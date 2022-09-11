@@ -1,0 +1,31 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "strict": true,
+    "alwaysStrict": true,
+    "useDefineForClassFields": true,
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "declaration": true, // <- Creates reference folder inside every component which has any other components
+    "isolatedModules": true,
+    "moduleResolution": "Node",
+    "noEmit": true,
+    //
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext",
+      "es2015",
+      "es2015.collection"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "src/index.d.ts",
+      "src/types"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+import Button from './Button';
+export const Template = (args) => <Button {...args} />;
+
+<Meta
+    title="Components/Action"
+    component={Button}
+/>
+
+# Button
+`@iogart-react-ui/iogart/Button`
+
+```javascript
+import { Button } from 'iogart-react-ui/iogart';
+```
+
+<Story
+  name="Button"
+  args={{
+    children: 'Button',
+  }}>
+  {Template.bind({})}
+</Story>

@@ -1,0 +1,24 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+import ButtonBase from './ButtonBase';
+export const Template = (args) => <ButtonBase {...args} />;
+
+<Meta
+    title="Components/Action"
+    component={ButtonBase}
+/>
+
+# Button Base
+`@iogart-react-ui/base/ButtonBase`
+
+```javascript
+import { ButtonBase } from 'iogart-react-ui/base';
+```
+
+<Story
+  name="ButtonBase"
+  args={{
+    children: 'Button Base',
+  }}>
+  {Template.bind({})}
+</Story>

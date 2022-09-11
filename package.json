@@ -1,0 +1,39 @@
+{
+  "name": "iogart-react-ui",
+  "description": "Web UI kit with ReactJS components",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build:all": "rm -rf ./dist && npx lerna run build",
+    "build:all:cache": "rm -rf ./node_modules/.cache/nx && rm -rf ./dist && npx lerna run build",
+    "start:all": "pnx lerna run watch",
+    "serve:storybook": "start-storybook -p 6006",
+    "build:storybook": "build-storybook"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@iogart-react-ui/base": "*",
+    "@iogart-react-ui/core": "*",
+    "@iogart-react-ui/icons": "*",
+    "@iogart-react-ui/iogart": "*",
+    "@iogart-react-ui/styles": "*",
+    "@iogart-react-ui/types": "*",
+    "@iogart-react-ui/utils": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.0",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack4": "^6.5.10",
+    "@storybook/manager-webpack4": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.2.5",
+    "lerna": "^5.3.0",
+    "prettier": "^2.7.1"
+  }
+}
