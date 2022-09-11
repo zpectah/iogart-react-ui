@@ -1,3 +1,5 @@
+import { Theme as emoTheme } from '@emotion/react';
+
 export type themeDirectionType = 'ltr' | 'rtl';
 export type themePaletteModeType = 'light' | 'dark';
 
@@ -8,7 +10,7 @@ export type themePaletteObjectType = {
     contrastText: string,
 };
 
-export interface Theme {
+export interface Theme extends emoTheme {
     direction: themeDirectionType,
     palette: {
         mode: themePaletteModeType,

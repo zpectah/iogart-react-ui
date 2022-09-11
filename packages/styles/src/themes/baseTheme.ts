@@ -4,37 +4,37 @@ const baseTheme: Theme = {
     direction: 'ltr',
     palette: {
         mode: 'light',
-        primary: {
+        primary: { // TODO
             main: '#797979',
             light: '#ababab',
             dark: '#ababab',
             contrastText: '#ababab',
         },
-        secondary: {
+        secondary: { // TODO
             main: '#ababab',
             light: '#ababab',
             dark: '#ababab',
             contrastText: '#ababab',
         },
-        error: {
+        error: { // TODO
             main: '#ababab',
             light: '#ababab',
             dark: '#ababab',
             contrastText: '#ababab',
         },
-        warning: {
+        warning: { // TODO
             main: '#ababab',
             light: '#ababab',
             dark: '#ababab',
             contrastText: '#ababab',
         },
-        success: {
+        success: { // TODO
             main: '#ababab',
             light: '#ababab',
             dark: '#ababab',
             contrastText: '#ababab',
         },
-        info: {
+        info: { // TODO
             main: '#ababab',
             light: '#ababab',
             dark: '#ababab',
@@ -65,6 +65,7 @@ const baseTheme: Theme = {
             light: 'rgb(250,250,250)',
             dark:  'rgb(25,25,25)',
         },
+        // TODO ...
         text: {},
         background: {},
         action: {},
@@ -72,6 +73,7 @@ const baseTheme: Theme = {
         divider: {},
         getContrastText: () => '',
     },
+    // TODO ...
     spacing: () => '',
     components: {},
     typography: {},
