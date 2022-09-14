@@ -58,7 +58,7 @@ Switch | `Switch` | ❌ | Data | read more
 Switch Group | `SwitchGroup` | ❌ | Data | read more
 Table | `Table` | ❌ | Data | read more
 Tabs | `Tabs` | ❌ | Navigation | read more
-Tag | `Tag` | ❌ | Status | read more
+Tag | `Tag` | ❎ | Status | read more
 Textarea | `Textarea` | ❌ | Data | read more
 Text Field | `TextField` | ❌ | Data | read more
 Time Picker | `TimePicker` | ❌ | Data | read more

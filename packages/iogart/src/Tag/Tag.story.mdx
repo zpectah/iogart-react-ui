@@ -1,0 +1,24 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+import Tag from './Tag';
+export const Template = (args) => <Tag {...args} />;
+
+<Meta
+    title="Components/Status"
+    component={Tag}
+/>
+
+# Button
+`@iogart-react-ui/iogart/Tag`
+
+```javascript
+import { Tag } from 'iogart-react-ui/iogart';
+```
+
+<Story
+  name="Tag"
+  args={{
+    label: 'Tag name',
+  }}>
+  {Template.bind({})}
+</Story>

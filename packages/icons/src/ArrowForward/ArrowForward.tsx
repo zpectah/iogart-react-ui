@@ -3,11 +3,18 @@ import React from 'react';
 import { ArrowForwardProps } from './ArrowForward.d';
 
 const ArrowForward = (props: ArrowForwardProps) => {
-    const { ...rest } = props;
+    const {
+        size = '24px',
+        color = '#000000',
+        ...rest
+    } = props;
 
     return (
         <span {...rest}>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} fill={color}>
+                <path d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+            </svg>
         </span>
     );
 };

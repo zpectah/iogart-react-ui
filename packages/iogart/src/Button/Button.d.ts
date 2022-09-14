@@ -1,6 +1,4 @@
-import { ButtonBaseProps } from '@iogart-react-ui/base/src/ButtonBase';
-
-export interface ButtonProps extends ButtonBaseProps {}
+import { ButtonProps } from './types';
 
 declare const Button: ButtonProps;
 

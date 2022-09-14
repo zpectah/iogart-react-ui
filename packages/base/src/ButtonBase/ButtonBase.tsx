@@ -1,28 +1,22 @@
-import React from 'react';
+import { FC, createElement } from 'react';
 
-// import useButtonBase from './useButtonBase';
+import useButtonBase from './useButtonBase';
+import { iogartButtonElement, iogartAnchorElement } from '@iogart-react-ui/types/src';
+import { ButtonBaseProps } from './types';
 
-import { ButtonBaseProps } from './ButtonBase.d';
-
-const ButtonBase: React.FC<ButtonBaseProps> = (props) => {
+const ButtonBase: FC<ButtonBaseProps<iogartButtonElement | iogartAnchorElement | HTMLElement>> = (props) => {
     const {
         children,
+        elementType = 'button',
         ...rest
     } = props;
 
-    // const { ...rest } = useButton();
-    // const ps = useButtonBase();
-    // console.log('ps', ps);
+    const updatedProps = useButtonBase({ ...rest });
 
-    console.log('props', props);
-
-    return (
-        <button
-            className="iogart-base iogart-button"
-            {...rest}
-        >
-            {children}
-        </button>
+    return createElement(
+        elementType,
+        updatedProps,
+        children,
     );
 };
 

@@ -1,3 +1,4 @@
 export { default as Button } from './Button';
-export type { ButtonProps } from './Button.d';
+export * from './types';
+export * from './Button.d';
 

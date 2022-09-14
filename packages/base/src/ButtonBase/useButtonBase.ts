@@ -1,37 +1,22 @@
 import { useRef } from 'react';
 
-const useButtonBase = (props?: any) => {
-    const {
-        disabled = false,
-        href,
-        ref,
-        tabIndex,
-        to,
-        type,
-    } = props;
+import { useButtonBaseParameters, useButtonBaseReturn } from './types';
 
-    const buttonRef = useRef();
+const useButtonBase = (props: useButtonBaseParameters) => {
+    const { ref, className, ...rest } = props;
 
-    const getRootProps = () => {
+    const elementRef = useRef<HTMLButtonElement | HTMLAnchorElement | HTMLElement>();
 
-        return {
-            onBlur: () => {},
-            onClick: () => {},
-            onFocus: () => {},
-            onKeyDown: () => {},
-            onKeyUp: () => {},
-            onMouseDown: () => {},
-            onMouseLeave: () => {},
-            onMouseUp: () => {},
-        };
+    const getClassName = () => {
+
+        return `iogart-base iogart-button-base${className && ` ${className}`}`;
     };
 
     return {
-        // button base properties
-        getRootProps,
-        // ...
-        disabled,
-    };
+        ref: ref || elementRef,
+        className: getClassName(),
+        ...rest,
+    } as useButtonBaseReturn;
 };
 
 export default useButtonBase;

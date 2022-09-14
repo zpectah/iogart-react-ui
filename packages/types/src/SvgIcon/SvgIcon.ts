@@ -1,3 +1,4 @@
 export interface SvgIcon {
-    // TODO
+    size?: string;
+    color?: string;
 }

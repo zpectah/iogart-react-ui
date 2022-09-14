@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Theme } from '@iogart-react-ui/types/src';
 import { styled } from '@iogart-react-ui/styles/src';
-import { ButtonBase } from '@iogart-react-ui/base/src/ButtonBase';
-import { ButtonProps } from './types';
+import { TagBase } from '@iogart-react-ui/base/src';
+import { TagProps } from './types';
 
-const StyledElement = styled(ButtonBase)`
+const StyledElement = styled(TagBase)`
     /* imported global styles */
     
     margin: 0;
@@ -16,14 +16,12 @@ const StyledElement = styled(ButtonBase)`
     color: ${({ theme }) =>  (theme as Theme).palette?.primary.main};
 `;
 
-const Button = (props: ButtonProps) => {
+const Tag = (props: TagProps) => {
     const { ...rest } = props;
 
     return (
-        <StyledElement
-            {...rest}
-        />
+        <StyledElement {...rest} />
     );
 };
 
-export default Button;
+export default Tag;

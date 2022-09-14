@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ArrowBackProps } from './ArrowBack.d';
+import { ExpandMoreProps } from './ExpandMore.d';
 
-const ArrowBack = (props: ArrowBackProps) => {
+const ExpandMore = (props: ExpandMoreProps) => {
     const {
         size = '24px',
         color = '#000000',
@@ -13,10 +13,10 @@ const ArrowBack = (props: ArrowBackProps) => {
         <span {...rest}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} fill={color}>
                 <path d="M0 0h24v24H0z" fill="none"/>
-                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+                <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
             </svg>
         </span>
     );
 };
 
-export default ArrowBack;
+export default ExpandMore;
