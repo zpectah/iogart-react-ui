@@ -1,10 +1,9 @@
 import { createElement, useMemo } from 'react';
 
 import useTagBase from './useTagBase';
-import { iogartSpanElement } from '@iogart-react-ui/types/src';
 import { TagBaseProps } from './types';
 
-const TagBase = (props: TagBaseProps<iogartSpanElement | HTMLElement>) => {
+const TagBase = (props: TagBaseProps) => {
     const {
         elementType = 'span',
         label = '',

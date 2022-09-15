@@ -14,7 +14,7 @@ import {
     iogartAnchorElement,
 } from '@iogart-react-ui/types/src';
 
-export interface ButtonBaseProps<T> extends IogartElementBase {
+export interface ButtonBaseProps<T = iogartButtonElement | iogartAnchorElement | HTMLElement> extends IogartElementBase {
     children?: ReactNode;
     elementType?: 'button' | 'a';
     disabled?: boolean;
@@ -24,6 +24,7 @@ export interface ButtonBaseProps<T> extends IogartElementBase {
     onFocus?: FocusEventHandler;
     onKeyDown?: KeyboardEventHandler;
     onKeyUp?: KeyboardEventHandler;
+    onMouseEnter?: MouseEventHandler;
     onMouseDown?: MouseEventHandler;
     onMouseLeave?: MouseEventHandler;
     onMouseUp?: MouseEventHandler;
@@ -34,5 +35,5 @@ export interface ButtonBaseProps<T> extends IogartElementBase {
     to?: string;
 }
 
-export interface useButtonBaseParameters extends ButtonBaseProps<iogartButtonElement | iogartAnchorElement | HTMLElement> {}
+export interface useButtonBaseParameters extends ButtonBaseProps {}
 export interface useButtonBaseReturn extends useButtonBaseParameters {}

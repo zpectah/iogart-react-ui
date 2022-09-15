@@ -4,6 +4,7 @@ import { Theme } from '@iogart-react-ui/types/src';
 import { styled } from '@iogart-react-ui/styles/src';
 import { TagBase } from '@iogart-react-ui/base/src';
 import { TagProps } from './types';
+import useTag from './useTag';
 
 const StyledElement = styled(TagBase)`
     /* imported global styles */
@@ -19,8 +20,12 @@ const StyledElement = styled(TagBase)`
 const Tag = (props: TagProps) => {
     const { ...rest } = props;
 
+    const updateProps = useTag({ ...rest });
+
     return (
-        <StyledElement {...rest} />
+        <StyledElement
+            {...updateProps}
+        />
     );
 };
 

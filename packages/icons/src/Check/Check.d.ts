@@ -1,7 +1,5 @@
 import { SvgIcon } from '@iogart-react-ui/types/src';
 
-export interface CheckProps extends SvgIcon {}
-
-declare const Check: CheckProps;
+declare const Check: SvgIcon;
 
 export default Check;

@@ -4,6 +4,7 @@ import { Theme } from '@iogart-react-ui/types/src';
 import { styled } from '@iogart-react-ui/styles/src';
 import { ButtonBase } from '@iogart-react-ui/base/src/ButtonBase';
 import { ButtonProps } from './types';
+import useButton from './useButton';
 
 const StyledElement = styled(ButtonBase)`
     /* imported global styles */
@@ -19,9 +20,11 @@ const StyledElement = styled(ButtonBase)`
 const Button = (props: ButtonProps) => {
     const { ...rest } = props;
 
+    const updateProps = useButton({ ...rest });
+
     return (
         <StyledElement
-            {...rest}
+            {...updateProps}
         />
     );
 };

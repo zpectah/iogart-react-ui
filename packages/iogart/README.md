@@ -7,6 +7,7 @@ Main components kit
 ## Contents
 Name | Module | Status | Category | Documentation
 --- | --- | --- | --- | ---
+Accordion | `Accordion` | ❌ | Content | read more
 Action Bar | `ActionBar` | ❌ | Action | read more
 Alert | `Alert` | ❌ | Feedback | read more
 Autocomplete | `Autocomplete` | ❌ | Data | read more
@@ -20,6 +21,7 @@ Card | `Card` | ❌ | Layout | read more
 Checkbox | `Checkbox` | ❌ | Data | read more
 CheckboxGroup | `CheckboxGroup` | ❌ | Data | read more
 Code | `Code` | ❌ | Content | read more
+Collapsed | `Collapsed` | ❌ | Content | read more
 Confirm Dialog | `ConfirmDialog` | ❌ | Feedback | read more
 Container | `Container` | ❌ | Layout | read more
 Data Table | `DataTable` | ❌ | Data | read more

@@ -4,7 +4,7 @@ import Button from './Button';
 export const Template = (args) => <Button {...args} />;
 
 <Meta
-    title="Components/Action"
+    title="Components/Action/Button"
     component={Button}
 />
 
@@ -16,9 +16,17 @@ import { Button } from 'iogart-react-ui/iogart';
 ```
 
 <Story
-  name="Button"
+  name="Default"
   args={{
-    children: 'Button',
+    children: 'Default Button',
+  }}>
+  {Template.bind({})}
+</Story>
+
+<Story
+  name="Primary"
+  args={{
+    children: 'Primary Button',
   }}>
   {Template.bind({})}
 </Story>

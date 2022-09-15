@@ -1,1 +1,1 @@
-export * from './demoMethod';
+export * from './Collapse';

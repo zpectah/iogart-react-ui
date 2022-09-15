@@ -1,0 +1,24 @@
+import { Meta, Story } from '@storybook/addon-docs';
+
+import TagBase from './TagBase';
+export const Template = (args) => <TagBase {...args} />;
+
+<Meta
+    title="Components/Status/Tag"
+    component={TagBase}
+/>
+
+# Button
+`@iogart-react-ui/base/TagBase`
+
+```javascript
+import { TagBase } from 'iogart-react-ui/base';
+```
+
+<Story
+  name="Base"
+  args={{
+    label: 'Tag name',
+  }}>
+  {Template.bind({})}
+</Story>

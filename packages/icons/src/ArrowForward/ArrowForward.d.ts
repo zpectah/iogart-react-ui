@@ -1,7 +1,5 @@
 import { SvgIcon } from '@iogart-react-ui/types/src';
 
-export interface ArrowForwardProps extends SvgIcon {}
-
-declare const ArrowForward: ArrowForwardProps;
+declare const ArrowForward: SvgIcon;
 
 export default ArrowForward;

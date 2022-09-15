@@ -1,1 +1,1 @@
-export * from './demoSystemMethod';
+export * from './Sx';

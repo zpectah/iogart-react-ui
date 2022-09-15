@@ -1,10 +1,9 @@
 import { FC, createElement } from 'react';
 
 import useButtonBase from './useButtonBase';
-import { iogartButtonElement, iogartAnchorElement } from '@iogart-react-ui/types/src';
 import { ButtonBaseProps } from './types';
 
-const ButtonBase: FC<ButtonBaseProps<iogartButtonElement | iogartAnchorElement | HTMLElement>> = (props) => {
+const ButtonBase: FC<ButtonBaseProps> = (props) => {
     const {
         children,
         elementType = 'button',

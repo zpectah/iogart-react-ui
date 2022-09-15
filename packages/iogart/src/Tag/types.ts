@@ -1,4 +1,6 @@
 import { TagBaseProps } from '@iogart-react-ui/base/src';
-import { iogartSpanElement } from '@iogart-react-ui/types/src';
 
-export interface TagProps extends TagBaseProps<iogartSpanElement | HTMLElement> {}
+export interface TagProps extends TagBaseProps {}
+
+export interface useTagParameters extends TagProps {}
+export interface useTagReturn extends useTagParameters {}

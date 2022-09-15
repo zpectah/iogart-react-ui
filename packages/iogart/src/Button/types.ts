@@ -15,3 +15,6 @@ export interface ButtonProps extends ButtonBaseProps<iogartAnchorElement | iogar
     startIcon?: ReactNode;
     endIcon?: ReactNode;
 }
+
+export interface useButtonParameters extends ButtonProps {}
+export interface useButtonReturn extends useButtonParameters {}

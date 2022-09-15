@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ArrowForwardProps } from './ArrowForward.d';
+import { SvgIcon } from '@iogart-react-ui/types/src';
 
-const ArrowForward = (props: ArrowForwardProps) => {
+const ArrowForward = (props: SvgIcon) => {
     const {
         size = '24px',
         color = '#000000',
@@ -10,12 +10,10 @@ const ArrowForward = (props: ArrowForwardProps) => {
     } = props;
 
     return (
-        <span {...rest}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} fill={color}>
-                <path d="M0 0h24v24H0z" fill="none"/>
-                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
-            </svg>
-        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} fill={color} {...rest}>
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+        </svg>
     );
 };
 

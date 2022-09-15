@@ -7,8 +7,10 @@ const useTagBase = (props: useTagBaseParameters) => {
     const { className, deleteIcon, ...rest } = props;
 
     const getClassName = () => {
+        const privateClasses = [ 'iogart-base', 'iogart-tag-base' ].join(' ');
+        const publicClasses = className ? className : '';
 
-        return `iogart-base iogart-tag-base${className && ` ${className}`}`;
+        return `${privateClasses} ${publicClasses}`;
     };
 
     const getDeleteIcon = () => {

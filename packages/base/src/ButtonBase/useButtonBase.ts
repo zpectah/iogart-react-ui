@@ -8,8 +8,10 @@ const useButtonBase = (props: useButtonBaseParameters) => {
     const elementRef = useRef<HTMLButtonElement | HTMLAnchorElement | HTMLElement>();
 
     const getClassName = () => {
+        const privateClasses = [ 'iogart-base', 'iogart-button-base' ].join(' ');
+        const publicClasses = className ? className : '';
 
-        return `iogart-base iogart-button-base${className && ` ${className}`}`;
+        return `${privateClasses} ${publicClasses}`;
     };
 
     return {
