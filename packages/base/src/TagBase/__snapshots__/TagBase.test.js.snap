@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag Base - base properties 1`] = `
+<span
+  className="iogart-base iogart-tag-base "
+>
+  Tag base
+</span>
+`;
+
+exports[`Tag Base - base properties 2`] = `
+<span
+  className="iogart-base iogart-tag-base "
+>
+  Tag base
+</span>
+`;

@@ -14,7 +14,7 @@ import {
     iogartAnchorElement,
 } from '@iogart-react-ui/types/src';
 
-export interface ButtonBaseProps<T = iogartButtonElement | iogartAnchorElement | HTMLElement> extends IogartElementBase {
+export interface ButtonBaseProps<T = iogartButtonElement | iogartAnchorElement> extends IogartElementBase {
     children?: ReactNode;
     elementType?: 'button' | 'a';
     disabled?: boolean;
