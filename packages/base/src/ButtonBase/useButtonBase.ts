@@ -9,7 +9,6 @@ import {
     IogartClickEvent,
     IogartDoubleClickEvent,
 } from '@iogart-react-ui/types';
-import { Sx } from '@iogart-react-ui/core';
 import { getElementClassName } from '@iogart-react-ui/utils';
 import { useButtonBaseParameters, useButtonBaseReturn } from './types';
 
@@ -28,8 +27,6 @@ const useButtonBase = (props: useButtonBaseParameters) => {
         // onMouseUp,
         onClick,
         onDoubleClick,
-        style,
-        sx,
         ...rest
     } = props;
 
@@ -38,7 +35,7 @@ const useButtonBase = (props: useButtonBaseParameters) => {
 
     const elementRef = useRef<HTMLButtonElement | HTMLAnchorElement>();
 
-    const getClassName = () => getElementClassName(
+    const updatedClassName = getElementClassName(
         className,
         [ 'iogart-button-base' ],
         { hover: isHover, focus: isFocus },
@@ -93,15 +90,9 @@ const useButtonBase = (props: useButtonBaseParameters) => {
         onDoubleClick: doubleClickHandler,
     };
 
-    const styleProperties = {
-        ...style,
-        ...sx && Sx(sx),
-    };
-
     return {
         ref: ref || elementRef,
-        className: getClassName(),
-        style: styleProperties,
+        className: updatedClassName,
         type,
         ...eventsProps,
         ...rest,

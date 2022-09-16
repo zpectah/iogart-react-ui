@@ -1,16 +1,28 @@
+import { Sx } from '@iogart-react-ui/core';
 import { getElementClassName } from '@iogart-react-ui/utils';
 import { useTagParameters, useTagReturn } from './types';
 
 const useTag = (props: useTagParameters) => {
-    const { className, ...rest } = props;
+    const {
+        className,
+        style,
+        sx,
+        ...rest
+    } = props;
 
-    const getClassName = () => getElementClassName(
+    const updatedClassName = getElementClassName(
         className,
         [ 'iogart-tag' ],
     );
 
+    const styleProperties = {
+        ...style,
+        ...sx && Sx(sx),
+    };
+
     return {
-        className: getClassName(),
+        className: updatedClassName,
+        style: styleProperties,
         ...rest
     } as useTagReturn;
 };

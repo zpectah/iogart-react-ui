@@ -1,4 +1,4 @@
-import { SxProps, SxReturn } from './types';
+import { SxProps, SxReturn } from '@iogart-react-ui/types';
 
 const Sx = (inputStyles: SxProps) => {
 

@@ -1,5 +1,14 @@
-import { ReactNode, LegacyRef, CSSProperties } from 'react';
+import {
+    ReactNode,
+    LegacyRef,
+    CSSProperties,
+} from 'react';
 import { WithAnimated } from 'react-spring';
+
+import {
+    CollapsibleElementKeys,
+    CollapsibleContentElementKeys,
+} from './enums';
 
 export type CollapsibleRenderToggleType = {
     collapsed: boolean,
@@ -11,6 +20,10 @@ export interface CollapsibleProps {
     renderToggle?: (render: CollapsibleRenderToggleType) => ReactNode;
     collapsed?: boolean;
     duration?: number;
+    element?: keyof typeof CollapsibleElementKeys;
+    styles?: CSSProperties;
+    contentElement?: keyof typeof CollapsibleContentElementKeys;
+    contentStyles?: CSSProperties;
 }
 
 export interface useCollapsibleParameters extends CollapsibleProps {}

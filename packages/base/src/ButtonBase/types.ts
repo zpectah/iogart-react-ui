@@ -9,14 +9,15 @@ import {
 } from 'react';
 
 import {
-    IogartElementBase,
+    IogartBaseUiProps,
     IogartButtonElement,
     IogartAnchorElement,
 } from '@iogart-react-ui/types';
+import { ButtonBaseElementKeys } from './enums';
 
-export interface ButtonBaseProps<T = IogartButtonElement | IogartAnchorElement> extends IogartElementBase {
+export interface ButtonBaseProps<T = IogartButtonElement | IogartAnchorElement> extends IogartBaseUiProps {
     children?: ReactNode;
-    elementType?: 'button' | 'a';
+    elementType?: keyof typeof ButtonBaseElementKeys;
     disabled?: boolean;
     type?: ButtonHTMLAttributes<HTMLButtonElement>['type'],
     role?: AriaRole,

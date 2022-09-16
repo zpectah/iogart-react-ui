@@ -4,11 +4,12 @@ import { Close } from '@iogart-react-ui/icons';
 import { IogartButtonElement } from '@iogart-react-ui/types';
 import useTagBase from './useTagBase';
 import { useButtonBase } from '../ButtonBase';
+import { TagBaseElementKeys } from './enums';
 import { TagBaseProps } from './types';
 
 const TagBase = (props: TagBaseProps) => {
     const {
-        elementType = 'span',
+        elementType = TagBaseElementKeys['span'],
         label = '',
         clickable,
         deleteIcon,

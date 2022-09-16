@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { getElementClassName } from '@iogart-react-ui/utils';
-import { Sx } from '@iogart-react-ui/core';
 import { IogartMouseEvent } from '@iogart-react-ui/types';
 import { useTagBaseParameters, useTagBaseReturn } from './types';
 
@@ -10,14 +9,12 @@ const useTagBase = (props: useTagBaseParameters) => {
         className,
         onMouseEnter,
         onMouseLeave,
-        style,
-        sx,
         ...rest
     } = props;
 
     const [ isHover, setHover ] = useState(false);
 
-    const getClassName = () => getElementClassName(
+    const updatedClassName = getElementClassName(
         className,
         [ 'iogart-tag-base' ],
         { hover: isHover },
@@ -38,14 +35,8 @@ const useTagBase = (props: useTagBaseParameters) => {
         onMouseLeave: mouseLeaveHandler,
     };
 
-    const styleProperties = {
-        ...style,
-        ...sx && Sx(sx),
-    };
-
     return {
-        className: getClassName(),
-        style: styleProperties,
+        className: updatedClassName,
         ...eventsProps,
         ...rest,
     } as useTagBaseReturn;

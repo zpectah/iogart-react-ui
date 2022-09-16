@@ -1,4 +1,4 @@
-import { Theme } from '@iogart-react-ui/types/src';
+import { Theme } from '@iogart-react-ui/types';
 
 const baseTheme: Theme = {
     direction: 'ltr',

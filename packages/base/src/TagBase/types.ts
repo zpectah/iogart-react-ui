@@ -3,12 +3,16 @@ import {
     MouseEventHandler,
 } from 'react';
 
-import { IogartElementBase, IogartSpanElement } from '@iogart-react-ui/types';
-import { TagBaseElementTypeKeys } from './enums';
+import {
+    IogartBaseUiProps,
+    IogartSpanElement,
+    IogartButtonElement,
+} from '@iogart-react-ui/types';
+import { TagBaseElementKeys } from './enums';
 
-export interface TagBaseProps<T = IogartSpanElement | HTMLElement> extends IogartElementBase {
+export interface TagBaseProps<T = IogartSpanElement | IogartButtonElement> extends IogartBaseUiProps {
     label?: ReactNode;
-    elementType?: keyof typeof TagBaseElementTypeKeys;
+    elementType?: keyof typeof TagBaseElementKeys;
     clickable?: boolean;
     onClick?: MouseEventHandler<T> | undefined;
     deleteIcon?: ReactNode;

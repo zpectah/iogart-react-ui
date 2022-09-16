@@ -7,9 +7,7 @@ import {
     MouseEvent,
 } from 'react';
 
-import { SxProps } from '@iogart-react-ui/core';
-
-// TODO
+import { SxProps } from '@iogart-react-ui/types';
 
 /*
 Common elements
@@ -32,10 +30,13 @@ export type IogartDoubleClickEvent<T> = MouseEvent<T, MouseEvent>;
 /*
 Common component
 */
-export interface IogartElementBase {
+export interface IogartBaseUiProps {
     tabIndex?: number | undefined;
     className?: string | undefined;
     style?: CSSProperties | undefined;
+    // ...
+}
+export interface IogartCommonUiProps extends IogartBaseUiProps {
     sx?: SxProps;
-    // TODO
+    // ...
 }
