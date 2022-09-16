@@ -1,14 +1,13 @@
+import { getElementClassName } from '@iogart-react-ui/utils/src';
 import { useTagParameters, useTagReturn } from './types';
 
 const useTag = (props: useTagParameters) => {
     const { className, ...rest } = props;
 
-    const getClassName = () => {
-        const privateClasses = [ 'iogart-tag' ].join(' ');
-        const publicClasses = className ? className : '';
-
-        return `${privateClasses} ${publicClasses}`;
-    };
+    const getClassName = () => getElementClassName(
+        className,
+        [ 'iogart-tag' ],
+    );
 
     return {
         className: getClassName(),

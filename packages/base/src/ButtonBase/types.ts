@@ -5,16 +5,16 @@ import {
     FocusEventHandler,
     KeyboardEventHandler,
     MouseEventHandler,
-    LegacyRef,
+    LegacyRef, MouseEvent,
 } from 'react';
 
 import {
     IogartElementBase,
-    iogartButtonElement,
-    iogartAnchorElement,
+    IogartButtonElement,
+    IogartAnchorElement,
 } from '@iogart-react-ui/types/src';
 
-export interface ButtonBaseProps<T = iogartButtonElement | iogartAnchorElement> extends IogartElementBase {
+export interface ButtonBaseProps<T = IogartButtonElement | IogartAnchorElement> extends IogartElementBase {
     children?: ReactNode;
     elementType?: 'button' | 'a';
     disabled?: boolean;
@@ -29,7 +29,7 @@ export interface ButtonBaseProps<T = iogartButtonElement | iogartAnchorElement> 
     onMouseLeave?: MouseEventHandler;
     onMouseUp?: MouseEventHandler;
     onClick?: MouseEventHandler<T> | undefined;
-    onDoubleClick?: MouseEventHandler<T> | undefined;
+    onDoubleClick?: (event: MouseEvent<T, MouseEvent>) => void;
     ref?: LegacyRef<HTMLButtonElement> | undefined;
     href?: string;
     to?: string;

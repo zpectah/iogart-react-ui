@@ -1,14 +1,13 @@
+import { getElementClassName } from '@iogart-react-ui/utils/src';
 import { useButtonParameters, useButtonReturn } from './types';
 
 const useButton = (props: useButtonParameters) => {
     const { className, ...rest } = props;
 
-    const getClassName = () => {
-        const privateClasses = [ 'iogart-button' ].join(' ');
-        const publicClasses = className ? className : '';
-
-        return `${privateClasses} ${publicClasses}`;
-    };
+    const getClassName = () => getElementClassName(
+        className,
+        [ 'iogart-button' ],
+    );
 
     return {
         className: getClassName(),

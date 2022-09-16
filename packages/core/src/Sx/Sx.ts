@@ -1,6 +1,10 @@
-const Sx = () => {
+const Sx = (inputStyles: any) => {
 
-    return {};
+    // TODO
+
+    return {
+        ...inputStyles
+    };
 };
 
 export default Sx;

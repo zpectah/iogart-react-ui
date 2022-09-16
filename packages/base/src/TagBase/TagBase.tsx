@@ -1,6 +1,9 @@
 import { createElement, useMemo } from 'react';
 
+import { Close } from '@iogart-react-ui/icons/src';
+import { IogartButtonElement } from '@iogart-react-ui/types/src';
 import useTagBase from './useTagBase';
+import { useButtonBase } from '../ButtonBase';
 import { TagBaseProps } from './types';
 
 const TagBase = (props: TagBaseProps) => {
@@ -8,20 +11,24 @@ const TagBase = (props: TagBaseProps) => {
         elementType = 'span',
         label = '',
         clickable,
+        deleteIcon,
         onClick,
         ...rest
     } = props;
 
-    const { deleteIcon, ...restOfUpdatedProps } = useTagBase({ clickable, onClick, ...rest });
+    const { ...restOfUpdatedProps } = useTagBase({ clickable, onClick, ...rest });
+
+    const buttonProps = useButtonBase({
+        className: 'iogart-tag-button',
+        onClick: (e) => { console.log('on close', e) },
+    }) as IogartButtonElement;
 
     const childrenNode = useMemo(() => {
         let children = label;
         if (clickable && onClick) {
             const closeButton = (
-                <button
-                    onClick={onClick}
-                >
-                    {deleteIcon}
+                <button {...buttonProps}>
+                    {deleteIcon ? deleteIcon : <Close />}
                 </button>
             );
             children = (
@@ -33,7 +40,7 @@ const TagBase = (props: TagBaseProps) => {
         }
 
         return children;
-    }, [ label, clickable, onClick, deleteIcon ]);
+    }, [ label, clickable, onClick, deleteIcon, buttonProps ]);
 
     return createElement(
         elementType,
