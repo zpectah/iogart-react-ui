@@ -28,6 +28,7 @@ const useButtonBase = (props: useButtonBaseParameters) => {
         // onMouseUp,
         onClick,
         onDoubleClick,
+        style,
         sx,
         ...rest
     } = props;
@@ -41,6 +42,7 @@ const useButtonBase = (props: useButtonBaseParameters) => {
         className,
         [ 'iogart-button-base' ],
         { hover: isHover, focus: isFocus },
+        { ui: true, base: true, },
     );
 
     const blurHandler = (event: IogartFocusEvent) => {
@@ -91,10 +93,15 @@ const useButtonBase = (props: useButtonBaseParameters) => {
         onDoubleClick: doubleClickHandler,
     };
 
+    const styleProperties = {
+        ...style,
+        ...sx && Sx(sx),
+    };
+
     return {
         ref: ref || elementRef,
         className: getClassName(),
-        sx: Sx(sx),
+        style: styleProperties,
         type,
         ...eventsProps,
         ...rest,

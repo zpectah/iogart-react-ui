@@ -10,6 +10,7 @@ const useTagBase = (props: useTagBaseParameters) => {
         className,
         onMouseEnter,
         onMouseLeave,
+        style,
         sx,
         ...rest
     } = props;
@@ -20,6 +21,7 @@ const useTagBase = (props: useTagBaseParameters) => {
         className,
         [ 'iogart-tag-base' ],
         { hover: isHover },
+        { ui: true, base: true, },
     );
 
     const mouseEnterHandler = (event: IogartMouseEvent) => {
@@ -36,9 +38,14 @@ const useTagBase = (props: useTagBaseParameters) => {
         onMouseLeave: mouseLeaveHandler,
     };
 
+    const styleProperties = {
+        ...style,
+        ...sx && Sx(sx),
+    };
+
     return {
         className: getClassName(),
-        sx: Sx(sx),
+        style: styleProperties,
         ...eventsProps,
         ...rest,
     } as useTagBaseReturn;
