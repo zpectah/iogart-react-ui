@@ -1,18 +1,25 @@
 import renderer from 'react-test-renderer';
 
-import TagBase from './TagBase';
+import Tag from './Tag';
 
-it('Tag Base - base properties', () => {
+it('Tag - onMouseEnter & onMouseLeave', () => {
 
     const component = renderer.create(
-        <TagBase label="Tag base" />
+        <Tag>Tag</Tag>
     );
 
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
 
     renderer.act(() => {
-        tree.props.label;
+        tree.props?.onMouseEnter();
+    });
+
+    tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+
+    renderer.act(() => {
+       tree.props?.onMouseLeave();
     });
 
     tree = component.toJSON();

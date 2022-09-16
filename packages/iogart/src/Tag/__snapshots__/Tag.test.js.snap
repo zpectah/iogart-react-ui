@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag - onMouseEnter & onMouseLeave 1`] = `
+<span
+  className="iogart-ui iogart-tag"
+  onClick={[Function]}
+  onDoubleClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  style={{}}
+/>
+`;
+
+exports[`Tag - onMouseEnter & onMouseLeave 2`] = `
+<span
+  className="iogart-ui iogart-tag iogart--hover"
+  onClick={[Function]}
+  onDoubleClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  style={{}}
+/>
+`;
+
+exports[`Tag - onMouseEnter & onMouseLeave 3`] = `
+<span
+  className="iogart-ui iogart-tag"
+  onClick={[Function]}
+  onDoubleClick={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+  style={{}}
+/>
+`;

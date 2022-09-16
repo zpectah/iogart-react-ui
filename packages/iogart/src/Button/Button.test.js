@@ -1,11 +1,11 @@
 import renderer from 'react-test-renderer';
 
-import ButtonBase from './ButtonBase';
+import Button from './Button';
 
-it('Button Base - onMouseEnter & onMouseLeave', () => {
+it('Button - onMouseEnter & onMouseLeave', () => {
 
     const component = renderer.create(
-        <ButtonBase>Button base</ButtonBase>
+        <Button>Button</Button>
     );
 
     let tree = component.toJSON();
