@@ -1,4 +1,4 @@
-import { getElementClassName } from '@iogart-react-ui/utils/src';
+import { getElementClassName } from '@iogart-react-ui/utils';
 import { useTagParameters, useTagReturn } from './types';
 
 const useTag = (props: useTagParameters) => {

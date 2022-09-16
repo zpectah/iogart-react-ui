@@ -1,7 +1,7 @@
 import { createElement, useMemo } from 'react';
 
-import { Close } from '@iogart-react-ui/icons/src';
-import { IogartButtonElement } from '@iogart-react-ui/types/src';
+import { Close } from '@iogart-react-ui/icons';
+import { IogartButtonElement } from '@iogart-react-ui/types';
 import useTagBase from './useTagBase';
 import { useButtonBase } from '../ButtonBase';
 import { TagBaseProps } from './types';

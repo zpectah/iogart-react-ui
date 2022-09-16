@@ -8,9 +8,9 @@ import {
     IogartMouseEvent,
     IogartClickEvent,
     IogartDoubleClickEvent,
-} from '@iogart-react-ui/types/src';
-import { Sx } from '@iogart-react-ui/core/src';
-import { getElementClassName } from '@iogart-react-ui/utils/src';
+} from '@iogart-react-ui/types';
+import { Sx } from '@iogart-react-ui/core';
+import { getElementClassName } from '@iogart-react-ui/utils';
 import { useButtonBaseParameters, useButtonBaseReturn } from './types';
 
 const useButtonBase = (props: useButtonBaseParameters) => {

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Theme } from '@iogart-react-ui/types/src';
-import { styled } from '@iogart-react-ui/styles/src';
-import { ButtonBase } from '@iogart-react-ui/base/src/ButtonBase';
+import { Theme } from '@iogart-react-ui/types';
+import { styled } from '@iogart-react-ui/styles';
+import { ButtonBase } from '@iogart-react-ui/base';
 import { ButtonProps } from './types';
 import useButton from './useButton';
 

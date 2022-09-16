@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SvgIcon } from '@iogart-react-ui/types/src';
+import { SvgIcon } from '@iogart-react-ui/types';
 
 const ArrowForward = (props: SvgIcon) => {
     const {

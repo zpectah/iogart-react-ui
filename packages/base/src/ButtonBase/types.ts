@@ -12,7 +12,7 @@ import {
     IogartElementBase,
     IogartButtonElement,
     IogartAnchorElement,
-} from '@iogart-react-ui/types/src';
+} from '@iogart-react-ui/types';
 
 export interface ButtonBaseProps<T = IogartButtonElement | IogartAnchorElement> extends IogartElementBase {
     children?: ReactNode;

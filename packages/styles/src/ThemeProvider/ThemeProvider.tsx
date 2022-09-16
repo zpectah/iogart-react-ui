@@ -4,7 +4,7 @@ import {
     ThemeProviderProps as EmoThemeProviderProps,
 } from '@emotion/react';
 
-import { Theme } from '@iogart-react-ui/types/src';
+import { Theme } from '@iogart-react-ui/types';
 import { baseTheme } from '../themes';
 
 export interface ThemeProviderProps extends EmoThemeProviderProps {

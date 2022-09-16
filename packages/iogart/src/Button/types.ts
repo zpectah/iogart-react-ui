@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
-import { ButtonBaseProps } from '@iogart-react-ui/base/src/ButtonBase';
-import { IogartAnchorElement, IogartButtonElement } from '@iogart-react-ui/types/src';
+import { ButtonBaseProps } from '@iogart-react-ui/base';
+import { IogartAnchorElement, IogartButtonElement } from '@iogart-react-ui/types';
 import {
     ButtonColorKeys,
     ButtonSizeKeys,

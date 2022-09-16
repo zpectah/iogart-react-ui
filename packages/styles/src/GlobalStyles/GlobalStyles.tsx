@@ -7,7 +7,7 @@ import {
     CSSObject,
 } from '@emotion/react';
 
-import { Theme } from '@iogart-react-ui/types/src';
+import { Theme } from '@iogart-react-ui/types';
 
 export interface GlobalStylesProps extends Partial<GlobalProps> {
     styles?: CSSObject,

@@ -1,6 +1,6 @@
 import { useTheme as emoUseTheme } from '@emotion/react';
 
-import { Theme } from '@iogart-react-ui/types/src';
+import { Theme } from '@iogart-react-ui/types';
 
 const useTheme = () => {
     const theme: Partial<Theme> = emoUseTheme();

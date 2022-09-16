@@ -3,7 +3,7 @@ import {
     MouseEventHandler,
 } from 'react';
 
-import { IogartElementBase, IogartSpanElement } from '@iogart-react-ui/types/src';
+import { IogartElementBase, IogartSpanElement } from '@iogart-react-ui/types';
 import { TagBaseElementTypeKeys } from './enums';
 
 export interface TagBaseProps<T = IogartSpanElement | HTMLElement> extends IogartElementBase {

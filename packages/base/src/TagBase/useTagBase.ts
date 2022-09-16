@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { getElementClassName } from '@iogart-react-ui/utils/src';
-import { Sx } from '@iogart-react-ui/core/src';
-import { IogartMouseEvent } from '@iogart-react-ui/types/src';
+import { getElementClassName } from '@iogart-react-ui/utils';
+import { Sx } from '@iogart-react-ui/core';
+import { IogartMouseEvent } from '@iogart-react-ui/types';
 import { useTagBaseParameters, useTagBaseReturn } from './types';
 
 const useTagBase = (props: useTagBaseParameters) => {

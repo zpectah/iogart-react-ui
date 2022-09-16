@@ -1,4 +1,4 @@
-import { getElementClassName } from '@iogart-react-ui/utils/src';
+import { getElementClassName } from '@iogart-react-ui/utils';
 import { useButtonParameters, useButtonReturn } from './types';
 
 const useButton = (props: useButtonParameters) => {

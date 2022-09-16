@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Theme } from '@iogart-react-ui/types/src';
-import { styled } from '@iogart-react-ui/styles/src';
-import { TagBase } from '@iogart-react-ui/base/src';
+import { Theme } from '@iogart-react-ui/types';
+import { styled } from '@iogart-react-ui/styles';
+import { TagBase } from '@iogart-react-ui/base';
 import { TagProps } from './types';
 import useTag from './useTag';
 

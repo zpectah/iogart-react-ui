@@ -7,7 +7,7 @@ import {
     MouseEvent,
 } from 'react';
 
-import { SxProps } from '@iogart-react-ui/core/src';
+import { SxProps } from '@iogart-react-ui/core';
 
 // TODO
 

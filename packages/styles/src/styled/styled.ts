@@ -6,7 +6,7 @@ import {
     default as emoStyled,
 } from '@emotion/styled';
 
-// import { Theme } from '@iogart-react-ui/types/src';
+// import { Theme } from '@iogart-react-ui/types';
 
 const styled = emoStyled;
 
