@@ -21,10 +21,13 @@ const Collapsible: FC<CollapsibleProps> = (props) => {
     return (
         <>
             {renderToggle && renderToggle(renderProps)}
-            <animated.div style={{
-                overflow: 'hidden',
-                ...springProps
-            }} className={className}>
+            <animated.div
+                style={{
+                    overflow: 'hidden',
+                    ...springProps
+                }}
+                className={className}
+            >
                 <div ref={contentRef}>
                     {children}
                 </div>

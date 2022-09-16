@@ -10,6 +10,7 @@ import {
 
 const useCollapsible = (props: useCollapsibleParameters) => {
     const {
+        duration = 125,
         collapsed = false,
         ...rest
     } = props;
@@ -27,7 +28,7 @@ const useCollapsible = (props: useCollapsibleParameters) => {
     };
 
     const springProps = useSpring({
-        config: { duration: 125 },
+        config: { duration },
         height: !isCollapsed ? 0 : bounds.height,
     }) as unknown as CSSProperties;
     const renderProps: CollapsibleRenderToggleType = {
