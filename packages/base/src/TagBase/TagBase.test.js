@@ -1,11 +1,11 @@
 import renderer from 'react-test-renderer';
 
-import Tag from './Tag';
+import TagBase from './TagBase';
 
-it('Tag - onMouseEnter & onMouseLeave', () => {
+it('Tag Base - onMouseEnter & onMouseLeave', () => {
 
     const component = renderer.create(
-        <Tag label="Tag" />
+        <TagBase label="TagBase" />
     );
 
     let tree = component.toJSON();
