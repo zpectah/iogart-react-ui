@@ -17,7 +17,7 @@ import { ButtonBaseElementKeys } from './enums';
 
 export interface ButtonBaseProps<T = IogartButtonElement | IogartAnchorElement> extends IogartBaseUiProps {
     children?: ReactNode;
-    elementType?: keyof typeof ButtonBaseElementKeys;
+    component?: keyof typeof ButtonBaseElementKeys;
     disabled?: boolean;
     type?: ButtonHTMLAttributes<HTMLButtonElement>['type'],
     role?: AriaRole,

@@ -8,6 +8,29 @@ import {
 } from 'react';
 
 import { SxProps } from '@iogart-react-ui/types';
+import {
+    contentElementTypeKeys,
+    elementTypeKeys,
+    elementFlexDirectionKeys,
+    elementFlexAlignContentKeys,
+    elementFlexAlignItemsKeys,
+    elementFlexAlignSelfKeys,
+    elementFlexJustifyContentKeys,
+    elementFlexJustifyItemsKeys,
+    elementFlexJustifySelfKeys,
+} from './enums';
+
+/* */
+export type contentElementType = keyof typeof contentElementTypeKeys;
+export type elementType = keyof typeof elementTypeKeys & contentElementType;
+export type elementFlexDirectionType = keyof typeof elementFlexDirectionKeys;
+export type elementFlexAlignContentType = keyof typeof elementFlexAlignContentKeys;
+export type elementFlexAlignItemsType = keyof typeof elementFlexAlignItemsKeys;
+export type elementFlexAlignSelfType = keyof typeof elementFlexAlignSelfKeys;
+export type elementFlexJustifyContentType = keyof typeof elementFlexJustifyContentKeys;
+export type elementFlexJustifyItemsType = keyof typeof elementFlexJustifyItemsKeys;
+export type elementFlexJustifySelfType = keyof typeof elementFlexJustifySelfKeys;
+
 
 /*
 Common elements
@@ -37,6 +60,6 @@ export interface IogartBaseUiProps {
     // ...
 }
 export interface IogartCommonUiProps extends IogartBaseUiProps {
-    sx?: SxProps;
+    sx?: SxProps | undefined;
     // ...
 }

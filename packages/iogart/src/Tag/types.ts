@@ -13,7 +13,7 @@ import { TagElementKeys } from './enums';
 
 export interface TagProps<T = IogartSpanElement | IogartButtonElement> extends IogartCommonUiProps {
     label?: ReactNode;
-    elementType?: keyof typeof TagElementKeys;
+    component?: keyof typeof TagElementKeys;
     clickable?: boolean;
     onClick?: MouseEventHandler<T> | undefined;
     onDoubleClick?: (event: MouseEvent<T, MouseEvent>) => void;

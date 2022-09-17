@@ -7,14 +7,14 @@ import useButtonBase from './useButtonBase';
 const ButtonBase: FC<ButtonBaseProps> = (props) => {
     const {
         children,
-        elementType = ButtonBaseElementKeys['button'],
+        component = ButtonBaseElementKeys.button,
         ...rest
     } = props;
 
     const updatedProps = useButtonBase({ ...rest });
 
     return createElement(
-        elementType,
+        component,
         updatedProps,
         children,
     );

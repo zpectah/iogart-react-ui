@@ -1,15 +1,29 @@
 import React, { createElement, useMemo } from 'react';
 
-import { IogartButtonElement } from '@iogart-react-ui/types';
+import { IogartButtonElement, Theme } from '@iogart-react-ui/types';
 import { useButtonBase } from '@iogart-react-ui/base';
+import { styled } from '@iogart-react-ui/styles';
 import { Close } from '@iogart-react-ui/icons';
 import { TagElementKeys } from './enums';
 import { TagProps } from './types';
 import useTag from './useTag';
 
+// TODO -->
+const StyledElement = styled('div')`
+    /* imported global styles */
+    
+    margin: 0;
+    padding: .5rem 1rem;
+    
+    display: inline-flex;
+    
+    color: ${({ theme }) =>  (theme as Theme).palette?.primary.main};
+`;
+// TODO <--
+
 const Tag = (props: TagProps) => {
     const {
-        elementType = TagElementKeys['span'],
+        component = TagElementKeys.span,
         label = '',
         clickable,
         deleteIcon,
@@ -44,7 +58,7 @@ const Tag = (props: TagProps) => {
     }, [ label, clickable, onClickDelete, deleteIcon, buttonProps ]);
 
     return createElement(
-        elementType,
+        component,
         { ...restOfUpdatedProps },
         childrenNode,
     );

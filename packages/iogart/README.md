@@ -55,7 +55,7 @@ Scrollable | `Scrollable` | ❌ | Layout | read more
 Search | `Search` | ❌ | Data | read more
 Select | `Select` | ❌ | Data | read more
 Slider | `Slider` | ❌ | Data | read more
-Stack | `Stack` | ❌ | Layout | read more
+Stack | `Stack` | ❎ | Layout | read more
 Switch | `Switch` | ❌ | Data | read more
 Switch Group | `SwitchGroup` | ❌ | Data | read more
 Table | `Table` | ❌ | Data | read more

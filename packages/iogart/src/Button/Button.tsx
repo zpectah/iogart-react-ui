@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createElement } from 'react';
 
 import { Theme } from '@iogart-react-ui/types';
 import { styled } from '@iogart-react-ui/styles';
@@ -22,10 +22,9 @@ const Button = (props: ButtonProps) => {
 
     const updateProps = useButton({ ...rest });
 
-    return (
-        <StyledElement
-            {...updateProps}
-        />
+    return createElement(
+        StyledElement,
+        {...updateProps},
     );
 };
 
