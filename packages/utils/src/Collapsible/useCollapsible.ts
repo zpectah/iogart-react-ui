@@ -2,6 +2,7 @@ import { useState, CSSProperties } from 'react';
 import { useSpring, animated } from 'react-spring';
 import useMeasure from 'react-use-measure';
 
+import { getElementClassName } from '@iogart-react-ui/utils';
 import {
     CollapsibleRenderToggleType,
     useCollapsibleParameters,
@@ -12,16 +13,19 @@ const useCollapsible = (props: useCollapsibleParameters) => {
     const {
         duration = 125,
         collapsed = false,
+        className,
+        toggleClassName,
         ...rest
     } = props;
 
     const [ isCollapsed, setCollapsed ] = useState<boolean>(collapsed);
     const [ ref, bounds ] = useMeasure();
 
-    const getClassName = () => {
-
-        return ``;
-    };
+    const updatedClassName = getElementClassName(
+        className,
+        [ 'iogart-collapsible' ],
+        { collapsed: isCollapsed },
+    );
 
     const toggleHandler = (): void => {
         setCollapsed(!isCollapsed);
@@ -33,7 +37,15 @@ const useCollapsible = (props: useCollapsibleParameters) => {
     }) as unknown as CSSProperties;
     const renderProps: CollapsibleRenderToggleType = {
         collapsed: isCollapsed,
-        toggle: toggleHandler,
+        toggleProps: {
+            onClick: toggleHandler,
+            className: getElementClassName(
+                toggleClassName,
+                [ 'iogart-collapsible-toggle' ],
+                { expanded: isCollapsed },
+            ),
+            'aria-expanded': String(isCollapsed),
+        },
     };
 
     return {
@@ -41,7 +53,7 @@ const useCollapsible = (props: useCollapsibleParameters) => {
         springProps,
         renderProps,
         contentRef: ref,
-        className: getClassName(),
+        className: updatedClassName,
         ...rest
     } as useCollapsibleReturn;
 };

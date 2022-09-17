@@ -21,8 +21,8 @@ import { Collapsible } from 'iogart-react-ui/utils';
     children: (
         <>some content collapsible block</>
     ),
-    renderToggle: ({ collapsed, toggle }) => (
-        <button onClick={toggle}>toggle is {collapsed ? 'open' : 'closed'}</button>
+    renderToggle: ({ collapsed, toggleProps }) => (
+        <button {...toggleProps}>toggle is {collapsed ? 'open' : 'closed'}</button>
     ),
   }}>
   {Template.bind({})}

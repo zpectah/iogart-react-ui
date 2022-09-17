@@ -12,7 +12,11 @@ import {
 
 export type CollapsibleRenderToggleType = {
     collapsed: boolean,
-    toggle: () => void,
+    toggleProps: {
+        onClick: () => void,
+        className: string,
+        'aria-expanded': string,
+    },
 };
 
 export interface CollapsibleProps {
@@ -24,6 +28,8 @@ export interface CollapsibleProps {
     styles?: CSSProperties;
     contentElement?: keyof typeof CollapsibleContentElementKeys;
     contentStyles?: CSSProperties;
+    className?: string;
+    toggleClassName?: string;
 }
 
 export interface useCollapsibleParameters extends CollapsibleProps {}

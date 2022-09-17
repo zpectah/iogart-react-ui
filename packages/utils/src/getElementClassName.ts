@@ -4,6 +4,9 @@ type getElementClassNameStateProps = {
     focus?: boolean,
     disabled?: boolean,
     hidden?: boolean,
+    collapsed?: boolean,
+    expanded?: boolean,
+    open?: boolean,
 }
 
 type getElementClassNamePrefixesProps = {
@@ -27,6 +30,9 @@ const getElementClassName = (
     if (state?.focus) stateClasses.push('iogart--focus');
     if (state?.disabled) stateClasses.push('iogart--disabled');
     if (state?.hidden) stateClasses.push('iogart--hidden');
+    if (state?.collapsed) stateClasses.push('iogart--collapsed');
+    if (state?.expanded) stateClasses.push('iogart--expanded');
+    if (state?.open) stateClasses.push('iogart--open');
 
     const finalClasses = [
         ...prefixClasses,
