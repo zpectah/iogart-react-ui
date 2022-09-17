@@ -5,14 +5,14 @@ export const decorators = [
 ];
 
 export const argTypes = {
-  // theme: {
-  //   control: 'select',
-  //   options: [ 'light', 'dark' ],
-  // },
+  theme: {
+    control: 'select',
+    options: [ 'light', 'dark' ],
+  },
 };
 
 export const args = {
-  // theme: 'light',
+  theme: 'light',
 };
 
 export const parameters = {

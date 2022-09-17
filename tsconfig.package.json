@@ -25,7 +25,8 @@
     "typeRoots": [
       "node_modules/@types",
       "src/index.d.ts",
-      "src/types"
+      "src/types",
+      "**/Theme.d.ts"
     ]
   }
 }

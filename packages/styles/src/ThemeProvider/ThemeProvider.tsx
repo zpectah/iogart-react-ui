@@ -4,11 +4,10 @@ import {
     ThemeProviderProps as EmoThemeProviderProps,
 } from '@emotion/react';
 
-import { Theme } from '@iogart-react-ui/types';
-import { baseTheme } from '../themes';
+import { lightTheme } from '../themes';
 
 export interface ThemeProviderProps extends EmoThemeProviderProps {
-    theme: Partial<Theme>,
+    // theme: Partial<Theme>,
 }
 
 const ThemeProvider = (props: ThemeProviderProps) => {
@@ -17,14 +16,7 @@ const ThemeProvider = (props: ThemeProviderProps) => {
         ...rest
     } = props;
 
-    const [ currentTheme, setCurrentTheme ] = React.useState<Partial<Theme>>(baseTheme);
-
-    React.useEffect(() => {
-        console.log('theme provider loaded ...', theme, currentTheme);
-
-        // deep merge with default theme ...
-
-    }, []);
+    const currentTheme = Object.assign(lightTheme, theme);
 
     return (
         <EmoThemeProvider
