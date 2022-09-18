@@ -9,7 +9,10 @@
     "start:all": "pnx lerna run watch",
     "serve:storybook": "start-storybook -p 6006",
     "build:storybook": "build-storybook",
-    "test": "jest"
+    "test:all": "jest",
+    "clear:dist": "rm -rf ./dist",
+    "clear:packages:snapshots": "rm -rf ./packages/**/**/**/__snapshots__",
+    "clear:packages:node_modules": "rm -rf ./packages/**/node_modules"
   },
   "workspaces": [
     "packages/*"

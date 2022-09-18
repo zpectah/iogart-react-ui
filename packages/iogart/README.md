@@ -23,7 +23,7 @@ CheckboxGroup | `CheckboxGroup` | ❌ | Data | read more
 Code | `Code` | ❌ | Content | read more
 Collapsed | `Collapsed` | ❌ | Content | read more
 Confirm Dialog | `ConfirmDialog` | ❌ | Feedback | read more
-Container | `Container` | ❌ | Layout | read more
+Container | `Container` | ❎ | Layout | read more
 Data Table | `DataTable` | ❌ | Data | read more
 Date Picker | `DatePicker` | ❌ | Data | read more
 Date Time Picker | `DateTimePicker` | ❌ | Data | read more
