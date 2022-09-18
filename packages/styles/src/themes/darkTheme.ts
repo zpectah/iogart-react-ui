@@ -1,7 +1,7 @@
 import { Theme } from '@iogart-react-ui/types';
+import baseTheme from './base';
 
-const darkTheme: Theme = {
-    direction: 'ltr',
+const darkTheme = {
     palette: {
         mode: 'dark',
         primary: { // TODO
@@ -73,16 +73,7 @@ const darkTheme: Theme = {
         divider: {},
         getContrastText: () => '',
     },
-    // TODO ...
-    spacing: () => '',
-    components: {},
-    typography: {},
-    shape: {},
-    mixins: {},
-    shadows: {},
-    transitions: {},
-    breakpoints: {},
-    zIndex: {},
-};
+    ...baseTheme,
+} as Theme;
 
 export default darkTheme;

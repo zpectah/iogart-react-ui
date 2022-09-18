@@ -10,11 +10,10 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
-    "declaration": true, // <- Creates reference folder inside every component which has any other components
+    "declaration": true,
     "isolatedModules": true,
     "moduleResolution": "Node",
     "noEmit": true,
-    //
     "lib": [
       "DOM",
       "DOM.Iterable",

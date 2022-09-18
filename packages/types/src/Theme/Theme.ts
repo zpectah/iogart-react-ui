@@ -52,9 +52,15 @@ export interface Theme extends emoTheme {
         divider: {},
         getContrastText: (color: string) => string,
     },
-    spacing: () => string,
-    components: {},
-    typography: {},
+    spacing: (value: number) => string,
+    components: {
+        Button: {},
+    },
+    typography: {
+        fontFamily: string,
+        fontSize: string | number,
+        lineHeight: string | number,
+    },
     shape: {},
     mixins: {},
     shadows: {},
