@@ -1,3 +1,0 @@
-# iogart-react-ui/types
-
-Common used types, interfaces, ...

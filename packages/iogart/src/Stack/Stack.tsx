@@ -1,24 +1,14 @@
-import React, { FC, createElement } from 'react';
+import React, { createElement } from 'react';
 
-import { contentElementTypeKeys } from '@iogart-react-ui/types';
 import { StackProps } from './types';
 import useStack from './useStack';
 
-const Stack:FC<StackProps> = (props) => {
-    const {
-        children,
-        style,
-        component = contentElementTypeKeys.div,
-        ...rest
-    } = props;
+const Stack = (props: StackProps) => {
+  const { children, elementType = 'div', ...rest } = props;
 
-    const updatedProps = useStack({ style, ...rest });
+  const updatedProps = useStack({ ...rest });
 
-    return createElement(
-        component,
-        updatedProps,
-        children,
-    );
+  return createElement(elementType, updatedProps, children);
 };
 
 export default Stack;

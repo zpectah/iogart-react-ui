@@ -1,30 +1,25 @@
-import { Sx } from '@iogart-react-ui/core';
 import { getElementClassName } from '@iogart-react-ui/utils';
-import { useTagParameters, useTagReturn } from './types';
+import { useTagProps, useTagReturn } from './types';
+import useTagStyles from './styles';
 
-const useTag = (props: useTagParameters) => {
-    const {
-        className,
-        style,
-        sx,
-        ...rest
-    } = props;
+const useTag = (props: useTagProps) => {
+  const { className, ...rest } = props;
 
-    const updatedClassName = getElementClassName(
-        className,
-        [ 'iogart-tag' ],
-    );
+  const classes = useTagStyles();
+  const updatedClassName = getElementClassName(
+    className,
+    ['iogart-Tag', classes.root],
+    {
+      ui: true,
+    }
+  );
 
-    const styleProperties = {
-        ...style,
-        ...sx && Sx(sx),
-    };
+  const returnProps: useTagReturn = {
+    className: updatedClassName,
+    ...rest,
+  };
 
-    return {
-        className: updatedClassName,
-        style: styleProperties,
-        ...rest
-    } as useTagReturn;
+  return returnProps;
 };
 
 export default useTag;

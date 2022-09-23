@@ -1,3 +1,0 @@
-# iogart-react-ui/icons
-
-SVG icons, ...

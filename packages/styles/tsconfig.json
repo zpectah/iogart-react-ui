@@ -1,7 +1,7 @@
 {
-  "extends": "../../tsconfig.package.json",
+  "extends": "../../shared/tsconfig.package.json",
   "compilerOptions": {
-    "outDir": "../../dist/styles",
+    "outDir": "../../dist/styles"
   },
-  "include": [ "src" ]
+  "include": ["src"]
 }

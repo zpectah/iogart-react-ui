@@ -1,7 +1,7 @@
 {
-  "extends": "../../tsconfig.package.json",
+  "extends": "../../shared/tsconfig.package.json",
   "compilerOptions": {
-    "outDir": "../../dist/iogart",
+    "outDir": "../../dist/iogart"
   },
-  "include": [ "src" ]
+  "include": ["src"]
 }

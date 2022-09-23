@@ -1,30 +1,31 @@
-import { Sx } from '@iogart-react-ui/core';
 import { getElementClassName } from '@iogart-react-ui/utils';
-import { useContainerParameters, useContainerReturn } from './types';
+import { useContainerProps, useContainerReturn } from './types';
+import useContainerStyles from './styles';
 
-const useContainer = (props: useContainerParameters) => {
-    const {
-        className,
-        style,
-        sx,
-        ...rest
-    } = props;
+const useContainer = (props: useContainerProps) => {
+  const { className, maxWidth = 'xl', fluid, ...rest } = props;
 
-    const updatedClassName = getElementClassName(
-        className,
-        [ 'iogart-container' ],
-    );
+  const classes = useContainerStyles();
+  const updatedClassName = getElementClassName(
+    className,
+    [
+      'iogart-Container',
+      classes.root,
+      fluid ? 'iogart-Container-fluid' : '',
+      maxWidth && !fluid ? `iogart-Container-${maxWidth}` : '',
+      maxWidth && !fluid ? classes[maxWidth] : '',
+    ],
+    {
+      ui: true,
+    }
+  );
 
-    const styleProperties = {
-        ...style,
-        ...sx && Sx(sx),
-    };
+  const returnProps: useContainerReturn = {
+    className: updatedClassName,
+    ...rest,
+  };
 
-    return {
-        className: updatedClassName,
-        style: styleProperties,
-        ...rest
-    } as useContainerReturn;
+  return returnProps;
 };
 
 export default useContainer;

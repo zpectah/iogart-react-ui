@@ -1,5 +1,3 @@
-import commonPackageBundler from '../../scripts/commonPackageBundler';
+import commonPackageBundler from '../../shared/package.rollup';
 
-export default [
-    commonPackageBundler('types'),
-];
+export default [commonPackageBundler('types')];

@@ -1,3 +1,0 @@
-# iogart-react-ui/core
-
-Core functionality, ...

@@ -1,15 +1,12 @@
 import { Meta, Story } from '@storybook/addon-docs';
 
-
 import Stack from './Stack';
 export const Template = (args) => <Stack {...args} />;
 
-<Meta
-    title="Components/Layout"
-    component={Stack}
-/>
+<Meta title="Components/Layout" component={Stack} />
 
 # Stack
+
 `@iogart-react-ui/iogart/Stack`
 
 ```javascript
@@ -20,13 +17,13 @@ import { Stack } from 'iogart-react-ui/iogart';
   name="Stack"
   args={{
     children: (
-        <>
-            <div>block 1</div>
-            <div>block 2</div>
-            <div>block 3</div>
-        </>
+      <>
+        <div>block 1</div>
+        <div>block 2</div>
+        <div>block 3</div>
+      </>
     ),
-  }}>
+  }}
+>
   {Template.bind({})}
 </Story>
-

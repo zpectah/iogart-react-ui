@@ -3,12 +3,10 @@ import { Meta, Story } from '@storybook/addon-docs';
 import Button from './Button';
 export const Template = (args) => <Button {...args} />;
 
-<Meta
-    title="Components/Action/Button"
-    component={Button}
-/>
+<Meta title="Components/Action/Button" component={Button} />
 
 # Button
+
 `@iogart-react-ui/iogart/Button`
 
 ```javascript
@@ -19,7 +17,8 @@ import { Button } from 'iogart-react-ui/iogart';
   name="Default"
   args={{
     children: 'Default Button',
-  }}>
+  }}
+>
   {Template.bind({})}
 </Story>
 
@@ -28,6 +27,7 @@ import { Button } from 'iogart-react-ui/iogart';
   args={{
     children: 'Primary Button',
     // onDoubleClick: (e) => { console.log('onDoubleClick e', e) },
-  }}>
+  }}
+>
   {Template.bind({})}
 </Story>

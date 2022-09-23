@@ -1,29 +1,29 @@
-import { ReactNode } from 'react';
-
 import {
-    IogartCommonUiProps,
-    contentElementType,
-    elementFlexDirectionType,
-    elementFlexAlignContentType,
-    elementFlexAlignItemsType,
-    elementFlexAlignSelfType,
-    elementFlexJustifyContentType,
-    elementFlexJustifyItemsType,
-    elementFlexJustifySelfType,
+  IogartCommonUi,
+  withChildren,
+  flexboxDirection,
+  flexboxAlignContent,
+  flexboxAlignItems,
+  flexboxAlignSelf,
+  flexboxJustifyContent,
+  flexboxJustifyItems,
+  flexboxJustifySelf,
 } from '@iogart-react-ui/types';
+import { StackElementTypeKeys } from './enums';
 
-export interface StackProps extends IogartCommonUiProps {
-    children?: ReactNode;
-    component?: contentElementType;
-    direction?: elementFlexDirectionType;
-    spacing?: number;
-    alignContent?: elementFlexAlignContentType;
-    alignItems?: elementFlexAlignItemsType;
-    alignSelf?: elementFlexAlignSelfType;
-    justifyContent?: elementFlexJustifyContentType;
-    justifyItems?: elementFlexJustifyItemsType;
-    justifySelf?: elementFlexJustifySelfType;
+export type StackElementType = keyof typeof StackElementTypeKeys;
+
+export interface StackProps extends IogartCommonUi, withChildren {
+  elementType?: StackElementType;
+  spacing?: number;
+  direction?: flexboxDirection;
+  alignContent?: flexboxAlignContent;
+  alignItems?: flexboxAlignItems;
+  alignSelf?: flexboxAlignSelf;
+  justifyContent?: flexboxJustifyContent;
+  justifyItems?: flexboxJustifyItems;
+  justifySelf?: flexboxJustifySelf;
 }
 
-export interface useStackParameters extends StackProps {}
-export interface useStackReturn extends useStackParameters {}
+export interface useStackProps extends StackProps {}
+export interface useStackReturn extends useStackProps {}

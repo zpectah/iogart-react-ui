@@ -1,0 +1,6 @@
+.idea/
+dist/
+.preview/
+.storybook/
+node_modules/
+**/node_modules/

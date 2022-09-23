@@ -1,3 +1,0 @@
-# iogart-react-ui/base
-
-Base components, unstyled versions, plain elements, elements hooks, ...

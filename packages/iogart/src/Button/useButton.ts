@@ -1,30 +1,25 @@
-import { Sx } from '@iogart-react-ui/core';
 import { getElementClassName } from '@iogart-react-ui/utils';
-import { useButtonParameters, useButtonReturn } from './types';
+import { useButtonProps, useButtonReturn } from './types';
+import useButtonStyles from './styles';
 
-const useButton = (props: useButtonParameters) => {
-    const {
-        className,
-        style,
-        sx,
-        ...rest
-    } = props;
+const useButton = (props: useButtonProps) => {
+  const { className, ...rest } = props;
 
-    const updatedClassName = getElementClassName(
-        className,
-        [ 'iogart-button' ],
-    );
+  const classes = useButtonStyles();
+  const updatedClassName = getElementClassName(
+    className,
+    ['iogart-Button', classes.root],
+    {
+      ui: true,
+    }
+  );
 
-    const styleProperties = {
-        ...style,
-        ...sx && Sx(sx),
-    };
+  const returnProps: useButtonReturn = {
+    className: updatedClassName,
+    ...rest,
+  };
 
-    return {
-        className: updatedClassName,
-        style: styleProperties,
-        ...rest
-    } as useButtonReturn;
+  return returnProps;
 };
 
 export default useButton;

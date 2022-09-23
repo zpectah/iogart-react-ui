@@ -1,7 +1,19 @@
-import { IogartCommonUiProps } from '@iogart-react-ui/types';
-import { TagBaseProps } from '@iogart-react-ui/base';
+import { ReactNode } from 'react';
 
-export interface TagProps extends TagBaseProps, IogartCommonUiProps {}
+import { IogartBaseUi, IogartCommonUi } from '@iogart-react-ui/types';
+import { TagElementTypeKeys } from './enums';
 
-export interface useTagParameters extends TagProps {}
-export interface useTagReturn extends useTagParameters {}
+export type TagElementType = keyof typeof TagElementTypeKeys;
+
+export interface TagBaseProps extends IogartBaseUi {
+  elementType?: TagElementType;
+  label?: ReactNode;
+  clickable?: boolean; // TODO
+}
+export interface TagProps extends TagBaseProps, IogartCommonUi {}
+
+export interface useTagBaseProps extends TagBaseProps {}
+export interface useTagBaseReturn extends useTagBaseProps {}
+
+export interface useTagProps extends TagProps {}
+export interface useTagReturn extends useTagProps {}

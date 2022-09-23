@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Base - onMouseEnter & onMouseLeave 1`] = `
+<button
+  className="iogart-base iogart-ButtonBase"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onDoubleClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Button base
+</button>
+`;
+
+exports[`Button Base - onMouseEnter & onMouseLeave 2`] = `
+<button
+  className="iogart-base iogart-ButtonBase iogart--hover"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onDoubleClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Button base
+</button>
+`;
+
+exports[`Button Base - onMouseEnter & onMouseLeave 3`] = `
+<button
+  className="iogart-base iogart-ButtonBase"
+  onBlur={[Function]}
+  onClick={[Function]}
+  onDoubleClick={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  Button base
+</button>
+`;
