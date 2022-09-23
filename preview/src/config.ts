@@ -1,4 +1,4 @@
-import previewsConfig from './previews.config';
+import previewsConfig from '../previews.config';
 
 const config = {
   globals: {

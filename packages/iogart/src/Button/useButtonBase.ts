@@ -1,7 +1,4 @@
 import { useRef, useState } from 'react';
-
-import { useButtonBaseProps, useButtonBaseReturn } from './types';
-
 import { getElementClassName } from '@iogart-react-ui/utils';
 import {
   AnchorElement,
@@ -12,6 +9,8 @@ import {
   // IogartKeyboardEvent,
   IogartMouseEvent,
 } from '@iogart-react-ui/types';
+import { useButtonBaseProps, useButtonBaseReturn } from './types';
+import { useButtonBaseStyles } from './styles';
 
 const useButtonBase = (props: useButtonBaseProps) => {
   const {
@@ -32,9 +31,10 @@ const useButtonBase = (props: useButtonBaseProps) => {
   const [isHover, setHover] = useState(false);
   const [isFocus, setFocus] = useState(false);
 
+  const classes = useButtonBaseStyles();
   const updatedClassName = getElementClassName(
     className,
-    ['iogart-ButtonBase'],
+    ['iogart-ButtonBase', classes.root],
     {
       isHover,
       isFocus,

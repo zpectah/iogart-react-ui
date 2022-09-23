@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+
 
 import { ArrowBack } from '@iogart-react-ui/icons';
 import { useLayoutHeadingStyles } from './styles';
+import {Button} from "../ui";
 
 export interface LayoutHeadingProps {
   title?: string;
@@ -18,7 +19,7 @@ const LayoutHeading = (props: LayoutHeadingProps) => {
   return (
     <div className={classes.root}>
       <div className={classes.primary}>
-        {dashboardLink && <Link to="/"> <ArrowBack /> Back to dashboard</Link>}
+        {dashboardLink && <Button to="/"> <ArrowBack size="1.25rem" /> Back to dashboard</Button>}
         {title && (
           <h4>
             {title}

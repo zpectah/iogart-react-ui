@@ -3,7 +3,7 @@ import React from 'react';
 import { SvgIcon } from '@iogart-react-ui/types';
 
 const ExpandLess = (props: SvgIcon) => {
-  const { size = '24px', color = '#000000', ...rest } = props;
+  const { size = '24px', color = 'currentColor', ...rest } = props;
 
   return (
     <svg

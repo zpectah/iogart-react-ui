@@ -2,7 +2,7 @@ import React from 'react';
 
 import config from '../../config';
 import { PreviewItem } from '../Preview';
-import { Layout } from '../../components/Layout';
+import { Layout } from '../../components';
 import DashboardTile from './DashboardTile';
 import { useDashboardStyles } from './styles';
 

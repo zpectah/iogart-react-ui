@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import config from '../../config';
-import { Layout } from '../../components/Layout';
+import { Layout } from '../../components';
 import { PreviewItem } from './types';
 import PreviewDetail from './PreviewDetail';
 import { usePreviewStyles } from './styles';
@@ -23,7 +23,7 @@ const Preview = () => {
       return <PreviewDetail detail={detail as PreviewItem} />;
     } else {
       return (
-        <div>
+        <div className={classes.notFound}>
           Detail not exist
           <br />
           <Link to="/">Back to dashboard</Link>
