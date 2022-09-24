@@ -9,7 +9,7 @@ import { usePreviewStyles } from './styles';
 
 const Preview = () => {
   const params = useParams();
-  const [detailTmp, setDetailTmp] = useState<PreviewItem | null>(null);
+  // const [detailTmp, setDetailTmp] = useState<PreviewItem | null>(null);
   const [subTitle, setSubTitle] = useState('');
 
   const classes = usePreviewStyles();
@@ -19,7 +19,7 @@ const Preview = () => {
     const detail = config.previews.find((preview) => preview.path === id);
     if (detail) {
       setSubTitle(detail.meta.title);
-      setDetailTmp(detail as PreviewItem);
+      // setDetailTmp(detail as PreviewItem);
       return <PreviewDetail detail={detail as PreviewItem} />;
     } else {
       return (
@@ -30,7 +30,7 @@ const Preview = () => {
         </div>
       );
     }
-  }, [ params ]);
+  }, [params]);
 
   return (
     <Layout

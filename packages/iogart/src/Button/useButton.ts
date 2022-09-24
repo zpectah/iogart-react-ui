@@ -6,13 +6,9 @@ const useButton = (props: useButtonProps) => {
   const { className, ...rest } = props;
 
   const classes = useButtonStyles();
-  const updatedClassName = getElementClassName(
-    className,
-    ['iogart-Button', classes.root],
-    {
-      ui: true,
-    }
-  );
+  const updatedClassName = getElementClassName(className, ['iogart-Button', classes.root], {
+    ui: true,
+  });
 
   const returnProps: useButtonReturn = {
     className: updatedClassName,

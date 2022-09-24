@@ -28,7 +28,10 @@
     "prettier:write:packages": "/bin/sh ./scripts/prettier_write_packages.sh",
     "prettier:write:preview": "/bin/sh ./scripts/prettier_write_preview.sh",
     "prettier:write:storybook": "/bin/sh ./scripts/prettier_write_storybook.sh",
-    "prettier:write:all": "/bin/sh ./scripts/prettier_write_packages.sh && /bin/sh ./scripts/prettier_write_preview.sh"
+    "prettier:write:all": "/bin/sh ./scripts/prettier_write_packages.sh && /bin/sh ./scripts/prettier_write_preview.sh",
+    "linter:packages": "/bin/sh ./scripts/linter_packages.sh",
+    "linter:preview": "/bin/sh ./scripts/linter_preview.sh",
+    "linter:all": "/bin/sh ./scripts/linter_packages.sh && /bin/sh ./scripts/linter_preview.sh"
   },
   "dependencies": {
     "@iogart-react-ui/icons": "*",
@@ -62,8 +65,11 @@
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/parser": "^5.38.0",
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^8.24.0",
     "jest": "^29.0.3",
     "lerna": "^5.5.1",
     "prettier": "^2.7.1",

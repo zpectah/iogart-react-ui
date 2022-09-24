@@ -25,5 +25,5 @@ export interface StackProps extends IogartCommonUi, withChildren {
   justifySelf?: flexboxJustifySelf;
 }
 
-export interface useStackProps extends StackProps {}
-export interface useStackReturn extends useStackProps {}
+export type useStackProps = StackProps;
+export type useStackReturn = useStackProps;

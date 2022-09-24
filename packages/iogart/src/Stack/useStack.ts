@@ -25,14 +25,10 @@ const useStack = (props: useStackProps) => {
     justifyContent,
     justifyItems,
     justifySelf,
-  } as unknown);
-  const updatedClassName = getElementClassName(
-    className,
-    ['iogart-Stack', classes.root],
-    {
-      ui: true,
-    }
-  );
+  });
+  const updatedClassName = getElementClassName(className, ['iogart-Stack', classes.root], {
+    ui: true,
+  });
 
   const returnProps: useStackReturn = {
     className: updatedClassName,

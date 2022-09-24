@@ -1,4 +1,10 @@
-import React, { createElement, ComponentClass, useMemo, FunctionComponent, Attributes } from 'react';
+import React, {
+  createElement,
+  ComponentClass,
+  useMemo,
+  FunctionComponent,
+  Attributes,
+} from 'react';
 
 import { Stack, Container, StackProps } from '@iogart-react-ui/iogart';
 import { PreviewItem } from './types';
@@ -7,15 +13,16 @@ import { usePreviewDetailStyles } from './styles';
 export interface PreviewDetailProps {
   detail?: PreviewItem | null;
 }
-export type NodeWrapperType = FunctionComponent<Attributes> | ComponentClass<Attributes, PreviewItem>;
+export type NodeWrapperType =
+  | FunctionComponent<Attributes>
+  | ComponentClass<Attributes, PreviewItem>;
 
 const PreviewDetail = (props: PreviewDetailProps) => {
   const { detail } = props;
 
   const classes = usePreviewDetailStyles();
 
-  const preview =
-    detail && createElement(detail.node as unknown as NodeWrapperType, detail.props);
+  const preview = detail && createElement(detail.node as unknown as NodeWrapperType, detail.props);
 
   const renderPreview = useMemo(() => {
     if (detail?.layout === 'container') {
@@ -28,11 +35,7 @@ const PreviewDetail = (props: PreviewDetailProps) => {
         if (layout.match(/:center/)) stackProps['justifyContent'] = 'center';
         if (layout.match(/:end/)) stackProps['justifyContent'] = 'flex-end';
 
-        return (
-          <Stack {...stackProps}>
-            {preview}
-          </Stack>
-        );
+        return <Stack {...stackProps}>{preview}</Stack>;
       }
     }
 

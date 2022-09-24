@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import { createElement } from 'react';
 
 import { ContainerProps } from './types';
 import useContainer from './useContainer';

@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import { createElement } from 'react';
 
 import { StackProps } from './types';
 import useStack from './useStack';

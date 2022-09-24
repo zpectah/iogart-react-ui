@@ -10,5 +10,5 @@ export interface ContainerProps extends IogartCommonUi, withChildren {
   fluid?: boolean;
 }
 
-export interface useContainerProps extends ContainerProps {}
-export interface useContainerReturn extends useContainerProps {}
+export type useContainerProps = ContainerProps;
+export type useContainerReturn = useContainerProps;

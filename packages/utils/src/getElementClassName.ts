@@ -12,7 +12,7 @@ export type getElementClassNameAdditionalProps = {
 };
 
 const getElementClassName = (
-  className: string = '',
+  className = '',
   classes: string[] = [],
   additional?: getElementClassNameAdditionalProps
 ) => {
@@ -30,12 +30,7 @@ const getElementClassName = (
   if (additional?.isExpanded) stateClasses.push('iogart--expanded');
   if (additional?.isOpen) stateClasses.push('iogart--open');
 
-  const finalClasses = [
-    ...prefixClasses,
-    ...baseClasses,
-    ...classes,
-    ...stateClasses,
-  ].join(' ');
+  const finalClasses = [...prefixClasses, ...baseClasses, ...classes, ...stateClasses].join(' ');
   const finalClassName = `${finalClasses} ${className}`;
 
   return finalClassName.replaceAll('  ', ' ').replace(/\s+$/g, '');

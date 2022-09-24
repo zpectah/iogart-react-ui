@@ -6,13 +6,9 @@ const useTag = (props: useTagProps) => {
   const { className, ...rest } = props;
 
   const classes = useTagStyles();
-  const updatedClassName = getElementClassName(
-    className,
-    ['iogart-Tag', classes.root],
-    {
-      ui: true,
-    }
-  );
+  const updatedClassName = getElementClassName(className, ['iogart-Tag', classes.root], {
+    ui: true,
+  });
 
   const returnProps: useTagReturn = {
     className: updatedClassName,

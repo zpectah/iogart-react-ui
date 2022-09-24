@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import { createElement } from 'react';
 
 import { ButtonProps } from './types';
 import ButtonBase from './ButtonBase';

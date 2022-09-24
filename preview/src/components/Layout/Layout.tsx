@@ -23,20 +23,12 @@ export interface LayoutProps {
 }
 
 const Layout = (props: LayoutProps) => {
-  const {
-    children,
-    variant = 'default',
-    maxWidth = 'xl',
-    meta,
-    heading,
-    withoutContainer,
-  } = props;
+  const { children, variant = 'default', maxWidth = 'xl', meta, heading, withoutContainer } = props;
 
   const classes = useLayoutStyles();
 
-  const headingTitle = heading?.title && `${heading.title}${
-    meta?.subTitle ? `: ${meta?.subTitle}` : ''
-  }`;
+  const headingTitle =
+    heading?.title && `${heading.title}${meta?.subTitle ? `: ${meta?.subTitle}` : ''}`;
 
   const renderContent = useMemo(() => {
     if (withoutContainer) {

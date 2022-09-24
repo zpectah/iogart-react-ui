@@ -1,1 +1,3 @@
-export interface SxProps {}
+export interface SxProps {
+  a: unknown;
+}

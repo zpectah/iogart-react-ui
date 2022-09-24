@@ -18,12 +18,7 @@ import {
   MixedReactHTML,
   withChildren,
 } from '@iogart-react-ui/types';
-import {
-  ButtonElementTypeKeys,
-  ButtonVariantKeys,
-  ButtonSizeKeys,
-  ButtonColorKeys,
-} from './enums';
+import { ButtonElementTypeKeys, ButtonVariantKeys, ButtonSizeKeys, ButtonColorKeys } from './enums';
 
 export type ButtonElementType = keyof typeof ButtonElementTypeKeys;
 
@@ -48,10 +43,7 @@ export interface ButtonEvents<T = ButtonElement | AnchorElement> {
   onDoubleClick?: (event: MouseEvent<T, MouseEvent>) => void;
 }
 
-export interface ButtonBaseProps
-  extends IogartBaseUi,
-    withChildren,
-    ButtonEvents {
+export interface ButtonBaseProps extends IogartBaseUi, withChildren, ButtonEvents {
   elementType?: ButtonElementType;
   type?: ButtonType;
   role?: AriaRole;
@@ -70,10 +62,10 @@ export interface ButtonProps extends ButtonBaseProps, IogartCommonUi {
   endIcon?: ReactNode;
 }
 
-export interface useButtonBaseProps extends ButtonBaseProps {}
+export type useButtonBaseProps = ButtonBaseProps;
 
-export interface useButtonBaseReturn extends useButtonBaseProps {}
+export type useButtonBaseReturn = useButtonBaseProps;
 
-export interface useButtonProps extends ButtonProps {}
+export type useButtonProps = ButtonProps;
 
-export interface useButtonReturn extends useButtonProps {}
+export type useButtonReturn = useButtonProps;

@@ -12,8 +12,8 @@ export interface TagBaseProps extends IogartBaseUi {
 }
 export interface TagProps extends TagBaseProps, IogartCommonUi {}
 
-export interface useTagBaseProps extends TagBaseProps {}
-export interface useTagBaseReturn extends useTagBaseProps {}
+export type useTagBaseProps = TagBaseProps;
+export type useTagBaseReturn = useTagBaseProps;
 
-export interface useTagProps extends TagProps {}
-export interface useTagReturn extends useTagProps {}
+export type useTagProps = TagProps;
+export type useTagReturn = useTagProps;
