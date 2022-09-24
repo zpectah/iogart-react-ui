@@ -19,7 +19,7 @@ export const useDashboardStyles = createUseStyles({
 export const useDashboardTileStyles = createUseStyles({
   root: {
     width: '25%',
-    height: '75px',
+    minHeight: '50px',
     margin: 0,
     padding: '2rem',
     textDecoration: 'none',

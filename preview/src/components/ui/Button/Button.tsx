@@ -1,23 +1,30 @@
 import { ReactNode, createElement, Attributes, RefAttributes } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 
-import { useButtonStyles } from './styles';
+import { useButtonStyles } from './style';
 
 export interface ButtonProps {
   children?: ReactNode;
-  // TODO
   to?: string;
   href?: string;
+  primary?: boolean;
+  secondary?: boolean;
+  spaced?: boolean;
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, to, href } = props;
+  const { children, to, href, primary, secondary, spaced = true } = props;
 
   const classes = useButtonStyles();
 
   const element = to ? Link : href ? 'a' : 'button';
   const buttonProps = {
-    className: classes.root,
+    className: [
+      classes.root,
+      primary ? classes.primary : '',
+      secondary ? classes.secondary : '',
+      spaced ? classes.spaced : '',
+    ].join(' '),
   };
   const linkProps = {
     to: to ? to : '/',

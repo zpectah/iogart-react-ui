@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, ContainerProps } from '@iogart-react-ui/iogart';
 import config from '../../config';
-import useHeaderStyles from './styles';
+import useHeaderStyles from './style';
 
 export interface HeaderProps {
   maxWidth?: ContainerProps['maxWidth'];

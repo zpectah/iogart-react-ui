@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button, Container, Stack } from '@iogart-react-ui/iogart';
+import { Button, Container, Stack, Tag } from '@iogart-react-ui/iogart';
 
 const commonMeta = {
   author: 'Tomas Sychra | zpecter.com',
@@ -12,7 +12,7 @@ const previewsConfig = [
     name: 'button',
     node: Button,
     path: 'button',
-    category: 'components',
+    category: 'action',
     tags: ['component', 'ui'],
     layout: 'stack:center',
     meta: {
@@ -25,10 +25,26 @@ const previewsConfig = [
     },
   },
   {
+    name: 'tag',
+    node: Tag,
+    path: 'tag',
+    category: 'status',
+    tags: ['component', 'ui'],
+    layout: 'stack:center',
+    meta: {
+      title: 'Tag',
+      description: 'Styled Tag with events',
+      ...commonMeta,
+    },
+    props: {
+      children: 'Tag name',
+    },
+  },
+  {
     name: 'container',
     node: Container,
     path: 'container',
-    category: 'components',
+    category: 'layout',
     tags: ['component', 'ui', 'content'],
     meta: {
       title: 'Container',
@@ -47,7 +63,7 @@ const previewsConfig = [
     name: 'stack',
     node: Stack,
     path: 'stack',
-    category: 'components',
+    category: 'layout',
     tags: ['component', 'ui', 'content', 'flexbox'],
     layout: 'container',
     meta: {

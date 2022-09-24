@@ -6,3 +6,7 @@ export * from './Check';
 export * from './Close';
 export * from './ExpandLess';
 export * from './ExpandMore';
+export * from './Home';
+export * from './Menu';
+export * from './Search';
+export * from './Settings';

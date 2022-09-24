@@ -8,7 +8,7 @@ import React, {
 
 import { Stack, Container, StackProps } from '@iogart-react-ui/iogart';
 import { PreviewItem } from './types';
-import { usePreviewDetailStyles } from './styles';
+import { usePreviewDetailStyles } from './style';
 
 export interface PreviewDetailProps {
   detail?: PreviewItem | null;
@@ -35,7 +35,11 @@ const PreviewDetail = (props: PreviewDetailProps) => {
         if (layout.match(/:center/)) stackProps['justifyContent'] = 'center';
         if (layout.match(/:end/)) stackProps['justifyContent'] = 'flex-end';
 
-        return <Stack {...stackProps}>{preview}</Stack>;
+        return (
+          <Container maxWidth="xl">
+            <Stack {...stackProps}>{preview}</Stack>
+          </Container>
+        );
       }
     }
 

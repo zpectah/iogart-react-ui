@@ -2,14 +2,15 @@ import React, { useMemo, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 import config from '../../config';
-import { Layout } from '../../components';
+import { Button, Layout } from '../../components';
 import { PreviewItem } from './types';
 import PreviewDetail from './PreviewDetail';
-import { usePreviewStyles } from './styles';
+import { usePreviewStyles } from './style';
+import { Settings } from '@iogart-react-ui/icons';
 
 const Preview = () => {
   const params = useParams();
-  // const [detailTmp, setDetailTmp] = useState<PreviewItem | null>(null);
+  const [detailTmp, setDetailTmp] = useState<PreviewItem | null>(null);
   const [subTitle, setSubTitle] = useState('');
 
   const classes = usePreviewStyles();
@@ -19,7 +20,7 @@ const Preview = () => {
     const detail = config.previews.find((preview) => preview.path === id);
     if (detail) {
       setSubTitle(detail.meta.title);
-      // setDetailTmp(detail as PreviewItem);
+      setDetailTmp(detail as PreviewItem);
       return <PreviewDetail detail={detail as PreviewItem} />;
     } else {
       return (
@@ -39,12 +40,18 @@ const Preview = () => {
         subTitle,
       }}
       heading={{
-        title: 'Preview',
         dashboardLink: true,
+        actions: (
+          <>
+            <Button spaced={false}>
+              <Settings size="1.5rem" />
+            </Button>
+          </>
+        ),
       }}
       withoutContainer
     >
-      {renderDetail}
+      {detailTmp && renderDetail}
     </Layout>
   );
 };

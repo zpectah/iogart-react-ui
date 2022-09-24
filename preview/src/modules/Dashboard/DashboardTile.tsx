@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { PreviewItem } from '../Preview';
-import { useDashboardTileStyles } from './styles';
+import { useDashboardTileStyles } from './style';
 
 export interface DashboardTileProps {
   preview: PreviewItem;
@@ -19,7 +19,6 @@ const DashboardTile = (props: DashboardTileProps) => {
         <h3 title={`Author: ${preview.meta.author} | Version: ${preview.meta.version}`}>
           {preview.meta.title}
         </h3>
-        {preview.meta.description && <p>{preview.meta.description}</p>}
       </div>
     </Link>
   );

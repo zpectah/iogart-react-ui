@@ -12,6 +12,7 @@ const useHeaderStyles = createUseStyles({
     position: 'fixed',
     top: 0,
     left: 0,
+    zIndex: 999,
     color: palette.light,
     backgroundColor: palette.dark,
   },
@@ -19,6 +20,8 @@ const useHeaderStyles = createUseStyles({
     margin: 0,
     padding: 0,
     fontSize: '1.35rem',
+    fontWeight: 900,
+    textTransform: 'uppercase',
   },
 });
 

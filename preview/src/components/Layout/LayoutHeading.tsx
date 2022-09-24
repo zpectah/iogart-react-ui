@@ -1,17 +1,18 @@
 import React, { ReactNode } from 'react';
 
 import { ArrowBack } from '@iogart-react-ui/icons';
-import { useLayoutHeadingStyles } from './styles';
+import { useLayoutHeadingStyles } from './style';
 import { Button } from '../ui';
 
 export interface LayoutHeadingProps {
   title?: string;
   dashboardLink?: boolean;
   node?: ReactNode;
+  actions?: ReactNode;
 }
 
 const LayoutHeading = (props: LayoutHeadingProps) => {
-  const { title, dashboardLink, node } = props;
+  const { title, dashboardLink, node, actions } = props;
 
   const classes = useLayoutHeadingStyles();
 
@@ -19,12 +20,12 @@ const LayoutHeading = (props: LayoutHeadingProps) => {
     <div className={classes.root}>
       <div className={classes.primary}>
         {dashboardLink && (
-          <Button to="/">
-            {' '}
-            <ArrowBack size="1.25rem" /> Back to dashboard
+          <Button to="/" spaced={false}>
+            <ArrowBack size="1.5rem" />
           </Button>
         )}
         {title && <h4>{title}</h4>}
+        {actions && actions}
       </div>
       {node && <div className={classes.secondary}>{node}</div>}
     </div>

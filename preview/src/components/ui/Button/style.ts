@@ -7,7 +7,7 @@ export const useButtonStyles = createUseStyles({
     width: 'auto',
     height: 'auto',
     margin: 0,
-    padding: '.75rem 1rem',
+    padding: '.5rem',
     display: 'inline-flex',
     flexDirection: 'row',
     flexWrap: 'nowrap',
@@ -15,10 +15,24 @@ export const useButtonStyles = createUseStyles({
     justifyContent: 'space-between',
     cursor: 'pointer',
     gap: '.5rem',
-    border: 0,
     fontSize: '1rem',
-    color: palette.light,
-    backgroundColor: palette.blueGrey,
+    color: palette.primary,
+    backgroundColor: 'transparent',
+    border: '1px solid transparent',
     borderRadius: '.25rem',
+
+    '&:focus, &:hover': {
+      borderColor: palette.primary,
+    },
+
+  },
+  primary: {
+    color: palette.light,
+    backgroundColor: palette.primary,
+  },
+  secondary: {},
+  spaced: {
+    paddingLeft: '1rem',
+    paddingRight: '1rem',
   },
 });

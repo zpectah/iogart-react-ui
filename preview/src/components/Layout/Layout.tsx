@@ -3,8 +3,8 @@ import React, { ReactNode, useEffect, useMemo } from 'react';
 import { Container, ContainerProps } from '@iogart-react-ui/iogart';
 import config from '../../config';
 import { Header } from '../Header';
-import LayoutHeading from './LayoutHeading';
-import { useLayoutStyles } from './styles';
+import LayoutHeading, { LayoutHeadingProps } from './LayoutHeading';
+import { useLayoutStyles } from './style';
 
 export interface LayoutProps {
   children?: ReactNode;
@@ -14,11 +14,7 @@ export interface LayoutProps {
     title?: string;
     subTitle?: string;
   };
-  heading?: {
-    title?: string;
-    dashboardLink?: boolean;
-    node?: ReactNode;
-  };
+  heading?: LayoutHeadingProps;
   withoutContainer?: boolean;
 }
 
@@ -36,7 +32,7 @@ const Layout = (props: LayoutProps) => {
     }
 
     return <Container maxWidth={maxWidth}>{children}</Container>;
-  }, [withoutContainer]);
+  }, [withoutContainer, children, maxWidth]);
 
   useEffect(() => {
     let title = config.globals.meta.title;
@@ -56,6 +52,7 @@ const Layout = (props: LayoutProps) => {
             title={headingTitle}
             dashboardLink={heading.dashboardLink}
             node={heading?.node}
+            actions={heading?.actions}
           />
         )}
         <div className={classes.content}>{renderContent}</div>
