@@ -10,7 +10,7 @@ const IogartThemeProvider = (props: IogartThemeProviderProps) => {
 
   const assignedTheme = theme ? deepMerge(THEME_DEFAULT, theme) : THEME_DEFAULT;
 
-  // console.log('assignedTheme', assignedTheme);
+  console.log('assignedTheme', assignedTheme);
 
   return createElement(
     IogartThemeContext.Provider,

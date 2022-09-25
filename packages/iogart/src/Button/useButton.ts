@@ -1,11 +1,13 @@
 import { getElementClassName } from '@iogart-react-ui/utils';
+import { useIogartTheme } from '@iogart-react-ui/styles';
 import { useButtonProps, useButtonReturn } from './types';
 import { useButtonStyles } from './styles';
 
 const useButton = (props: useButtonProps) => {
-  const { className, ...rest } = props;
+  const { className, color, ...rest } = props;
 
-  const classes = useButtonStyles();
+  const theme = useIogartTheme();
+  const classes = useButtonStyles({ ...{ color }, theme });
   const updatedClassName = getElementClassName(className, ['iogart-Button', classes.root], {
     ui: true,
   });

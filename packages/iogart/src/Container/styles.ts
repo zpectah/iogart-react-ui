@@ -1,8 +1,9 @@
 import { createUseStyles } from 'react-jss';
+import { withIogartThemeProps, THEME_BREAKPOINT_CONTAINER, THEME_BREAKPOINTS } from '@iogart-react-ui/styles';
 
-import { THEME_BREAKPOINT_CONTAINER, THEME_BREAKPOINTS } from '@iogart-react-ui/styles';
+interface useContainerStylesProps extends withIogartThemeProps {}
 
-const useContainerStyles = createUseStyles({
+const useContainerStyles = createUseStyles<any, useContainerStylesProps>({
   root: {
     maxWidth: '100%',
     marginLeft: 'auto',

@@ -1,5 +1,8 @@
 import { DefaultTheme } from 'react-jss';
 import { withChildren } from '@iogart-react-ui/types';
+import { ThemeBreakpointKeys } from './enums';
+
+export type ThemeBreakpointKeyType = keyof typeof ThemeBreakpointKeys;
 
 interface themeColor {
   main: string;
@@ -83,14 +86,15 @@ export interface IogartTheme extends DefaultTheme {
     container: {
       [k: string]: number | null;
     };
-    up: (breakpoint: string) => string;
-    down: (breakpoint: string) => string;
-    between: (breakpoint: string) => string;
-    only: (breakpoint: string) => string;
-    not: (breakpoint: string) => string;
+    up: (breakpoint: ThemeBreakpointKeyType) => string;
+    down: (breakpoint: ThemeBreakpointKeyType) => string;
+    between: (min: ThemeBreakpointKeyType, max: ThemeBreakpointKeyType) => string;
+    only: (breakpoint: ThemeBreakpointKeyType) => string;
+    not: (breakpoint: ThemeBreakpointKeyType) => string;
   };
   typography: {
     fontFamilyBase: string;
+    fontSizeBody: string | number;
     fontSizeBase: string | number;
     fontWeightLight: number;
     fontWeightRegular: number;

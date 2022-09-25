@@ -1,6 +1,5 @@
 import { createUseStyles } from 'react-jss';
-
-import { withIogartThemeProps } from '@iogart-react-ui/types';
+import { withIogartThemeProps } from '@iogart-react-ui/styles';
 
 interface useStackStylesProps extends withIogartThemeProps {
   spacing?: number;

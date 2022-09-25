@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { getElementClassName } from '@iogart-react-ui/utils';
+import { useIogartTheme } from '@iogart-react-ui/styles';
 import {
   AnchorElement,
   ButtonElement,
@@ -31,7 +32,8 @@ const useButtonBase = (props: useButtonBaseProps) => {
   const [isHover, setHover] = useState(false);
   const [isFocus, setFocus] = useState(false);
 
-  const classes = useButtonBaseStyles();
+  const theme = useIogartTheme();
+  const classes = useButtonBaseStyles({ ...{}, theme });
   const updatedClassName = getElementClassName(className, ['iogart-ButtonBase', classes.root], {
     isHover,
     isFocus,

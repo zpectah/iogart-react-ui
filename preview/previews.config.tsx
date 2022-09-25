@@ -54,9 +54,21 @@ const previewsConfig = [
     props: {
       children: (
         <>
-          <div>children node</div>
+          <p>
+            Maximus eget, arcu integer ut donec pellentesque nulla feugiat, molestie at dui suscipit. Sagittis euismod, vestibulum lacinia varius ac hendrerit sed id tortor
+            tellus placerat, sed vitae ullamcorper auctor nec. Ut vel, sodales porttitor commodo mauris a proin in ex sem, ut hendrerit mattis nunc ac nec. Nisi commodo dui
+            et tempus, consequat consequat libero vitae nunc augue rhoncus erat sodales, a consequat consequat sollicitudin. Nulla a euismod, rhoncus erat suspendisse aliquam
+            dui et tempus ut nisl vel purus sapien, libero sed nulla a vitae sed. A lacinia consectetur, justo quis aliquam adipiscing fermentum augue mauris, sapien dui dui nunc.
+            <br />
+            Ornare risus, suspendisse aliquet non mauris fusce vitae ligula quis commodo, posuere lectus imperdiet vehicula. Erat id maximus, aenean aliquam iaculis molestie
+            venenatis aliquet fusce ante, elementum non arcu nisi commodo. Vestibulum ligula, a volutpat eget nunc vitae lacinia vehicula, molestie posuere sapien curabitur.
+            Arcu ornare, congue nulla rhoncus rutrum justo aliquam suscipit adipiscing, nunc felis a maximus quam. Ornare cras dictum, metus pharetra sed porttitor fermentum
+            venenatis tristique  fringilla, imperdiet bibendum vel sollicitudin. Sem facilisis, porttitor varius lectus feugiat in donec ut hendrerit nisl vel purus, libero
+            ac nec donec varius.
+          </p>
         </>
       ),
+      maxWidth: 'md',
     },
   },
   {

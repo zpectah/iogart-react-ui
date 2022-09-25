@@ -1,11 +1,13 @@
 import { getElementClassName } from '@iogart-react-ui/utils';
+import { useIogartTheme } from '@iogart-react-ui/styles';
 import { useContainerProps, useContainerReturn } from './types';
 import useContainerStyles from './styles';
 
 const useContainer = (props: useContainerProps) => {
   const { className, maxWidth = 'xl', fluid, ...rest } = props;
 
-  const classes = useContainerStyles();
+  const theme = useIogartTheme();
+  const classes = useContainerStyles({ ...{}, theme });
   const updatedClassName = getElementClassName(
     className,
     [
