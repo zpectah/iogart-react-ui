@@ -37,7 +37,7 @@ const PreviewDetail = (props: PreviewDetailProps) => {
 
         return (
           <Container maxWidth="xl">
-            <Stack {...stackProps}>{preview}</Stack>
+            <Stack spacing={2} style={{ padding: '1rem' }} {...stackProps}>{preview}</Stack>
           </Container>
         );
       }

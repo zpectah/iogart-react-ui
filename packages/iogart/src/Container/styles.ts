@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss';
 
-import { breakpoints, container } from '@iogart-react-ui/styles';
+import { THEME_BREAKPOINT_CONTAINER, THEME_BREAKPOINTS } from '@iogart-react-ui/styles';
 
 const useContainerStyles = createUseStyles({
   root: {
@@ -14,33 +14,33 @@ const useContainerStyles = createUseStyles({
     maxWidth: '100%',
   },
   xs: {
-    [`@media (min-width: ${breakpoints.xs.min}px)`]: {
+    [`@media (min-width: ${THEME_BREAKPOINTS.xs.min}px)`]: {
       maxWidth: '100%',
     },
   },
   sm: {
-    [`@media (min-width: ${breakpoints.sm.min}px)`]: {
-      maxWidth: container.sm,
+    [`@media (min-width: ${THEME_BREAKPOINTS.sm.min}px)`]: {
+      maxWidth: THEME_BREAKPOINT_CONTAINER.sm,
     },
   },
   md: {
-    [`@media (min-width: ${breakpoints.md.min}px)`]: {
-      maxWidth: container.md,
+    [`@media (min-width: ${THEME_BREAKPOINTS.md.min}px)`]: {
+      maxWidth: THEME_BREAKPOINT_CONTAINER.md,
     },
   },
   lg: {
-    [`@media (min-width: ${breakpoints.lg.min}px)`]: {
-      maxWidth: container.lg,
+    [`@media (min-width: ${THEME_BREAKPOINTS.lg.min}px)`]: {
+      maxWidth: THEME_BREAKPOINT_CONTAINER.lg,
     },
   },
   xl: {
-    [`@media (min-width: ${breakpoints.xl.min}px)`]: {
-      maxWidth: container.xl,
+    [`@media (min-width: ${THEME_BREAKPOINTS.xl.min}px)`]: {
+      maxWidth: THEME_BREAKPOINT_CONTAINER.xl,
     },
   },
   xxl: {
-    [`@media (min-width: ${breakpoints.xxl.min}px)`]: {
-      maxWidth: container.xxl,
+    [`@media (min-width: ${THEME_BREAKPOINTS.xxl.min}px)`]: {
+      maxWidth: THEME_BREAKPOINT_CONTAINER.xxl,
     },
   },
 });

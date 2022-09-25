@@ -7,6 +7,8 @@ import { PreviewItem } from './types';
 import PreviewDetail from './PreviewDetail';
 import { usePreviewStyles } from './style';
 import { Settings } from '@iogart-react-ui/icons';
+import { IogartThemeProvider } from '@iogart-react-ui/styles';
+import { customTheme } from './theme';
 
 const Preview = () => {
   const params = useParams();
@@ -51,7 +53,11 @@ const Preview = () => {
       }}
       withoutContainer
     >
-      {detailTmp && renderDetail}
+      <IogartThemeProvider
+        theme={customTheme}
+      >
+        {detailTmp && renderDetail}
+      </IogartThemeProvider>
     </Layout>
   );
 };

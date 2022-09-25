@@ -80,3 +80,26 @@ A basic set of React components with a minimalistic design. Inspired by MUI, Car
 | Preview | `@iogart-react-ui/preview` | Preview stand alone app for development and testing |
 
 
+## How to use it (*TODO)
+We are using 'Inter' as default font family. You can set your custom font as well in theme with `IogartThemeProvider`
+
+1. Load fonts in your HTML or load it in your styles
+```html
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet" />
+```
+
+2. Set up font family in css
+```css
+      html {
+        ...
+        font-family: 'Inter', sans-serif;
+        ...
+      }
+```
+
+3. ...
+
+
+

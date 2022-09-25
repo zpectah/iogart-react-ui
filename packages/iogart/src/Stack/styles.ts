@@ -1,16 +1,30 @@
 import { createUseStyles } from 'react-jss';
 
-const useStackStyles = createUseStyles({
+import { withIogartThemeProps } from '@iogart-react-ui/types';
+
+interface useStackStylesProps extends withIogartThemeProps {
+  spacing?: number;
+  direction?: string;
+  alignItems?: string;
+  alignContent?: string;
+  alignSelf?: string;
+  justifyContent?: string;
+  justifyItems?: string;
+  justifySelf?: string;
+}
+
+const useStackStyles = createUseStyles<'root', useStackStylesProps>({
   root: {
     display: 'flex',
-    gap: (props) => (props.spacing ? `calc(${props.spacing} * .75rem)` : 0),
-    flexDirection: (props) => (props.direction ? props.direction : 'row'),
-    alignItems: (props) => (props.alignItems ? props.alignItems : 'initial'),
-    alignContent: (props) => (props.alignContent ? props.alignContent : 'initial'),
-    alignSelf: (props) => (props.alignSelf ? props.alignSelf : 'initial'),
-    justifyContent: (props) => (props.justifyContent ? props.justifyContent : 'initial'),
-    justifyItems: (props) => (props.justifyItems ? props.justifyItems : 'initial'),
-    justifySelf: (props) => (props.justifySelf ? props.justifySelf : 'initial'),
+    // backgroundColor: ({ theme }) => theme.palette.primary.main, // Example for theme
+    gap: ({ spacing, theme }) => (spacing ? theme.spacing(spacing) : 0),
+    flexDirection: ({ direction }) => (direction ? direction : 'row'),
+    alignItems: ({ alignItems }) => (alignItems ? alignItems : 'initial'),
+    alignContent: ({ alignContent }) => (alignContent ? alignContent : 'initial'),
+    alignSelf: ({ alignSelf }) => (alignSelf ? alignSelf : 'initial'),
+    justifyContent: ({ justifyContent }) => (justifyContent ? justifyContent : 'initial'),
+    justifyItems: ({ justifyItems }) => (justifyItems ? justifyItems : 'initial'),
+    justifySelf: ({ justifySelf }) => (justifySelf ? justifySelf : 'initial'),
   },
 });
 

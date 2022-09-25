@@ -8,8 +8,10 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
+    "jss": "^10.9.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-jss": "^10.9.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",
@@ -22,6 +24,8 @@
     "@types/node": "^18.7.18",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
+    "@types/jss": "^10.0.0",
+    "@types/react-jss": "^10.0.0",
     "lerna": "^5.5.1",
     "prettier": "^2.7.1",
     "rollup": "^2.79.0",
