@@ -11,11 +11,7 @@ export type getElementClassNameAdditionalProps = {
   base?: boolean;
 };
 
-const getElementClassName = (
-  className = '',
-  classes: string[] = [],
-  additional?: getElementClassNameAdditionalProps
-) => {
+const getElementClassName = (className = '', classes: string[] = [], additional?: getElementClassNameAdditionalProps) => {
   const baseClasses: string[] = [];
   const prefixClasses: string[] = [];
   const stateClasses: string[] = [];

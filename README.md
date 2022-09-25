@@ -57,9 +57,8 @@ A basic set of React components with a minimalistic design. Inspired by MUI, Car
 
 
 ## Scripts run before commit
-1. `% yarn prettier:check:all` - Runs prettier and check
 2. `% yarn prettier:write:all` - Runs prettier and fix
-3. `% yarn linter:all:` : Runs ESLint on `./packages` and `./preview`
+3. `% yarn linter:all` : Runs ESLint on `./packages` and `./preview`
 4. `% yarn test:all` - Runs Jest test on `./packages` and `./preview`
 
 

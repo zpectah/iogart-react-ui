@@ -11,15 +11,12 @@ import { useDashboardStyles } from './style';
 const Dashboard = () => {
   const classes = useDashboardStyles();
 
-  const [ searchModel, setSearchModel ] = useState<{ input: string, tags: string[] }>({
+  const [searchModel, setSearchModel] = useState<{ input: string; tags: string[] }>({
     input: '',
     tags: [],
   });
 
-  const {
-    tagList,
-    filteredPreviews,
-  } = useDashboardSearch({
+  const { tagList, filteredPreviews } = useDashboardSearch({
     previews: config.previews as unknown as PreviewItem[],
     model: searchModel,
   });
@@ -27,21 +24,14 @@ const Dashboard = () => {
   return (
     <Layout
       heading={{
-        node: (
-          <DashboardSearch
-            onChange={setSearchModel}
-            tagList={tagList}
-          />
-        ),
+        node: <DashboardSearch onChange={setSearchModel} tagList={tagList} />,
       }}
     >
       <div className={classes.root}>
         {filteredPreviews.map((preview) => (
           <DashboardTile key={preview.name} preview={preview} />
         ))}
-        {filteredPreviews.length === 0 && (
-          <span>Nothing for '{searchModel.input}' was found</span>
-        )}
+        {filteredPreviews.length === 0 && <span>Nothing for '{searchModel.input}' was found</span>}
       </div>
     </Layout>
   );

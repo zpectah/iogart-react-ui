@@ -13,21 +13,13 @@ const useCollapsible = (props: useCollapsibleProps) => {
     setCollapsed(!isCollapsed);
   };
 
-  const triggerClassName = getElementClassName(
-    triggerProps?.className,
-    ['iogart-collapsible-trigger'],
-    {
-      isExpanded: isCollapsed,
-    }
-  );
+  const triggerClassName = getElementClassName(triggerProps?.className, ['iogart-collapsible-trigger'], {
+    isExpanded: isCollapsed,
+  });
 
-  const contentClassName = getElementClassName(
-    contentProps?.className,
-    ['iogart-collapsible-content'],
-    {
-      isCollapsed,
-    }
-  );
+  const contentClassName = getElementClassName(contentProps?.className, ['iogart-collapsible-content'], {
+    isCollapsed,
+  });
 
   const outputTriggerProps: useCollapsibleReturn['trigger'] = {
     onClick: clickHandler,

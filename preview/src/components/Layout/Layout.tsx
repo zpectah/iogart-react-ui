@@ -23,8 +23,7 @@ const Layout = (props: LayoutProps) => {
 
   const classes = useLayoutStyles();
 
-  const headingTitle =
-    heading?.title && `${heading.title}${meta?.subTitle ? `: ${meta?.subTitle}` : ''}`;
+  const headingTitle = heading?.title && `${heading.title}${meta?.subTitle ? `: ${meta?.subTitle}` : ''}`;
 
   const renderContent = useMemo(() => {
     if (withoutContainer) {

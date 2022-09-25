@@ -23,6 +23,5 @@ export const useInputStyles = createUseStyles({
       outline: 'none',
     },
     '&:active': {},
-
   },
 });

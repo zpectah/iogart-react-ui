@@ -32,6 +32,5 @@ export const useTagToggleStyles = createUseStyles({
       color: palette.light,
       background: palette.secondary,
     },
-
   },
 });

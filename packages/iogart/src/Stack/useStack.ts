@@ -18,7 +18,8 @@ const useStack = (props: useStackProps) => {
   } = props;
 
   const theme = useIogartTheme();
-  const classes = useStackStyles({ ...{
+  const classes = useStackStyles({
+    ...{
       spacing,
       direction,
       alignContent,
@@ -27,7 +28,9 @@ const useStack = (props: useStackProps) => {
       justifyContent,
       justifyItems,
       justifySelf,
-    }, theme });
+    },
+    theme,
+  });
   const updatedClassName = getElementClassName(className, ['iogart-Stack', classes.root], {
     ui: true,
   });

@@ -32,12 +32,7 @@ const Button = (props: ButtonProps) => {
     ...buttonProps,
   };
   const finalProps =
-    to || href
-      ? linkProps
-      : (buttonProps as
-          | (Attributes & LinkProps & RefAttributes<HTMLAnchorElement>)
-          | null
-          | undefined);
+    to || href ? linkProps : (buttonProps as (Attributes & LinkProps & RefAttributes<HTMLAnchorElement>) | null | undefined);
 
   return createElement(element, finalProps, children);
 };

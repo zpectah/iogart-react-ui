@@ -1,4 +1,4 @@
-import React, { createContext, createElement } from 'react';
+import { createContext, createElement } from 'react';
 import { deepMerge } from '@iogart-react-ui/utils';
 import { IogartThemeProviderProps, IogartTheme } from './types';
 import { THEME_DEFAULT } from './theme';
@@ -6,10 +6,7 @@ import { THEME_DEFAULT } from './theme';
 export const IogartThemeContext = createContext({ theme: THEME_DEFAULT });
 
 const IogartThemeProvider = (props: IogartThemeProviderProps) => {
-  const {
-    children,
-    theme,
-  } = props;
+  const { children, theme } = props;
 
   const assignedTheme = theme ? deepMerge(THEME_DEFAULT, theme) : THEME_DEFAULT;
 
@@ -20,7 +17,7 @@ const IogartThemeProvider = (props: IogartThemeProviderProps) => {
     {
       value: { theme: assignedTheme as IogartTheme },
     },
-    children,
+    children
   );
 };
 

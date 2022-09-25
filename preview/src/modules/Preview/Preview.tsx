@@ -53,11 +53,7 @@ const Preview = () => {
       }}
       withoutContainer
     >
-      <IogartThemeProvider
-        theme={customTheme}
-      >
-        {detailTmp && renderDetail}
-      </IogartThemeProvider>
+      <IogartThemeProvider theme={customTheme}>{detailTmp && renderDetail}</IogartThemeProvider>
     </Layout>
   );
 };

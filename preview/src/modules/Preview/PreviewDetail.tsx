@@ -1,10 +1,4 @@
-import React, {
-  createElement,
-  ComponentClass,
-  useMemo,
-  FunctionComponent,
-  Attributes,
-} from 'react';
+import React, { createElement, ComponentClass, useMemo, FunctionComponent, Attributes } from 'react';
 
 import { Stack, Container, StackProps } from '@iogart-react-ui/iogart';
 import { PreviewItem } from './types';
@@ -13,9 +7,7 @@ import { usePreviewDetailStyles } from './style';
 export interface PreviewDetailProps {
   detail?: PreviewItem | null;
 }
-export type NodeWrapperType =
-  | FunctionComponent<Attributes>
-  | ComponentClass<Attributes, PreviewItem>;
+export type NodeWrapperType = FunctionComponent<Attributes> | ComponentClass<Attributes, PreviewItem>;
 
 const PreviewDetail = (props: PreviewDetailProps) => {
   const { detail } = props;
@@ -37,7 +29,9 @@ const PreviewDetail = (props: PreviewDetailProps) => {
 
         return (
           <Container maxWidth="xl">
-            <Stack spacing={2} style={{ padding: '1rem' }} {...stackProps}>{preview}</Stack>
+            <Stack spacing={2} style={{ padding: '1rem' }} {...stackProps}>
+              {preview}
+            </Stack>
           </Container>
         );
       }

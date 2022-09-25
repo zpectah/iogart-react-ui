@@ -35,8 +35,7 @@ export const useDashboardTileStyles = createUseStyles({
     borderRadius: '.25rem',
     position: 'relative',
     overflow: 'hidden',
-    transition:
-      'color .25s cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color .25s cubic-bezier(0.4, 0, 0.2, 1) 0s',
+    transition: 'color .25s cubic-bezier(0.4, 0, 0.2, 1) 0s, background-color .25s cubic-bezier(0.4, 0, 0.2, 1) 0s',
     cursor: 'pointer',
 
     '& h3, & small, & p': {

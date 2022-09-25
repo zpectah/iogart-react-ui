@@ -63,20 +63,34 @@ export const THEME_DEFAULT: IogartTheme = {
       disabled: '', // TODO
       focus: '', // TODO
     },
-    getContrastColor(color) { return color; }, // TODO
+    getContrastColor(color) {
+      return color;
+    }, // TODO
   },
   spacer: THEME_SPACER,
-  spacing(value) { return `calc(${value} * ${this.spacer})`; },
+  spacing(value) {
+    return `calc(${value} * ${this.spacer})`;
+  },
   direction: 'ltr',
   breakpoints: {
     keys: THEME_BREAKPOINT_KEYS,
     values: THEME_BREAKPOINTS,
     container: THEME_BREAKPOINT_CONTAINER,
-    up(breakpoint) { return ``; }, // TODO
-    down(breakpoint) { return ``; }, // TODO
-    between(breakpoint) { return ``; }, // TODO
-    only(breakpoint) { return ``; }, // TODO
-    not(breakpoint) { return ``; }, // TODO
+    up(breakpoint) {
+      return ``;
+    }, // TODO
+    down(breakpoint) {
+      return ``;
+    }, // TODO
+    between(breakpoint) {
+      return ``;
+    }, // TODO
+    only(breakpoint) {
+      return ``;
+    }, // TODO
+    not(breakpoint) {
+      return ``;
+    }, // TODO
   },
   typography: {
     fontFamilyBase: THEME_FONT_FAMILY,

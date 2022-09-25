@@ -39,9 +39,8 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
               Application Error
             </h1>
             <p>
-              We're sorry, but unfortunately there was a problem with the app. You can try reloading
-              the page or clearing the browser cache. If problems persist, contact your
-              administrator.
+              We're sorry, but unfortunately there was a problem with the app. You can try reloading the page or clearing the
+              browser cache. If problems persist, contact your administrator.
               <br />
               <a>Return to dashboard</a>
             </p>

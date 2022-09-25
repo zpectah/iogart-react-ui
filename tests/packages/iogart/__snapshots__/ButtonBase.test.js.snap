@@ -2,7 +2,7 @@
 
 exports[`Button Base - onMouseEnter & onMouseLeave 1`] = `
 <button
-  className="iogart-base iogart-ButtonBase"
+  className="iogart-base iogart-ButtonBase root-0-2-1"
   onBlur={[Function]}
   onClick={[Function]}
   onDoubleClick={[Function]}
@@ -16,7 +16,7 @@ exports[`Button Base - onMouseEnter & onMouseLeave 1`] = `
 
 exports[`Button Base - onMouseEnter & onMouseLeave 2`] = `
 <button
-  className="iogart-base iogart-ButtonBase iogart--hover"
+  className="iogart-base iogart-ButtonBase root-0-2-1 iogart--hover"
   onBlur={[Function]}
   onClick={[Function]}
   onDoubleClick={[Function]}
@@ -30,7 +30,7 @@ exports[`Button Base - onMouseEnter & onMouseLeave 2`] = `
 
 exports[`Button Base - onMouseEnter & onMouseLeave 3`] = `
 <button
-  className="iogart-base iogart-ButtonBase"
+  className="iogart-base iogart-ButtonBase root-0-2-1"
   onBlur={[Function]}
   onClick={[Function]}
   onDoubleClick={[Function]}

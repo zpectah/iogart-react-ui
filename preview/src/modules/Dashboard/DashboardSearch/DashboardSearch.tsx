@@ -4,20 +4,17 @@ import { Input, TagToggle } from '../../../components';
 import { useDashboardSearchStyles } from './style';
 
 export interface DashboardSearchProps {
-  onChange: (props: { input: string, tags: string[] }) => void;
-  tagList: string[],
+  onChange: (props: { input: string; tags: string[] }) => void;
+  tagList: string[];
 }
 
 const DashboardSearch = (props: DashboardSearchProps) => {
-  const {
-    onChange,
-    tagList = [],
-  } = props;
+  const { onChange, tagList = [] } = props;
 
   const classes = useDashboardSearchStyles();
 
-  const [ inputValue, setInputValue ] = useState<string>('');
-  const [ tagsValue, setTagsValue ] = useState<string[]>([]);
+  const [inputValue, setInputValue] = useState<string>('');
+  const [tagsValue, setTagsValue] = useState<string[]>([]);
 
   const inputChangeHandler = (value: string) => {
     const model = {
@@ -47,10 +44,7 @@ const DashboardSearch = (props: DashboardSearchProps) => {
           width: '40%',
         }}
       />
-      <TagToggle
-        tags={tagList}
-        onChange={tagsChangeHandler}
-      />
+      <TagToggle tags={tagList} onChange={tagsChangeHandler} />
     </div>
   );
 };

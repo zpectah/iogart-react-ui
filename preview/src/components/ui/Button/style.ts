@@ -24,7 +24,6 @@ export const useButtonStyles = createUseStyles({
     '&:focus, &:hover': {
       borderColor: palette.primary,
     },
-
   },
   primary: {
     color: palette.light,
