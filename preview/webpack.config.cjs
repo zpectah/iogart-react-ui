@@ -2,7 +2,7 @@ const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const targetPath = path.resolve(__dirname, '../.preview');
-const serverPort = 3233;
+const serverPort = 3232;
 const serverHost = 'localhost';
 
 const config = {

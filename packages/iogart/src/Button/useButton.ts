@@ -21,6 +21,7 @@ const useButton = (props: useButtonProps) => {
 
   const returnProps: useButtonReturn = {
     className: updatedClassName,
+    disabled,
     ...rest,
   };
 

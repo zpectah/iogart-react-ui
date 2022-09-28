@@ -41,7 +41,7 @@ function createIogartTheme () {
         main: PALETTE.yellow,
         dark: Color(PALETTE.yellow).darken(.5).toString(),
         light: Color(PALETTE.yellow).lighten(.5).toString(),
-        contrastText: PALETTE.dark,
+        contrastText: PALETTE.white,
       },
       error: {
         main: PALETTE.red,
@@ -55,14 +55,14 @@ function createIogartTheme () {
         secondary: '', // TODO
         disabled: '', // TODO
       },
-      divider: '', // TODO
+      divider: Color(PALETTE.volcanicGlass).alpha(.5).toString(), // TODO
       border: '', // TODO
-      background: PALETTE.white, // TODO
+      background: PALETTE.white,
       action: {
-        active: '', // TODO
+        active: Color(PALETTE.veryPeri).alpha(.125).toString(),
         hover: '', // TODO
         selected: '', // TODO
-        disabled: Color(PALETTE.white).alpha(.15).toString(), // TODO
+        disabled: Color(PALETTE.white).alpha(.45).toString(),
         focus: '', // TODO
       },
       _contrast(color) {

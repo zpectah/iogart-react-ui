@@ -28,6 +28,7 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
     borderWidth: '1px',
     borderStyle: 'solid',
     borderRadius: pill ? '3rem' : theme.shapes.borderRadius,
+    borderColor: 'inherit',
     color: 'inherit',
     backgroundColor: 'transparent',
     cursor: disabled ? 'not-allowed' : 'pointer',
@@ -35,9 +36,21 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
     ...theme.typography.button,
     ...getButtonSizeProps(theme, size),
 
-    [`&.${CLASSNAMES.disabled}`]: {
-      opacity: .75,
+    [`&:disabled, &.${CLASSNAMES.disabled}`]: {
+      position: 'relative',
+
+      '&:before': {
+        content: '""',
+        width: '100%',
+        height: '100%',
+        display: 'block',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        backgroundColor: theme.palette.action.disabled,
+      }
     },
+    // [`&.${CLASSNAMES.loading}`]: {},
 
   }),
   primary: ({ theme, variant}) => (getColorVariantProps(theme, 'primary', variant)),

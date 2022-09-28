@@ -23,9 +23,9 @@ const previewsConfig = [
     },
     props: {
       children: 'Button demo children',
-      color: 'secondary',
-      // variant: 'contained',
-      variant: 'outlined',
+      color: 'success',
+      variant: 'contained',
+      // variant: 'outlined',
       // size: 'large',
       // disabled: true,
       startIcon: <ArrowBack />,
