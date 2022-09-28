@@ -6,7 +6,7 @@ export enum ButtonElementTypeKeys {
 export enum ButtonVariantKeys {
   contained = 'contained',
   outlined = 'outlined',
-  link = 'link',
+  text = 'text',
 }
 
 export enum ButtonSizeKeys {

@@ -7,7 +7,6 @@ import {
   KeyboardEventHandler,
   MouseEventHandler,
   MouseEvent,
-  // ComponentType,
 } from 'react';
 
 import {
@@ -30,6 +29,8 @@ export type ButtonColor = keyof typeof ButtonColorKeys;
 
 export type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
 
+type ButtonPickedProps = Pick<HTMLButtonElement, 'form' | 'formAction' | 'formEnctype' | 'formMethod' | 'formNoValidate' | 'formTarget' | 'value'>;
+
 export interface ButtonEvents<T = ButtonElement | AnchorElement> {
   onBlur?: FocusEventHandler;
   onFocus?: FocusEventHandler;
@@ -43,7 +44,7 @@ export interface ButtonEvents<T = ButtonElement | AnchorElement> {
   onDoubleClick?: (event: MouseEvent<T, MouseEvent>) => void;
 }
 
-export interface ButtonBaseProps extends IogartBaseUi, withChildren, ButtonEvents {
+export interface ButtonBaseProps extends IogartBaseUi, withChildren, ButtonEvents, ButtonPickedProps {
   elementType?: ButtonElementType;
   type?: ButtonType;
   role?: AriaRole;
@@ -60,6 +61,8 @@ export interface ButtonProps extends ButtonBaseProps, IogartCommonUi {
   color?: ButtonColor;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  loading?: boolean;
+  pill?: boolean;
 }
 
 export type useButtonBaseProps = ButtonBaseProps;

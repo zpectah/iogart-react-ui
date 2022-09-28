@@ -1,75 +1,82 @@
-import { palette } from '../palette';
+import Color from 'color';
 import { IogartTheme } from './types';
 import {
+  PALETTE,
   THEME_SPACER,
   THEME_FONT_FAMILY,
   THEME_BREAKPOINT_KEYS,
   THEME_BREAKPOINTS,
   THEME_BREAKPOINT_CONTAINER,
-} from './const';
+} from '../const';
 
-const createIogartTheme = () => {
-  // console.log('???', this);
-  const self = this;
-
+function createIogartTheme () {
   const theme: IogartTheme = {
     palette: {
       mode: 'default',
       primary: {
-        main: palette.blueGrey,
-        dark: '', // TODO
-        light: '', // TODO
-        contrastText: palette.light,
+        main: PALETTE.veryPeri,
+        dark: Color(PALETTE.veryPeri).darken(.5).toString(),
+        light: Color(PALETTE.veryPeri).lighten(.5).toString(),
+        contrastText: PALETTE.light,
       },
       secondary: {
-        main: palette.brown,
-        dark: '', // TODO
-        light: '', // TODO
-        contrastText: palette.light,
+        main: PALETTE.anthracite,
+        dark: Color(PALETTE.anthracite).darken(.5).toString(),
+        light: Color(PALETTE.anthracite).lighten(.5).toString(),
+        contrastText: PALETTE.light,
       },
       success: {
-        main: palette.green,
-        dark: '', // TODO
-        light: '', // TODO
-        contrastText: palette.light,
+        main: PALETTE.green,
+        dark: Color(PALETTE.green).darken(.5).toString(),
+        light: Color(PALETTE.green).lighten(.5).toString(),
+        contrastText: PALETTE.light,
       },
       info: {
-        main: palette.lightBlue,
-        dark: '', // TODO
-        light: '', // TODO
-        contrastText: palette.light,
+        main: PALETTE.lightBlue,
+        dark: Color(PALETTE.lightBlue).darken(.5).toString(),
+        light: Color(PALETTE.lightBlue).lighten(.5).toString(),
+        contrastText: PALETTE.light,
       },
       warning: {
-        main: palette.yellow,
-        dark: '', // TODO
-        light: '', // TODO
-        contrastText: palette.dark,
+        main: PALETTE.yellow,
+        dark: Color(PALETTE.yellow).darken(.5).toString(),
+        light: Color(PALETTE.yellow).lighten(.5).toString(),
+        contrastText: PALETTE.dark,
       },
       error: {
-        main: palette.red,
-        dark: '', // TODO
-        light: '', // TODO
-        contrastText: palette.light, // TODO
+        main: PALETTE.red,
+        dark: Color(PALETTE.red).darken(.5).toString(),
+        light: Color(PALETTE.red).lighten(.5).toString(),
+        contrastText: PALETTE.light,
       },
-      common: palette,
+      common: PALETTE,
       text: {
-        primary: palette.dark,
+        primary: PALETTE.dark,
         secondary: '', // TODO
         disabled: '', // TODO
       },
       divider: '', // TODO
       border: '', // TODO
-      background: palette.light, // TODO
+      background: PALETTE.white, // TODO
       action: {
         active: '', // TODO
         hover: '', // TODO
         selected: '', // TODO
-        disabled: '', // TODO
+        disabled: Color(PALETTE.white).alpha(.15).toString(), // TODO
         focus: '', // TODO
       },
-      getContrastColor(color) {
-        return color;
-      }, // TODO
+      _contrast(color) {
+        return Color(color).negate().toString(); // TODO
+      },
+      _lLighten(color, amount) {
+        return Color(color).lighten(amount).toString();
+      },
+      _darken(color, amount) {
+        return Color(color).darken(amount).toString();
+      },
+      _alpha(color, amount) {
+        return Color(color).alpha(amount).toString();
+      },
     },
     spacer: THEME_SPACER,
     spacing(value) {
@@ -171,7 +178,7 @@ const createIogartTheme = () => {
         fontFamily: THEME_FONT_FAMILY,
         fontWeight: 400,
         fontSize: '.95rem',
-        lineHeight: 1.35,
+        lineHeight: 1.25,
         letterSpacing: 0,
       },
     },
@@ -182,18 +189,6 @@ const createIogartTheme = () => {
     shadows: {}, // TODO
     mixins: {}, // TODO
   };
-
-  // Fixing values from default values (???)
-  theme.typography.h1.fontFamily = theme.typography.fontFamilyBase;
-  theme.typography.h2.fontFamily = theme.typography.fontFamilyBase;
-  theme.typography.h3.fontFamily = theme.typography.fontFamilyBase;
-  theme.typography.h4.fontFamily = theme.typography.fontFamilyBase;
-  theme.typography.h5.fontFamily = theme.typography.fontFamilyBase;
-  theme.typography.h6.fontFamily = theme.typography.fontFamilyBase;
-  theme.typography.subtitle.fontFamily = theme.typography.fontFamilyBase;
-  theme.typography.body.fontFamily = theme.typography.fontFamilyBase;
-  theme.typography.button.fontFamily = theme.typography.fontFamilyBase;
-
 
   return theme;
 }

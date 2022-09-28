@@ -8,6 +8,7 @@
     "watch": "rollup -cw"
   },
   "dependencies": {
+    "color": "^4.2.3",
     "jss": "^10.9.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -24,6 +25,7 @@
     "@types/node": "^18.7.18",
     "@types/react": "^18.0.20",
     "@types/react-dom": "^18.0.6",
+    "@types/color": "^3.0.3",
     "@types/jss": "^10.0.0",
     "@types/react-jss": "^10.0.0",
     "lerna": "^5.5.1",

@@ -3,7 +3,9 @@ import { withIogartThemeProps, THEME_BREAKPOINT_CONTAINER, THEME_BREAKPOINTS } f
 
 interface useContainerStylesProps extends withIogartThemeProps {}
 
-const useContainerStyles = createUseStyles<any, useContainerStylesProps>({
+type useContainerStylesClassNames = 'root' | 'fluid' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+
+const useContainerStyles = createUseStyles<useContainerStylesClassNames, useContainerStylesProps>({
   root: {
     maxWidth: '100%',
     marginLeft: 'auto',

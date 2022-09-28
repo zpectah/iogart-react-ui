@@ -1,22 +1,18 @@
 import { createUseStyles } from 'react-jss';
-import { buttonBaseMixin, buttonResetMixin } from '@iogart-react-ui/styles';
-import { palette } from '@iogart-react-ui/styles';
-import { withIogartThemeProps, IogartTheme } from '@iogart-react-ui/styles';
+import { buttonBaseMixin, buttonResetMixin, withIogartThemeProps, getButtonSizeProps, getColorVariantProps, CLASSNAMES } from '@iogart-react-ui/styles';
+import { ButtonVariant, ButtonSize, ButtonColor } from './types';
 
 interface useButtonBaseStylesProps extends withIogartThemeProps {}
 
-interface useButtonStylesProps extends withIogartThemeProps {}
+interface useButtonStylesProps extends withIogartThemeProps {
+  variant: ButtonVariant;
+  size: ButtonSize;
+  disabled: boolean;
+  loading: boolean;
+  pill: boolean;
+}
 
-const getColorPreferences = (theme: IogartTheme, color?: string) => {
-  let base = {
-    color: theme.palette.common.light,
-    backgroundColor: theme.palette.common.blueGrey,
-    borderColor: 'transparent',
-  };
-
-
-  return base;
-};
+type useButtonStylesClassNames = 'root' | ButtonColor;
 
 export const useButtonBaseStyles = createUseStyles<'root', useButtonBaseStylesProps>({
   root: {
@@ -25,38 +21,29 @@ export const useButtonBaseStyles = createUseStyles<'root', useButtonBaseStylesPr
   },
 });
 
-export const useButtonStyles = createUseStyles<any, useButtonStylesProps>({
-  root: {
-    padding: '.75rem 1rem',
+export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useButtonStylesProps>({
+  root: ({ theme, size, disabled, loading, pill }) => ({
     justifyContent: 'space-between',
-    gap: '.5rem',
-    border: 0,
-    fontFamily: ({ theme }) => theme.typography.button.fontFamily,
-    fontSize: ({ theme }) => theme.typography.button.fontSize,
-    fontWeight: ({ theme }) => theme.typography.button.fontWeight,
+    gap: theme.spacer,
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderRadius: pill ? '3rem' : theme.shapes.borderRadius,
+    color: 'inherit',
+    backgroundColor: 'transparent',
+    cursor: disabled ? 'not-allowed' : 'pointer',
+    position: loading ? 'relative' : 'inherit',
+    ...theme.typography.button,
+    ...getButtonSizeProps(theme, size),
 
-    color: palette.light,
-    backgroundColor: palette.blueGrey,
-    borderRadius: ({ theme }) => theme.shapes.borderRadius,
-    // TODO
-  },
+    [`&.${CLASSNAMES.disabled}`]: {
+      opacity: .75,
+    },
 
-  /*
-  primary: {},
-  secondary: {},
-  success: {},
-  error: {},
-  warning: {},
-  info: {},
-  */
-
-  contained: {},
-  outlined: {},
-  link: {},
-
-  small: {
-    fontSize: '.75rem',
-  },
-  large: {},
-
+  }),
+  primary: ({ theme, variant}) => (getColorVariantProps(theme, 'primary', variant)),
+  secondary: ({ theme, variant }) => (getColorVariantProps(theme, 'secondary', variant)),
+  success: ({ theme, variant}) => (getColorVariantProps(theme, 'success', variant)),
+  error: ({ theme, variant}) => (getColorVariantProps(theme, 'error', variant)),
+  warning: ({ theme, variant }) => (getColorVariantProps(theme, 'warning', variant)),
+  info: ({ theme, variant }) => (getColorVariantProps(theme, 'info', variant)),
 });

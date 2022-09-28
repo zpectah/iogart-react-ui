@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, Container, Stack, Tag } from '@iogart-react-ui/iogart';
+import { ArrowBack, ArrowForward } from '@iogart-react-ui/icons';
 
 const commonMeta = {
   author: 'Tomas Sychra | zpecter.com',
@@ -22,6 +23,15 @@ const previewsConfig = [
     },
     props: {
       children: 'Button demo children',
+      color: 'secondary',
+      // variant: 'contained',
+      variant: 'outlined',
+      // size: 'large',
+      // disabled: true,
+      startIcon: <ArrowBack />,
+      endIcon: <ArrowForward />,
+      // loading: true,
+      // pill: true,
     },
   },
   {

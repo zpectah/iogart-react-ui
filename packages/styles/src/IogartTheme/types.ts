@@ -57,6 +57,15 @@ export interface IogartTheme extends DefaultTheme {
       black: string;
       light: string;
       dark: string;
+      // Pantone 2022
+      veryPeri: string;
+      anthracite: string;
+      volcanicGlass: string;
+      deepTaupe: string;
+      plazaTaupe: string;
+      whiteSand: string;
+      petrifiedOak: string;
+      cloudDancer: string;
     };
     text: {
       primary: string;
@@ -73,7 +82,10 @@ export interface IogartTheme extends DefaultTheme {
       disabled: string;
       focus: string;
     };
-    getContrastColor: (color: string) => string;
+    _contrast: (color: string) => string;
+    _lLighten: (color: string, amount: number) => string;
+    _darken: (color: string, amount: number) => string;
+    _alpha: (color: string, amount: number) => string;
   };
   spacer: string | number;
   spacing: (value: number) => string;

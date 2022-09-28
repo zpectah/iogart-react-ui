@@ -1,6 +1,5 @@
 .idea/
 .tests/
 .preview/
-.storybook/
 node_modules/
 dist/
