@@ -1,5 +1,12 @@
 import { createUseStyles } from 'react-jss';
-import { buttonBaseMixin, buttonResetMixin, withIogartThemeProps, getButtonSizeProps, getColorVariantProps, CLASSNAMES } from '@iogart-react-ui/styles';
+import {
+  buttonBaseMixin,
+  buttonResetMixin,
+  withIogartThemeProps,
+  getButtonSizeProps,
+  getColorVariantProps,
+  CLASSNAMES,
+} from '@iogart-react-ui/styles';
 import { ButtonVariant, ButtonSize, ButtonColor } from './types';
 
 interface useButtonBaseStylesProps extends withIogartThemeProps {}
@@ -48,15 +55,14 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
         top: 0,
         left: 0,
         backgroundColor: theme.palette.action.disabled,
-      }
+      },
     },
     // [`&.${CLASSNAMES.loading}`]: {},
-
   }),
-  primary: ({ theme, variant}) => (getColorVariantProps(theme, 'primary', variant)),
-  secondary: ({ theme, variant }) => (getColorVariantProps(theme, 'secondary', variant)),
-  success: ({ theme, variant}) => (getColorVariantProps(theme, 'success', variant)),
-  error: ({ theme, variant}) => (getColorVariantProps(theme, 'error', variant)),
-  warning: ({ theme, variant }) => (getColorVariantProps(theme, 'warning', variant)),
-  info: ({ theme, variant }) => (getColorVariantProps(theme, 'info', variant)),
+  primary: ({ theme, variant }) => getColorVariantProps(theme, 'primary', variant),
+  secondary: ({ theme, variant }) => getColorVariantProps(theme, 'secondary', variant),
+  success: ({ theme, variant }) => getColorVariantProps(theme, 'success', variant),
+  error: ({ theme, variant }) => getColorVariantProps(theme, 'error', variant),
+  warning: ({ theme, variant }) => getColorVariantProps(theme, 'warning', variant),
+  info: ({ theme, variant }) => getColorVariantProps(theme, 'info', variant),
 });

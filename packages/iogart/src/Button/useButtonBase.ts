@@ -1,91 +1,34 @@
 import { useState } from 'react';
 import { getElementClassName } from '@iogart-react-ui/utils';
-import { useIogartTheme } from '@iogart-react-ui/styles';
-import {
-  AnchorElement,
-  ButtonElement,
-  IogartClickEvent,
-  IogartDoubleClickEvent,
-  IogartFocusEvent,
-  // IogartKeyboardEvent,
-  IogartMouseEvent,
-} from '@iogart-react-ui/types';
+import { useIogartTheme, CLASSNAME_PREFIX } from '@iogart-react-ui/styles';
+import { IogartFocusEvent } from '@iogart-react-ui/types';
 import { useButtonBaseProps, useButtonBaseReturn } from './types';
 import { useButtonBaseStyles } from './styles';
 
 const useButtonBase = (props: useButtonBaseProps) => {
-  const {
-    className,
-    onBlur,
-    onFocus,
-    // onKeyDown,
-    // onKeyUp,
-    onMouseEnter,
-    // onMouseDown,
-    onMouseLeave,
-    // onMouseUp,
-    onClick,
-    onDoubleClick,
-    ...rest
-  } = props;
+  const { className, onFocus, onBlur, ...rest } = props;
 
-  const [isHover, setHover] = useState(false);
   const [isFocus, setFocus] = useState(false);
 
   const theme = useIogartTheme();
   const classes = useButtonBaseStyles({ ...{}, theme });
-  const updatedClassName = getElementClassName(className, ['iogart-ButtonBase', classes.root], {
-    isHover,
+  const updatedClassName = getElementClassName(className, [`${CLASSNAME_PREFIX}ButtonBase`, classes.root], {
     isFocus,
     base: true,
   });
 
-  const blurHandler = (event: IogartFocusEvent) => {
-    setFocus(false);
-    if (onBlur) onBlur(event);
-  };
   const focusHandler = (event: IogartFocusEvent) => {
     setFocus(true);
     if (onFocus) onFocus(event);
   };
-  const mouseEnterHandler = (event: IogartMouseEvent) => {
-    setHover(true);
-    if (onMouseEnter) onMouseEnter(event);
+  const blurHandler = (event: IogartFocusEvent) => {
+    setFocus(false);
+    if (onBlur) onBlur(event);
   };
-  const mouseLeaveHandler = (event: IogartMouseEvent) => {
-    setHover(false);
-    if (onMouseLeave) onMouseLeave(event);
-  };
-  const clickHandler = (event: IogartClickEvent<AnchorElement | ButtonElement>) => {
-    if (onClick) onClick(event);
-  };
-  const doubleClickHandler = (event: IogartDoubleClickEvent<AnchorElement | ButtonElement>) => {
-    if (onDoubleClick) onDoubleClick(event);
-  };
-  // const keyDownHandler = (event: IogartKeyboardEvent) => {
-  //     if (onKeyDown) onKeyDown(event);
-  // };
-  // const keyUpHandler = (event: IogartKeyboardEvent) => {
-  //     if (onKeyUp) onKeyUp(event);
-  // };
-  // const mouseDownHandler = (event: IogartMouseEvent) => {
-  //     if (onMouseDown) onMouseDown(event);
-  // };
-  // const mouseUpHandler = (event: IogartMouseEvent) => {
-  //     if (onMouseUp) onMouseUp(event);
-  // };
 
   const updatedEvents = {
     onBlur: blurHandler,
     onFocus: focusHandler,
-    onMouseEnter: mouseEnterHandler,
-    onMouseLeave: mouseLeaveHandler,
-    onClick: clickHandler,
-    onDoubleClick: doubleClickHandler,
-    // onKeyDown: keyDownHandler,
-    // onKeyUp: keyUpHandler,
-    // onMouseDown: mouseDownHandler,
-    // onMouseUp: mouseUpHandler,
   };
 
   const returnProps: useButtonBaseReturn = {

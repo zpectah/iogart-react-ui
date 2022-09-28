@@ -1,21 +1,20 @@
 import { ButtonColor, ButtonVariant } from '@iogart-react-ui/iogart';
 import { IogartTheme } from '../IogartTheme';
 
-const getColorVariantProps = (theme: IogartTheme, color: ButtonColor, variant: ButtonVariant ) => {
+const getColorVariantProps = (theme: IogartTheme, color: ButtonColor, variant: ButtonVariant) => {
   switch (variant) {
-
     case 'contained':
       return {
         color: theme.palette[color].contrastText,
         backgroundColor: theme.palette[color].main,
-        textShadow: `0 0 .25rem ${theme.palette._alpha(theme.palette[color].dark, .25)}`,
+        textShadow: `0 0 .25rem ${theme.palette._alpha(theme.palette[color].dark, 0.25)}`,
 
         [`&:not(:disabled)`]: {
           borderColor: theme.palette[color].main,
         },
         [`&:hover`]: {
           [`&:not(:disabled)`]: {
-            backgroundColor: theme.palette._darken(theme.palette[color].main, .1),
+            backgroundColor: theme.palette._darken(theme.palette[color].main, 0.1),
           },
         },
         [`&:focus`]: {
@@ -36,7 +35,7 @@ const getColorVariantProps = (theme: IogartTheme, color: ButtonColor, variant: B
         },
         [`&:hover`]: {
           [`&:not(:disabled)`]: {
-            backgroundColor: theme.palette._alpha(theme.palette[color].light, .05),
+            backgroundColor: theme.palette._alpha(theme.palette[color].light, 0.05),
           },
         },
         [`&:focus`]: {
@@ -63,12 +62,11 @@ const getColorVariantProps = (theme: IogartTheme, color: ButtonColor, variant: B
         },
         [`&:focus`]: {
           [`&:not(:disabled)`]: {
-            outline: `1px solid ${theme.palette._alpha(theme.palette[color].main, .35)}`,
+            outline: `1px solid ${theme.palette._alpha(theme.palette[color].main, 0.35)}`,
           },
         },
         // [`&:disabled, &.${CLASSNAMES.disabled}`]: {},
       };
-
   }
 };
 

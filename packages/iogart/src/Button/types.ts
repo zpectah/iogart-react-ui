@@ -1,7 +1,6 @@
 import {
   ButtonHTMLAttributes,
   AriaRole,
-  LegacyRef,
   ReactNode,
   FocusEventHandler,
   KeyboardEventHandler,
@@ -9,14 +8,7 @@ import {
   MouseEvent,
 } from 'react';
 
-import {
-  AnchorElement,
-  ButtonElement,
-  IogartBaseUi,
-  IogartCommonUi,
-  MixedReactHTML,
-  withChildren,
-} from '@iogart-react-ui/types';
+import { AnchorElement, ButtonElement, IogartCommonUi, MixedReactHTML } from '@iogart-react-ui/types';
 import { ButtonElementTypeKeys, ButtonVariantKeys, ButtonSizeKeys, ButtonColorKeys } from './enums';
 
 export type ButtonElementType = keyof typeof ButtonElementTypeKeys;
@@ -28,8 +20,6 @@ export type ButtonSize = keyof typeof ButtonSizeKeys;
 export type ButtonColor = keyof typeof ButtonColorKeys;
 
 export type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
-
-type ButtonPickedProps = Pick<HTMLButtonElement, 'form' | 'formAction' | 'formEnctype' | 'formMethod' | 'formNoValidate' | 'formTarget' | 'value'>;
 
 export interface ButtonEvents<T = ButtonElement | AnchorElement> {
   onBlur?: FocusEventHandler;
@@ -44,18 +34,15 @@ export interface ButtonEvents<T = ButtonElement | AnchorElement> {
   onDoubleClick?: (event: MouseEvent<T, MouseEvent>) => void;
 }
 
-export interface ButtonBaseProps extends IogartBaseUi, withChildren, ButtonEvents, ButtonPickedProps {
+export interface ButtonBaseProps extends HTMLButtonElement, ButtonEvents {
   elementType?: ButtonElementType;
-  type?: ButtonType;
   role?: AriaRole;
-  disabled?: boolean;
-  ref?: LegacyRef<HTMLButtonElement> | undefined;
   href?: string;
   to?: string;
   as?: MixedReactHTML;
 }
 
-export interface ButtonProps extends ButtonBaseProps, IogartCommonUi {
+export interface ButtonProps extends IogartCommonUi, ButtonBaseProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
   color?: ButtonColor;

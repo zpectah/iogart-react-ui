@@ -16,7 +16,17 @@ const Button = (props: ButtonProps) => {
         {children}
         {endIcon && endIcon}
         {loading && (
-          <span style={{ display: 'block', textAlign: 'center', position: 'absolute', backgroundColor: 'rgba(250,250,250,.5)', zIndex: 1 }}>loading</span>
+          <span
+            style={{
+              display: 'block',
+              textAlign: 'center',
+              position: 'absolute',
+              backgroundColor: 'rgba(250,250,250,.5)',
+              zIndex: 1,
+            }}
+          >
+            loading
+          </span>
         )}
       </>
     );

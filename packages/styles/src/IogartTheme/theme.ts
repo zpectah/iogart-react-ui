@@ -9,44 +9,44 @@ import {
   THEME_BREAKPOINT_CONTAINER,
 } from '../const';
 
-function createIogartTheme () {
+function createIogartTheme() {
   const theme: IogartTheme = {
     palette: {
       mode: 'default',
       primary: {
         main: PALETTE.veryPeri,
-        dark: Color(PALETTE.veryPeri).darken(.5).toString(),
-        light: Color(PALETTE.veryPeri).lighten(.5).toString(),
+        dark: Color(PALETTE.veryPeri).darken(0.5).toString(),
+        light: Color(PALETTE.veryPeri).lighten(0.5).toString(),
         contrastText: PALETTE.light,
       },
       secondary: {
         main: PALETTE.anthracite,
-        dark: Color(PALETTE.anthracite).darken(.5).toString(),
-        light: Color(PALETTE.anthracite).lighten(.5).toString(),
+        dark: Color(PALETTE.anthracite).darken(0.5).toString(),
+        light: Color(PALETTE.anthracite).lighten(0.5).toString(),
         contrastText: PALETTE.light,
       },
       success: {
         main: PALETTE.green,
-        dark: Color(PALETTE.green).darken(.5).toString(),
-        light: Color(PALETTE.green).lighten(.5).toString(),
+        dark: Color(PALETTE.green).darken(0.5).toString(),
+        light: Color(PALETTE.green).lighten(0.5).toString(),
         contrastText: PALETTE.light,
       },
       info: {
         main: PALETTE.lightBlue,
-        dark: Color(PALETTE.lightBlue).darken(.5).toString(),
-        light: Color(PALETTE.lightBlue).lighten(.5).toString(),
+        dark: Color(PALETTE.lightBlue).darken(0.5).toString(),
+        light: Color(PALETTE.lightBlue).lighten(0.5).toString(),
         contrastText: PALETTE.light,
       },
       warning: {
         main: PALETTE.yellow,
-        dark: Color(PALETTE.yellow).darken(.5).toString(),
-        light: Color(PALETTE.yellow).lighten(.5).toString(),
+        dark: Color(PALETTE.yellow).darken(0.5).toString(),
+        light: Color(PALETTE.yellow).lighten(0.5).toString(),
         contrastText: PALETTE.white,
       },
       error: {
         main: PALETTE.red,
-        dark: Color(PALETTE.red).darken(.5).toString(),
-        light: Color(PALETTE.red).lighten(.5).toString(),
+        dark: Color(PALETTE.red).darken(0.5).toString(),
+        light: Color(PALETTE.red).lighten(0.5).toString(),
         contrastText: PALETTE.light,
       },
       common: PALETTE,
@@ -55,14 +55,14 @@ function createIogartTheme () {
         secondary: '', // TODO
         disabled: '', // TODO
       },
-      divider: Color(PALETTE.volcanicGlass).alpha(.5).toString(), // TODO
+      divider: Color(PALETTE.volcanicGlass).alpha(0.5).toString(), // TODO
       border: '', // TODO
       background: PALETTE.white,
       action: {
-        active: Color(PALETTE.veryPeri).alpha(.125).toString(),
+        active: Color(PALETTE.veryPeri).alpha(0.125).toString(),
         hover: '', // TODO
         selected: '', // TODO
-        disabled: Color(PALETTE.white).alpha(.45).toString(),
+        disabled: Color(PALETTE.white).alpha(0.45).toString(),
         focus: '', // TODO
       },
       _contrast(color) {

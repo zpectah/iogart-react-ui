@@ -3,7 +3,6 @@ import { IogartTheme } from '../IogartTheme';
 
 const getButtonSizeProps = (theme: IogartTheme, size: ButtonSize) => {
   switch (size) {
-
     case 'large':
       return {
         padding: `${theme.spacing(1.15)} ${theme.spacing(1.5)}`,
@@ -17,7 +16,7 @@ const getButtonSizeProps = (theme: IogartTheme, size: ButtonSize) => {
 
     case 'small':
       return {
-        padding: `${theme.spacing(.75)} ${theme.spacing(1)}`,
+        padding: `${theme.spacing(0.75)} ${theme.spacing(1)}`,
         fontSize: '.825rem',
 
         '& svg': {
@@ -36,7 +35,6 @@ const getButtonSizeProps = (theme: IogartTheme, size: ButtonSize) => {
           height: `calc(${theme.typography.fontSizeBase} * 1.25)`,
         },
       };
-
   }
 };
 

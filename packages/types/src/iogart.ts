@@ -8,6 +8,6 @@ export interface IogartBaseUi {
   style?: CSSProperties | undefined;
 }
 
-export interface IogartCommonUi extends IogartBaseUi {
+export interface IogartCommonUi {
   sx?: SxProps | undefined;
 }

@@ -1,7 +1,15 @@
 import { CSSProperties } from 'react';
 import { createUseStyles } from 'react-jss';
 import { withIogartThemeProps } from '@iogart-react-ui/styles';
-import { flexboxDirection, flexboxAlignContent, flexboxAlignItems, flexboxAlignSelf, flexboxJustifyContent, flexboxJustifyItems, flexboxJustifySelf } from '@iogart-react-ui/types';
+import {
+  flexboxDirection,
+  flexboxAlignContent,
+  flexboxAlignItems,
+  flexboxAlignSelf,
+  flexboxJustifyContent,
+  flexboxJustifyItems,
+  flexboxJustifySelf,
+} from '@iogart-react-ui/types';
 
 interface useStackStylesProps extends withIogartThemeProps {
   spacing?: number;
