@@ -51,19 +51,23 @@ function createIogartTheme() {
       },
       common: PALETTE,
       text: {
-        primary: PALETTE.dark,
-        secondary: '', // TODO
-        disabled: '', // TODO
+        primary: Color(PALETTE.black).alpha(0.9).toString(),
+        secondary: PALETTE.dark,
+        disabled: Color(PALETTE.dark).alpha(0.25).toString(),
       },
-      divider: Color(PALETTE.volcanicGlass).alpha(0.5).toString(), // TODO
-      border: '', // TODO
-      background: PALETTE.white,
+      divider: Color(PALETTE.volcanicGlass).alpha(0.75).toString(),
+      border: Color(PALETTE.dark).alpha(0.75).toString(),
+      background: {
+        body: PALETTE.white,
+        paper: PALETTE.light,
+        backdrop: Color(PALETTE.dark).alpha(0.5).toString(),
+      },
       action: {
-        active: Color(PALETTE.veryPeri).alpha(0.125).toString(),
-        hover: '', // TODO
-        selected: '', // TODO
+        active: Color(PALETTE.black).alpha(0.125).toString(),
+        hover: Color(PALETTE.white).alpha(0.125).toString(),
+        selected: Color(PALETTE.veryPeri).alpha(0.125).toString(),
         disabled: Color(PALETTE.white).alpha(0.45).toString(),
-        focus: '', // TODO
+        focus: Color(PALETTE.white).alpha(0.15).toString(),
       },
       _contrast(color) {
         return Color(color).negate().toString(); // TODO
@@ -79,7 +83,7 @@ function createIogartTheme() {
       },
     },
     spacer: THEME_SPACER,
-    spacing(value) {
+    _spacing(value) {
       return `calc(${value} * ${this.spacer})`;
     },
     direction: 'ltr',
@@ -87,28 +91,39 @@ function createIogartTheme() {
       keys: THEME_BREAKPOINT_KEYS,
       values: THEME_BREAKPOINTS,
       container: THEME_BREAKPOINT_CONTAINER,
-      up(breakpoint) {
-        const minWidth = THEME_BREAKPOINTS[breakpoint].min;
-
-        return `@media (min-width: ${minWidth}px)`;
+      _up(breakpoint) {
+        return `@media (min-width: ${THEME_BREAKPOINTS[breakpoint].min}px)`;
       },
-      down(breakpoint) {
-        const maxWidth = THEME_BREAKPOINTS[breakpoint].min;
-
-        return `@media (max-width: ${maxWidth}px)`;
+      _down(breakpoint) {
+        return `@media (max-width: ${THEME_BREAKPOINTS[breakpoint].min}px)`;
       },
-      between(min, max) {
-        const minWidth = THEME_BREAKPOINTS[min].min;
-        const maxWidth = THEME_BREAKPOINTS[max].min;
-
-        return `@media (min-width: ${minWidth}px and max-width: ${maxWidth}px)`;
+      _between(min, max) {
+        return `@media (min-width: ${THEME_BREAKPOINTS[min].min}px and max-width: ${THEME_BREAKPOINTS[max].min}px)`;
       },
-      only(breakpoint) {
-        return ``;
-      }, // TODO
-      not(breakpoint) {
-        return ``;
-      }, // TODO
+      _only(breakpoint) {
+        switch (breakpoint) {
+
+          case 'xs':
+            return `@media (min-width: ${THEME_BREAKPOINTS.xs.min}px and max-width: ${THEME_BREAKPOINTS.xs.max}px)`;
+
+          case 'sm':
+            return `@media (min-width: ${THEME_BREAKPOINTS.sm.min}px and max-width: ${THEME_BREAKPOINTS.sm.max}px)`;
+
+          case 'md':
+            return `@media (min-width: ${THEME_BREAKPOINTS.md.min}px and max-width: ${THEME_BREAKPOINTS.md.max}px)`;
+
+          case 'lg':
+            return `@media (min-width: ${THEME_BREAKPOINTS.lg.min}px and max-width: ${THEME_BREAKPOINTS.lg.max}px)`;
+
+          case 'xl':
+            return `@media (min-width: ${THEME_BREAKPOINTS.xl.min}px and max-width: ${THEME_BREAKPOINTS.xl.max}px)`;
+
+          case 'xxl':
+          default:
+            return `@media (min-width: ${THEME_BREAKPOINTS.xxl.min}px)`;
+
+        }
+      },
     },
     typography: {
       fontFamilyBase: THEME_FONT_FAMILY,
@@ -174,6 +189,13 @@ function createIogartTheme() {
         lineHeight: 1.167,
         letterSpacing: 0,
       },
+      caption: {
+        fontFamily: THEME_FONT_FAMILY,
+        fontWeight: 400,
+        fontSize: '.75rem',
+        lineHeight: 1.3,
+        letterSpacing: 0,
+      },
       button: {
         fontFamily: THEME_FONT_FAMILY,
         fontWeight: 400,
@@ -185,9 +207,39 @@ function createIogartTheme() {
     shapes: {
       borderRadius: 3,
     },
-    transitions: {}, // TODO
-    shadows: {}, // TODO
-    mixins: {}, // TODO
+    transitions: {
+      easing: {
+        easeInOut: 'cubic-bezier(0.4,0,0.2,1)',
+        easeOut: 'cubic-bezier(0.0,0,0.2,1)',
+        easeIn: 'cubic-bezier(0.4,0,1,1)',
+        sharp: 'cubic-bezier(0.4,0,0.6,1)',
+      },
+      duration: {
+        short: 125,
+        standard: 275,
+        slow: 450,
+        slower: 725,
+      },
+      _create(property, easing, duration) {
+        // TODO: create for multiple ...
+        return `${property} ${this.easing[easing]} ${this.duration[duration]}`;
+      },
+    },
+    shadows: {
+      0: 'none',
+      1: `0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)`, // TODO
+      2: `0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12)`, // TODO
+      3: `0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12)`, // TODO
+      4: `0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)`, // TODO
+      5: `0px 3px 5px -1px rgba(0,0,0,0.2), 0px 6px 10px 0px rgba(0,0,0,0.14), 0px 1px 14px 0px rgba(0,0,0,0.12)`, // TODO
+    },
+    zAxis: {
+      drawer: 1190,
+      modal: 1290,
+      tooltip: 1790,
+      toasts: 1890,
+    },
+    // mixins: {}, // TODO
   };
 
   return theme;

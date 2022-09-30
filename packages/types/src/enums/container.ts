@@ -1,11 +1,11 @@
-export enum ContainerElementTypeKeys {
+export enum containerElementTypeKeys {
   main = 'main',
   div = 'div',
   section = 'section',
   article = 'article',
 }
 
-export enum ContainerMaxWidthKeys {
+export enum containerMaxWidthKeys {
   xs = 'xs',
   sm = 'sm',
   md = 'md',

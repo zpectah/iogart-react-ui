@@ -32,7 +32,7 @@ const Button = (props: ButtonProps) => {
     );
   };
 
-  return createElement(ButtonBase, updatedProps, renderChildren());
+  return createElement(ButtonBase, { children, ...updatedProps }, renderChildren());
 };
 
 export default Button;

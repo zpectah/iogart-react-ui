@@ -1,21 +1,21 @@
-export enum ButtonElementTypeKeys {
+export enum buttonElementTypeKeys {
   button = 'button',
   a = 'a',
 }
 
-export enum ButtonVariantKeys {
+export enum buttonVariantKeys {
   contained = 'contained',
   outlined = 'outlined',
   text = 'text',
 }
 
-export enum ButtonSizeKeys {
+export enum buttonSizeKeys {
   small = 'small',
   medium = 'medium',
   large = 'large',
 }
 
-export enum ButtonColorKeys {
+export enum buttonColorKeys {
   primary = 'primary',
   secondary = 'secondary',
   success = 'success',

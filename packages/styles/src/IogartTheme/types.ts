@@ -57,15 +57,14 @@ export interface IogartTheme extends DefaultTheme {
       black: string;
       light: string;
       dark: string;
-      // Pantone 2022
-      veryPeri: string;
-      anthracite: string;
-      volcanicGlass: string;
-      deepTaupe: string;
-      plazaTaupe: string;
-      whiteSand: string;
-      petrifiedOak: string;
-      cloudDancer: string;
+      veryPeri: string; // Pantone 2022
+      anthracite: string; // Pantone 2022
+      volcanicGlass: string; // Pantone 2022
+      deepTaupe: string; // Pantone 2022
+      plazaTaupe: string; // Pantone 2022
+      whiteSand: string; // Pantone 2022
+      petrifiedOak: string; // Pantone 2022
+      cloudDancer: string; // Pantone 2022
     };
     text: {
       primary: string;
@@ -74,7 +73,11 @@ export interface IogartTheme extends DefaultTheme {
     };
     divider: string;
     border: string;
-    background: string;
+    background: {
+      body: string;
+      paper: string;
+      backdrop: string;
+    };
     action: {
       active: string;
       hover: string;
@@ -88,7 +91,7 @@ export interface IogartTheme extends DefaultTheme {
     _alpha: (color: string, amount: number) => string;
   };
   spacer: string | number;
-  spacing: (value: number) => string;
+  _spacing: (value: number) => string;
   direction: 'ltr' | 'rtl';
   breakpoints: {
     keys: string[];
@@ -98,11 +101,10 @@ export interface IogartTheme extends DefaultTheme {
     container: {
       [k: string]: number | null;
     };
-    up: (breakpoint: ThemeBreakpointKeyType) => string;
-    down: (breakpoint: ThemeBreakpointKeyType) => string;
-    between: (min: ThemeBreakpointKeyType, max: ThemeBreakpointKeyType) => string;
-    only: (breakpoint: ThemeBreakpointKeyType) => string;
-    not: (breakpoint: ThemeBreakpointKeyType) => string;
+    _up: (breakpoint: ThemeBreakpointKeyType) => string;
+    _down: (breakpoint: ThemeBreakpointKeyType) => string;
+    _between: (min: ThemeBreakpointKeyType, max: ThemeBreakpointKeyType) => string;
+    _only: (breakpoint: ThemeBreakpointKeyType) => string;
   };
   typography: {
     fontFamilyBase: string;
@@ -120,14 +122,31 @@ export interface IogartTheme extends DefaultTheme {
     h6: themeTypographyObject;
     subtitle: themeTypographyObject;
     body: themeTypographyObject;
+    caption: themeTypographyObject;
     button: themeTypographyObject;
   };
   shapes: {
     borderRadius: number;
   };
-  transitions: Record<string, unknown>; // TODO
-  shadows: Record<string, unknown>; // TODO
-  mixins: Record<string, unknown>; // TODO
+  transitions: {
+    easing: {
+      [k: string]: string;
+    },
+    duration: {
+      [k: string]: number;
+    },
+    _create: (property: string, easing: 'easeInOut' | 'easeOut' | 'easeIn' | 'sharp', duration: 'short' | 'standard' | 'slow' | 'slower') => string;
+  };
+  shadows: {
+    [k: number]: string;
+  };
+  zAxis: {
+    drawer: number;
+    modal: number;
+    tooltip: number;
+    toasts: number;
+  };
+  // mixins: Record<string, unknown>; // TODO
 }
 
 export type PartialIogartTheme = Partial<IogartTheme>;

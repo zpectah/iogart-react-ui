@@ -1,51 +1,57 @@
 import { createUseStyles } from 'react-jss';
-import { withIogartThemeProps, THEME_BREAKPOINT_CONTAINER, THEME_BREAKPOINTS } from '@iogart-react-ui/styles';
+import { containerMaxWidthKeys } from '@iogart-react-ui/types';
+import { withIogartThemeProps, THEME_BREAKPOINT_CONTAINER } from '@iogart-react-ui/styles';
 
 interface useContainerStylesProps extends withIogartThemeProps {}
 
-type useContainerStylesClassNames = 'root' | 'fluid' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+type useContainerStylesClassNames = 'root' | 'fluid' | keyof typeof containerMaxWidthKeys;
 
 const useContainerStyles = createUseStyles<useContainerStylesClassNames, useContainerStylesProps>({
-  root: {
+  root: ({ theme }) => ({
     maxWidth: '100%',
     marginLeft: 'auto',
     marginRight: 'auto',
-    paddingLeft: '.5rem',
-    paddingRight: '.5rem',
-  },
+    paddingLeft: theme._spacing(1),
+    paddingRight: theme._spacing(1),
+
+    [theme.breakpoints._up('md')]: {
+      paddingLeft: theme._spacing(2),
+      paddingRight: theme._spacing(2),
+    },
+  }),
   fluid: {
     maxWidth: '100%',
   },
-  xs: {
-    [`@media (min-width: ${THEME_BREAKPOINTS.xs.min}px)`]: {
+  xs: ({ theme }) => ({
+    [theme.breakpoints._up('xs')]: {
       maxWidth: '100%',
     },
-  },
-  sm: {
-    [`@media (min-width: ${THEME_BREAKPOINTS.sm.min}px)`]: {
+  }),
+  sm: ({ theme }) => ({
+    [theme.breakpoints._up('sm')]: {
       maxWidth: THEME_BREAKPOINT_CONTAINER.sm,
     },
-  },
-  md: {
-    [`@media (min-width: ${THEME_BREAKPOINTS.md.min}px)`]: {
+  }),
+  md: ({ theme }) => ({
+    [theme.breakpoints._up('md')]: {
       maxWidth: THEME_BREAKPOINT_CONTAINER.md,
     },
-  },
-  lg: {
-    [`@media (min-width: ${THEME_BREAKPOINTS.lg.min}px)`]: {
+  }),
+  lg: ({ theme }) => ({
+    [theme.breakpoints._up('lg')]: {
       maxWidth: THEME_BREAKPOINT_CONTAINER.lg,
     },
-  },
-  xl: {
-    [`@media (min-width: ${THEME_BREAKPOINTS.xl.min}px)`]: {
+  }),
+  xl: ({ theme }) => ({
+    [theme.breakpoints._up('xl')]: {
       maxWidth: THEME_BREAKPOINT_CONTAINER.xl,
     },
-  },
-  xxl: {
-    [`@media (min-width: ${THEME_BREAKPOINTS.xxl.min}px)`]: {
+  }),
+  xxl: ({ theme }) => ({
+    [theme.breakpoints._up('xxl')]: {
       maxWidth: THEME_BREAKPOINT_CONTAINER.xxl,
     },
-  },
+  }),
 });
 
 export default useContainerStyles;

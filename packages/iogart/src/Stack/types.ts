@@ -1,6 +1,7 @@
 import {
   IogartCommonUi,
   withChildren,
+  withStyles,
   flexboxDirection,
   flexboxAlignContent,
   flexboxAlignItems,
@@ -13,7 +14,7 @@ import { StackElementTypeKeys } from './enums';
 
 export type StackElementType = keyof typeof StackElementTypeKeys;
 
-export interface StackProps extends IogartCommonUi, withChildren {
+export interface StackProps extends IogartCommonUi, withChildren, withStyles {
   elementType?: StackElementType;
   spacing?: number;
   direction?: flexboxDirection;

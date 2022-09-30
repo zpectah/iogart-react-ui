@@ -1,10 +1,9 @@
-import { IogartCommonUi, withChildren } from '@iogart-react-ui/types';
-import { ContainerElementTypeKeys, ContainerMaxWidthKeys } from './enums';
+import { IogartCommonUi, withChildren, containerElementTypeKeys, containerMaxWidthKeys, withStyles } from '@iogart-react-ui/types';
 
-export type ContainerElementType = keyof typeof ContainerElementTypeKeys;
-export type ContainerMaxWidth = keyof typeof ContainerMaxWidthKeys;
+export type ContainerElementType = keyof typeof containerElementTypeKeys;
+export type ContainerMaxWidth = keyof typeof containerMaxWidthKeys;
 
-export interface ContainerProps extends IogartCommonUi, withChildren {
+export interface ContainerProps extends IogartCommonUi, withChildren, withStyles {
   elementType?: ContainerElementType;
   maxWidth?: ContainerMaxWidth;
   fluid?: boolean;

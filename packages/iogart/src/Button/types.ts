@@ -8,16 +8,15 @@ import {
   MouseEvent,
 } from 'react';
 
-import { AnchorElement, ButtonElement, IogartCommonUi, MixedReactHTML } from '@iogart-react-ui/types';
-import { ButtonElementTypeKeys, ButtonVariantKeys, ButtonSizeKeys, ButtonColorKeys } from './enums';
+import { AnchorElement, ButtonElement, IogartCommonUi, MixedReactHTML, buttonElementTypeKeys, buttonVariantKeys, buttonSizeKeys, buttonColorKeys, withStyles } from '@iogart-react-ui/types';
 
-export type ButtonElementType = keyof typeof ButtonElementTypeKeys;
+export type ButtonElementType = keyof typeof buttonElementTypeKeys;
 
-export type ButtonVariant = keyof typeof ButtonVariantKeys;
+export type ButtonVariant = keyof typeof buttonVariantKeys;
 
-export type ButtonSize = keyof typeof ButtonSizeKeys;
+export type ButtonSize = keyof typeof buttonSizeKeys;
 
-export type ButtonColor = keyof typeof ButtonColorKeys;
+export type ButtonColor = keyof typeof buttonColorKeys;
 
 export type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
 
@@ -42,7 +41,7 @@ export interface ButtonBaseProps extends HTMLButtonElement, ButtonEvents {
   as?: MixedReactHTML;
 }
 
-export interface ButtonProps extends IogartCommonUi, ButtonBaseProps {
+export interface ButtonProps extends IogartCommonUi, ButtonBaseProps, Omit<withStyles, 'className' | 'style'> {
   variant?: ButtonVariant;
   size?: ButtonSize;
   color?: ButtonColor;
@@ -56,6 +55,6 @@ export type useButtonBaseProps = ButtonBaseProps;
 
 export type useButtonBaseReturn = useButtonBaseProps;
 
-export type useButtonProps = ButtonProps;
+export type useButtonProps = Omit<ButtonProps, 'children'>;
 
 export type useButtonReturn = useButtonProps;

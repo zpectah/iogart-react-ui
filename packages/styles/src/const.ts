@@ -22,15 +22,14 @@ export const PALETTE = {
   black: 'rgb(2,2,2)',
   light: 'rgb(250,250,250)',
   dark: 'rgb(25,25,25)',
-  // Pantone 2022
-  veryPeri: 'rgb(104,104,172)',
-  anthracite: 'rgb(41,40,45)',
-  volcanicGlass: 'rgb(98,93,96)',
-  deepTaupe: 'rgb(125,100,97)',
-  plazaTaupe: 'rgb(173,163,146)',
-  whiteSand: 'rgb(219,211,208)',
-  petrifiedOak: 'rgb(143,121,96)',
-  cloudDancer: 'rgb(241,237,234)',
+  veryPeri: 'rgb(104,104,172)', // Pantone 2022
+  anthracite: 'rgb(41,40,45)', // Pantone 2022
+  volcanicGlass: 'rgb(98,93,96)', // Pantone 2022
+  deepTaupe: 'rgb(125,100,97)', // Pantone 2022
+  plazaTaupe: 'rgb(173,163,146)', // Pantone 2022
+  whiteSand: 'rgb(219,211,208)', // Pantone 2022
+  petrifiedOak: 'rgb(143,121,96)', // Pantone 2022
+  cloudDancer: 'rgb(241,237,234)', // Pantone 2022
 };
 
 export const THEME_SPACER = '.75rem';

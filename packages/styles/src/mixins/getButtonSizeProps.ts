@@ -5,7 +5,7 @@ const getButtonSizeProps = (theme: IogartTheme, size: ButtonSize) => {
   switch (size) {
     case 'large':
       return {
-        padding: `${theme.spacing(1.15)} ${theme.spacing(1.5)}`,
+        padding: `${theme._spacing(1.15)} ${theme._spacing(1.5)}`,
         fontSize: '1.15rem',
 
         '& svg': {
@@ -16,7 +16,7 @@ const getButtonSizeProps = (theme: IogartTheme, size: ButtonSize) => {
 
     case 'small':
       return {
-        padding: `${theme.spacing(0.75)} ${theme.spacing(1)}`,
+        padding: `${theme._spacing(0.75)} ${theme._spacing(1)}`,
         fontSize: '.825rem',
 
         '& svg': {
@@ -28,7 +28,7 @@ const getButtonSizeProps = (theme: IogartTheme, size: ButtonSize) => {
     case 'medium':
     default:
       return {
-        padding: `${theme.spacing(1)} ${theme.spacing(1.25)}`,
+        padding: `${theme._spacing(1)} ${theme._spacing(1.25)}`,
 
         '& svg': {
           width: `calc(${theme.typography.fontSizeBase} * 1.25)`,
