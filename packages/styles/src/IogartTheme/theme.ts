@@ -1,5 +1,6 @@
 import Color from 'color';
 import { IogartTheme } from '@iogart-react-ui/types';
+import { invertColor } from '@iogart-react-ui/utils';
 import {
   PALETTE,
   THEME_SPACER,
@@ -68,11 +69,15 @@ function createIogartTheme() {
         selected: Color(PALETTE.veryPeri).alpha(0.125).toString(),
         disabled: Color(PALETTE.white).alpha(0.45).toString(),
         focus: Color(PALETTE.white).alpha(0.15).toString(),
+        loading: Color(PALETTE.white).alpha(0.45).toString(),
       },
-      _contrast(color) {
-        return Color(color).negate().toString(); // TODO
+      _negated(color) {
+        return Color(color).negate().toString();
       },
-      _lLighten(color, amount) {
+      _inverted(color, bw) {
+        return invertColor(Color(color).hex(), bw);
+      },
+      _lighten(color, amount) {
         return Color(color).lighten(amount).toString();
       },
       _darken(color, amount) {
@@ -80,6 +85,9 @@ function createIogartTheme() {
       },
       _alpha(color, amount) {
         return Color(color).alpha(amount).toString();
+      },
+      _grayscale(color) {
+        return Color(color).grayscale().toString();
       },
     },
     spacer: THEME_SPACER,
@@ -218,9 +226,8 @@ function createIogartTheme() {
         slow: 450,
         slower: 725,
       },
-      _create(property, easing, duration) {
-        // TODO: create for multiple ...
-        return `${property} ${this.easing[easing]} ${this.duration[duration]}`;
+      _create(property, easing = 'easeInOut', duration = 'standard', delay = 0) {
+        return `${property} .${this.duration[duration]}s ${this.easing[easing]} ${delay}s`;
       },
     },
     shadows: {

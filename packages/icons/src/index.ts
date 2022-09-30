@@ -10,3 +10,5 @@ export * from './Home';
 export * from './Menu';
 export * from './Search';
 export * from './Settings';
+export * from './SpinnerPuff';
+export * from './SpinnerThreeDots';

@@ -1,3 +1,4 @@
+import { createElement } from 'react';
 import { getElementClassName, capitalize } from '@iogart-react-ui/utils';
 import { useIogartTheme, CLASSNAME_PREFIX } from '@iogart-react-ui/styles';
 import { useButtonProps, useButtonReturn } from './types';
@@ -12,6 +13,7 @@ const useButton = (props: useButtonProps) => {
     loading = false,
     pill = false,
     className,
+    spinnerNode = 'Loading',
     ...rest
   } = props;
 
@@ -32,8 +34,20 @@ const useButton = (props: useButtonProps) => {
     }
   );
 
+  const loadingNode =
+    loading &&
+    createElement(
+      'span',
+      {
+        tabIndex: 1,
+        className: classes.loading,
+      },
+      spinnerNode
+    );
+
   const returnProps: useButtonReturn = {
     className: updatedClassName,
+    loadingNode,
     disabled,
     ...rest,
   };

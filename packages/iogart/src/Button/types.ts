@@ -1,12 +1,4 @@
-import {
-  ButtonHTMLAttributes,
-  AriaRole,
-  ReactNode,
-  FocusEventHandler,
-  KeyboardEventHandler,
-  MouseEventHandler,
-  MouseEvent,
-} from 'react';
+import { AriaRole, ReactNode, FocusEventHandler, KeyboardEventHandler, MouseEventHandler, MouseEvent } from 'react';
 
 import {
   AnchorElement,
@@ -15,20 +7,19 @@ import {
   MixedReactHTML,
   buttonElementTypeKeys,
   buttonVariantKeys,
-  buttonSizeKeys,
-  buttonColorKeys,
   withStyles,
+  withChildren,
+  colorVariantKeys,
+  sizeVariantKeys,
 } from '@iogart-react-ui/types';
 
 export type ButtonElementType = keyof typeof buttonElementTypeKeys;
 
 export type ButtonVariant = keyof typeof buttonVariantKeys;
 
-export type ButtonSize = keyof typeof buttonSizeKeys;
+export type ButtonSize = keyof typeof sizeVariantKeys;
 
-export type ButtonColor = keyof typeof buttonColorKeys;
-
-export type ButtonType = ButtonHTMLAttributes<HTMLButtonElement>['type'];
+export type ButtonColor = keyof typeof colorVariantKeys;
 
 export interface ButtonEvents<T = ButtonElement | AnchorElement> {
   onBlur?: FocusEventHandler;
@@ -43,7 +34,7 @@ export interface ButtonEvents<T = ButtonElement | AnchorElement> {
   onDoubleClick?: (event: MouseEvent<T, MouseEvent>) => void;
 }
 
-export interface ButtonBaseProps extends HTMLButtonElement, ButtonEvents {
+export interface ButtonBaseProps extends Omit<HTMLButtonElement, 'children'>, ButtonEvents, withChildren {
   elementType?: ButtonElementType;
   role?: AriaRole;
   href?: string;
@@ -65,6 +56,10 @@ export type useButtonBaseProps = ButtonBaseProps;
 
 export type useButtonBaseReturn = useButtonBaseProps;
 
-export type useButtonProps = Omit<ButtonProps, 'children'>;
+export type useButtonProps = Omit<ButtonProps, 'children'> & {
+  spinnerNode: ReactNode;
+};
 
-export type useButtonReturn = useButtonProps;
+export type useButtonReturn = Omit<useButtonProps, 'spinnerNode'> & {
+  loadingNode: ReactNode | null;
+};

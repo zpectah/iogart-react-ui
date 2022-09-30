@@ -1,5 +1,5 @@
 import React, { createElement } from 'react';
-
+import { SpinnerThreeDots } from '@iogart-react-ui/icons';
 import { ButtonProps } from './types';
 import ButtonBase from './ButtonBase';
 import useButton from './useButton';
@@ -7,32 +7,23 @@ import useButton from './useButton';
 const Button = (props: ButtonProps) => {
   const { children, startIcon, endIcon, loading, ...rest } = props;
 
-  const updatedProps = useButton({ loading, ...rest });
+  const spinner = <SpinnerThreeDots size={12} />;
+  const { loadingNode, ...updatedProps } = useButton({ loading, spinnerNode: spinner, ...rest });
+
+  const childrenNode = createElement('span', {}, children);
 
   const renderChildren = () => {
     return (
       <>
         {startIcon && startIcon}
-        {children}
+        {childrenNode}
         {endIcon && endIcon}
-        {loading && (
-          <span
-            style={{
-              display: 'block',
-              textAlign: 'center',
-              position: 'absolute',
-              backgroundColor: 'rgba(250,250,250,.5)',
-              zIndex: 1,
-            }}
-          >
-            loading
-          </span>
-        )}
+        {loadingNode}
       </>
     );
   };
 
-  return createElement(ButtonBase, { children, ...updatedProps }, renderChildren());
+  return createElement(ButtonBase, { children: childrenNode, ...updatedProps }, renderChildren());
 };
 
 export default Button;

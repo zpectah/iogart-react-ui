@@ -1,4 +1,4 @@
-import { PartialIogartTheme } from '../../../../packages/styles';
+import { PartialIogartTheme } from '../../../../packages/types';
 
 export const customTheme = {
   // palette: {

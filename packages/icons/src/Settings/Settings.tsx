@@ -3,7 +3,7 @@ import React from 'react';
 import { SvgIcon } from '@iogart-react-ui/types';
 
 const Settings = (props: SvgIcon) => {
-  const { size = '24px', color = 'currentColor', ...rest } = props;
+  const { size = 16, color = 'currentColor', ...rest } = props;
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={size} height={size} fill={color} {...rest}>

@@ -1,5 +1,6 @@
+import { CSSProperties } from 'react';
 import { ButtonColor, ButtonVariant } from '@iogart-react-ui/iogart';
-import { IogartTheme } from '../IogartTheme';
+import { IogartTheme } from '@iogart-react-ui/types';
 
 const getColorVariantProps = (theme: IogartTheme, color: ButtonColor, variant: ButtonVariant) => {
   switch (variant) {
@@ -23,7 +24,7 @@ const getColorVariantProps = (theme: IogartTheme, color: ButtonColor, variant: B
           },
         },
         // [`&:disabled, &.${CLASSNAMES.disabled}`]: {},
-      };
+      } as CSSProperties;
 
     case 'outlined':
       return {
@@ -44,7 +45,7 @@ const getColorVariantProps = (theme: IogartTheme, color: ButtonColor, variant: B
           },
         },
         // [`&:disabled, &.${CLASSNAMES.disabled}`]: {},
-      };
+      } as CSSProperties;
 
     case 'text':
     default:
@@ -66,7 +67,7 @@ const getColorVariantProps = (theme: IogartTheme, color: ButtonColor, variant: B
           },
         },
         // [`&:disabled, &.${CLASSNAMES.disabled}`]: {},
-      };
+      } as CSSProperties;
   }
 };
 

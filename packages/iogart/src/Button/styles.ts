@@ -5,6 +5,7 @@ import {
   getButtonSizeProps,
   getColorVariantProps,
   CLASSNAMES,
+  getDisabledPseudoElement,
 } from '@iogart-react-ui/styles';
 import { withIogartThemeProps } from '@iogart-react-ui/types';
 import { ButtonVariant, ButtonSize, ButtonColor } from './types';
@@ -19,7 +20,7 @@ interface useButtonStylesProps extends withIogartThemeProps {
   pill: boolean;
 }
 
-type useButtonStylesClassNames = 'root' | ButtonColor;
+type useButtonStylesClassNames = 'root' | 'loading' | ButtonColor;
 
 export const useButtonBaseStyles = createUseStyles<'root', useButtonBaseStylesProps>({
   root: {
@@ -38,26 +39,15 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
     borderColor: 'inherit',
     color: 'inherit',
     backgroundColor: 'transparent',
-    cursor: disabled ? 'not-allowed' : 'pointer',
+    cursor: disabled || loading ? 'not-allowed' : 'pointer',
     position: loading ? 'relative' : 'inherit',
+    transition: [theme.transitions._create('background-color', 'sharp')],
     ...theme.typography.button,
     ...getButtonSizeProps(theme, size),
 
     [`&:disabled, &.${CLASSNAMES.disabled}`]: {
-      position: 'relative',
-
-      '&:before': {
-        content: '""',
-        width: '100%',
-        height: '100%',
-        display: 'block',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        backgroundColor: theme.palette.action.disabled,
-      },
+      ...getDisabledPseudoElement(theme),
     },
-    // [`&.${CLASSNAMES.loading}`]: {},
   }),
   primary: ({ theme, variant }) => getColorVariantProps(theme, 'primary', variant),
   secondary: ({ theme, variant }) => getColorVariantProps(theme, 'secondary', variant),
@@ -65,4 +55,17 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
   error: ({ theme, variant }) => getColorVariantProps(theme, 'error', variant),
   warning: ({ theme, variant }) => getColorVariantProps(theme, 'warning', variant),
   info: ({ theme, variant }) => getColorVariantProps(theme, 'info', variant),
+  loading: ({ theme }) => ({
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    color: 'inherit',
+    backgroundColor: theme.palette.action.loading,
+  }),
 });

@@ -88,11 +88,14 @@ export interface IogartTheme extends DefaultTheme {
       selected: string;
       disabled: string;
       focus: string;
+      loading: string;
     };
-    _contrast: (color: string) => string;
-    _lLighten: (color: string, amount: number) => string;
+    _negated: (color: string) => string;
+    _inverted: (color: string, bw?: boolean) => string;
+    _lighten: (color: string, amount: number) => string;
     _darken: (color: string, amount: number) => string;
     _alpha: (color: string, amount: number) => string;
+    _grayscale: (color: string) => string;
   };
   spacer: string | number;
   _spacing: (value: number) => string;
@@ -139,7 +142,7 @@ export interface IogartTheme extends DefaultTheme {
     duration: {
       [k: string]: number;
     };
-    _create: (property: string, easing: ThemeEasingType, duration: ThemeDurationType) => string;
+    _create: (property: string, easing?: ThemeEasingType, duration?: ThemeDurationType, delay?: number) => string;
   };
   shadows: {
     [k: number]: string;
