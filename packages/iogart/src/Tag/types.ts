@@ -1,9 +1,8 @@
 import { ReactNode } from 'react';
 
-import { IogartBaseUi, IogartCommonUi, withChildren, withStyles } from '@iogart-react-ui/types';
-import { TagElementTypeKeys } from './enums';
+import { IogartBaseUi, IogartCommonUi, withChildren, withStyles, tagElementTypeKeys } from '@iogart-react-ui/types';
 
-export type TagElementType = keyof typeof TagElementTypeKeys;
+export type TagElementType = keyof typeof tagElementTypeKeys;
 
 export interface TagBaseProps extends IogartBaseUi, withChildren, withStyles {
   elementType?: TagElementType;

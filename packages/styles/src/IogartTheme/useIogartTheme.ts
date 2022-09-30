@@ -1,5 +1,6 @@
 import { useContext } from 'react';
-import { IogartThemeContext, IogartTheme } from '@iogart-react-ui/styles';
+import { IogartThemeContext } from '@iogart-react-ui/styles';
+import { IogartTheme } from '@iogart-react-ui/types';
 
 const useIogartTheme = () => {
   const { theme } = useContext(IogartThemeContext);

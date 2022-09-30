@@ -1,4 +1,4 @@
-export enum TagElementTypeKeys {
+export enum tagElementTypeKeys {
   span = 'span',
   div = 'div',
 }

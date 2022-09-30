@@ -1,4 +1,4 @@
-export enum ThemeBreakpointKeys {
+export enum breakpointKeys {
   xs = 'xs',
   sm = 'sm',
   md = 'md',

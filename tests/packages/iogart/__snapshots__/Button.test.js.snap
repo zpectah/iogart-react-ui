@@ -2,41 +2,10 @@
 
 exports[`Button - onMouseEnter & onMouseLeave 1`] = `
 <button
-  className="iogart-base iogart-ButtonBase root-0-2-13 iogart-ui iogart-Button root-0-2-1"
+  className="iogart-base iogart-ButtonBase root-0-2-15 iogart-ui iogart-Button iogart-Button-PrimaryMediumText root-0-2-1 root-d0-0-2-8 primary-0-2-2 primary-d1-0-2-9"
+  disabled={false}
   onBlur={[Function]}
-  onClick={[Function]}
-  onDoubleClick={[Function]}
   onFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  Button
-</button>
-`;
-
-exports[`Button - onMouseEnter & onMouseLeave 2`] = `
-<button
-  className="iogart-base iogart-ButtonBase root-0-2-13 iogart--hover iogart-ui iogart-Button root-0-2-1"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onDoubleClick={[Function]}
-  onFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  Button
-</button>
-`;
-
-exports[`Button - onMouseEnter & onMouseLeave 3`] = `
-<button
-  className="iogart-base iogart-ButtonBase root-0-2-13 iogart-ui iogart-Button root-0-2-1"
-  onBlur={[Function]}
-  onClick={[Function]}
-  onDoubleClick={[Function]}
-  onFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
 >
   Button
 </button>

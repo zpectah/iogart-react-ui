@@ -6,7 +6,7 @@ import {
   flexboxJustifyContentKeys,
   flexboxJustifyItemsKeys,
   flexboxJustifySelfKeys,
-} from '@iogart-react-ui/utils';
+} from './enums';
 
 export type flexboxDirection = keyof typeof flexboxDirectionKeys;
 

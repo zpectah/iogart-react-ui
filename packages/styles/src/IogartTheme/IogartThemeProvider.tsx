@@ -1,6 +1,6 @@
 import { createContext, createElement } from 'react';
 import { deepMerge } from '@iogart-react-ui/utils';
-import { IogartThemeProviderProps, IogartTheme } from './types';
+import { IogartThemeProviderProps, IogartTheme } from '@iogart-react-ui/types';
 import { THEME_DEFAULT } from './theme';
 
 export const IogartThemeContext = createContext({ theme: THEME_DEFAULT });

@@ -9,10 +9,10 @@ import {
   flexboxJustifyContent,
   flexboxJustifyItems,
   flexboxJustifySelf,
+  stackElementTypeKeys,
 } from '@iogart-react-ui/types';
-import { StackElementTypeKeys } from './enums';
 
-export type StackElementType = keyof typeof StackElementTypeKeys;
+export type StackElementType = keyof typeof stackElementTypeKeys;
 
 export interface StackProps extends IogartCommonUi, withChildren, withStyles {
   elementType?: StackElementType;

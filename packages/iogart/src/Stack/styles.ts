@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 import { createUseStyles } from 'react-jss';
-import { withIogartThemeProps } from '@iogart-react-ui/styles';
+import { withIogartThemeProps } from '@iogart-react-ui/types';
 import {
   flexboxDirection,
   flexboxAlignContent,
@@ -23,7 +23,7 @@ interface useStackStylesProps extends withIogartThemeProps {
 }
 
 const useStackStyles = createUseStyles<'root', useStackStylesProps>({
-  root: ({ theme, ...rest }) => {
+  root: ({ ...rest }) => {
     const styles: CSSProperties = {
       display: 'flex',
       // backgroundColor: theme.palette.primary.main, // Example for theme

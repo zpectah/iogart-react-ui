@@ -8,7 +8,17 @@ import {
   MouseEvent,
 } from 'react';
 
-import { AnchorElement, ButtonElement, IogartCommonUi, MixedReactHTML, buttonElementTypeKeys, buttonVariantKeys, buttonSizeKeys, buttonColorKeys, withStyles } from '@iogart-react-ui/types';
+import {
+  AnchorElement,
+  ButtonElement,
+  IogartCommonUi,
+  MixedReactHTML,
+  buttonElementTypeKeys,
+  buttonVariantKeys,
+  buttonSizeKeys,
+  buttonColorKeys,
+  withStyles,
+} from '@iogart-react-ui/types';
 
 export type ButtonElementType = keyof typeof buttonElementTypeKeys;
 

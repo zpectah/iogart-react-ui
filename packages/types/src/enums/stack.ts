@@ -1,4 +1,4 @@
-export enum StackElementTypeKeys {
+export enum stackElementTypeKeys {
   article = 'article',
   aside = 'aside',
   div = 'div',

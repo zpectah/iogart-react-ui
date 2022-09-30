@@ -1,8 +1,12 @@
 import { DefaultTheme } from 'react-jss';
-import { withChildren } from '@iogart-react-ui/types';
-import { ThemeBreakpointKeys } from './enums';
+import { withChildren } from './withChildren';
+import { breakpointKeys, transitionEasingKeys, transitionDurationKeys } from './enums';
 
-export type ThemeBreakpointKeyType = keyof typeof ThemeBreakpointKeys;
+export type ThemeBreakpointKeyType = keyof typeof breakpointKeys;
+
+export type ThemeEasingType = keyof typeof transitionEasingKeys;
+
+export type ThemeDurationType = keyof typeof transitionDurationKeys;
 
 interface themeColor {
   main: string;
@@ -131,11 +135,11 @@ export interface IogartTheme extends DefaultTheme {
   transitions: {
     easing: {
       [k: string]: string;
-    },
+    };
     duration: {
       [k: string]: number;
-    },
-    _create: (property: string, easing: 'easeInOut' | 'easeOut' | 'easeIn' | 'sharp', duration: 'short' | 'standard' | 'slow' | 'slower') => string;
+    };
+    _create: (property: string, easing: ThemeEasingType, duration: ThemeDurationType) => string;
   };
   shadows: {
     [k: number]: string;

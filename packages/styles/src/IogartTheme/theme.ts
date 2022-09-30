@@ -1,5 +1,5 @@
 import Color from 'color';
-import { IogartTheme } from './types';
+import { IogartTheme } from '@iogart-react-ui/types';
 import {
   PALETTE,
   THEME_SPACER,
@@ -102,7 +102,6 @@ function createIogartTheme() {
       },
       _only(breakpoint) {
         switch (breakpoint) {
-
           case 'xs':
             return `@media (min-width: ${THEME_BREAKPOINTS.xs.min}px and max-width: ${THEME_BREAKPOINTS.xs.max}px)`;
 
@@ -121,7 +120,6 @@ function createIogartTheme() {
           case 'xxl':
           default:
             return `@media (min-width: ${THEME_BREAKPOINTS.xxl.min}px)`;
-
         }
       },
     },

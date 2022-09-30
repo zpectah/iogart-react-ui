@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { useCollapsibleProps, useCollapsibleReturn } from './types';
-import getElementClassName from '../../getElementClassName';
+import getElementClassName from '../getElementClassName';
 
 const useCollapsible = (props: useCollapsibleProps) => {
   const { collapsed, triggerProps, contentProps, ...rest } = props;

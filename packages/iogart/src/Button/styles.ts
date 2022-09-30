@@ -2,11 +2,11 @@ import { createUseStyles } from 'react-jss';
 import {
   buttonBaseMixin,
   buttonResetMixin,
-  withIogartThemeProps,
   getButtonSizeProps,
   getColorVariantProps,
   CLASSNAMES,
 } from '@iogart-react-ui/styles';
+import { withIogartThemeProps } from '@iogart-react-ui/types';
 import { ButtonVariant, ButtonSize, ButtonColor } from './types';
 
 interface useButtonBaseStylesProps extends withIogartThemeProps {}

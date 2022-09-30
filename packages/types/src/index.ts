@@ -4,6 +4,7 @@ export * from './events';
 export * from './iogart';
 export * from './svgIcon';
 export * from './sx';
+export * from './theme';
 export * from './withChildren';
 export * from './withStyles';
 export * from './flexbox';
