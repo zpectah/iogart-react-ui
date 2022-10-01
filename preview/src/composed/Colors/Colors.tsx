@@ -8,7 +8,7 @@ const Colors = () => {
   const theme = useIogartTheme();
 
   const getPaletteList = () => {
-    const list: { name: string, backgroundColor: string }[] = [];
+    const list: { name: string; backgroundColor: string }[] = [];
 
     for (const key in theme.palette.common) {
       list.push({
@@ -47,11 +47,7 @@ const Colors = () => {
             backgroundColor={theme.palette.success.dark}
             label="Success:dark"
           />
-          <ColorBlock
-            color={theme.palette.info.contrastText}
-            backgroundColor={theme.palette.info.dark}
-            label="Info:dark"
-          />
+          <ColorBlock color={theme.palette.info.contrastText} backgroundColor={theme.palette.info.dark} label="Info:dark" />
           <ColorBlock
             color={theme.palette.warning.contrastText}
             backgroundColor={theme.palette.warning.dark}
@@ -79,21 +75,13 @@ const Colors = () => {
             backgroundColor={theme.palette.success.main}
             label="Success"
           />
-          <ColorBlock
-            color={theme.palette.info.contrastText}
-            backgroundColor={theme.palette.info.main}
-            label="Info"
-          />
+          <ColorBlock color={theme.palette.info.contrastText} backgroundColor={theme.palette.info.main} label="Info" />
           <ColorBlock
             color={theme.palette.warning.contrastText}
             backgroundColor={theme.palette.warning.main}
             label="Warning"
           />
-          <ColorBlock
-            color={theme.palette.error.contrastText}
-            backgroundColor={theme.palette.error.main}
-            label="Error"
-          />
+          <ColorBlock color={theme.palette.error.contrastText} backgroundColor={theme.palette.error.main} label="Error" />
         </ColorRow>
         <ColorRow>
           <ColorBlock

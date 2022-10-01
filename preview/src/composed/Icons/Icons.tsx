@@ -1,7 +1,22 @@
 import React from 'react';
 import IconRow from './IconRow';
 import IconBlock from './IconBlock';
-import { ArrowBack, ArrowDownward, ArrowForward, ArrowUpward, Check, Close, ExpandLess, ExpandMore, Home, Menu, Search, Settings, SpinnerPuff, SpinnerThreeDots } from '@iogart-react-ui/icons';
+import {
+  ArrowBack,
+  ArrowDownward,
+  ArrowForward,
+  ArrowUpward,
+  Check,
+  Close,
+  ExpandLess,
+  ExpandMore,
+  Home,
+  Menu,
+  Search,
+  Settings,
+  SpinnerPuff,
+  SpinnerThreeDots,
+} from '@iogart-react-ui/icons';
 
 const Icons = () => {
   const iconList = [
@@ -69,20 +84,12 @@ const Icons = () => {
     <div>
       <IconRow>
         {iconList.map((icon) => (
-          <IconBlock
-            key={icon.name}
-            name={icon.name}
-            node={icon.node}
-          />
+          <IconBlock key={icon.name} name={icon.name} node={icon.node} />
         ))}
       </IconRow>
       <IconRow>
         {spinnerList.map((icon) => (
-          <IconBlock
-            key={icon.name}
-            name={icon.name}
-            node={icon.node}
-          />
+          <IconBlock key={icon.name} name={icon.name} node={icon.node} />
         ))}
       </IconRow>
     </div>

@@ -3,23 +3,14 @@ import React, { FC, createElement, ReactNode, CSSProperties } from 'react';
 export interface TypographyBlockProps {
   children: ReactNode;
   style: CSSProperties;
-  elementType?: any;
+  elementType?: string;
   caption?: string;
 }
 
 const TypographyBlock: FC<TypographyBlockProps> = (props) => {
-  const {
-    children,
-    style,
-    elementType = 'div',
-    caption,
-  } = props;
+  const { children, style, elementType = 'div', caption } = props;
 
-  const node = createElement(
-    elementType,
-    { style },
-    children,
-  );
+  const node = createElement(elementType, { style }, children);
 
   return (
     <figure
@@ -28,11 +19,7 @@ const TypographyBlock: FC<TypographyBlockProps> = (props) => {
         marginBottom: '2rem',
       }}
     >
-      {caption && (
-        <figcaption>
-          {caption}
-        </figcaption>
-      )}
+      {caption && <figcaption>{caption}</figcaption>}
       {node}
     </figure>
   );

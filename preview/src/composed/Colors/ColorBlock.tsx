@@ -36,15 +36,9 @@ const ColorBlock = (props: ColorBlockProps) => {
       border: `1px solid ${backgroundColor}`,
       ...ps,
     };
-  }, [ bordered, color, backgroundColor ]);
+  }, [bordered, color, backgroundColor]);
 
-  return (
-    <div
-      style={blockStyles}
-    >
-      {label}
-    </div>
-  );
+  return <div style={blockStyles}>{label}</div>;
 };
 
 export default ColorBlock;

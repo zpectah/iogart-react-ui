@@ -34,7 +34,7 @@ export const PALETTE: { [k: string]: string } = {
 
 export const THEME_SPACER = '.75rem';
 
-export const THEME_FONT_FAMILY = `'Inter', sans-serif`;
+export const THEME_FONT_FAMILY = `'Inter', Helvetica, Arial, sans-serif`;
 
 export const THEME_BREAKPOINT_KEYS = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'];
 

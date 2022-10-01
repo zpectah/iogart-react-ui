@@ -1,4 +1,5 @@
 import { createUseStyles } from 'react-jss';
+import { HEADER_HEIGHT } from '../../const';
 
 export const usePreviewStyles = createUseStyles({
   root: {},
@@ -14,7 +15,7 @@ export const usePreviewStyles = createUseStyles({
 export const usePreviewDetailStyles = createUseStyles({
   root: {
     width: '100%',
-    height: '100%',
+    minHeight: `calc(100% - ${HEADER_HEIGHT})`,
     margin: 0,
     border: 0,
     position: 'absolute',
