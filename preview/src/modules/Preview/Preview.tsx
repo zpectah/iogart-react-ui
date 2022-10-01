@@ -19,11 +19,11 @@ const Preview = () => {
 
   const renderDetail = useMemo(() => {
     const id = params.id;
-    const detail = config.previews.find((preview) => preview.path === id);
+    const detail = config.previews.find((preview) => preview.name === id);
     if (detail) {
       setSubTitle(detail.meta.title);
-      setDetailTmp(detail as PreviewItem);
-      return <PreviewDetail detail={detail as PreviewItem} />;
+      setDetailTmp(detail as unknown as PreviewItem);
+      return <PreviewDetail detail={detail as unknown as PreviewItem} />;
     } else {
       return (
         <div className={classes.notFound}>

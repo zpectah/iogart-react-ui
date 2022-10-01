@@ -30,7 +30,6 @@ const useDashboardSearch = (props: useDashboardSearchProps) => {
           const matcher = new RegExp(`.*${string}.*`);
           const matched =
             preview.name.toLowerCase().match(matcher) ||
-            preview.path.toLowerCase().match(matcher) ||
             preview.category.toLowerCase().match(matcher) ||
             preview.meta.title.toLowerCase().match(matcher) ||
             preview.meta.description.toLowerCase().match(matcher) ||

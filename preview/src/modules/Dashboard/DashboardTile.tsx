@@ -14,7 +14,7 @@ const DashboardTile = (props: DashboardTileProps) => {
   const classes = useDashboardTileStyles();
 
   return (
-    <Link to={`/preview/${preview.path}`} className={classes.root}>
+    <Link to={`/preview/${preview.name}`} className={classes.root}>
       <div className={classes.primary}>
         <h3 title={`Author: ${preview.meta.author} | Version: ${preview.meta.version}`}>{preview.meta.title}</h3>
       </div>

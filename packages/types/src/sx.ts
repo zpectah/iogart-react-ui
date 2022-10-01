@@ -3,5 +3,5 @@ export interface SxProps {
 }
 
 export interface withSx {
-  sx: SxProps;
+  sx?: SxProps;
 }

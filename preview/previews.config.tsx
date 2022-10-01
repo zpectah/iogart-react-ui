@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Button, Container, Stack, Tag } from '@iogart-react-ui/iogart';
 import { ArrowBack, ArrowForward } from '@iogart-react-ui/icons';
+import { Colors, Icons, Typography } from './src/composed';
 
 const commonMeta = {
   author: 'Tomas Sychra | zpecter.com',
@@ -10,9 +11,47 @@ const commonMeta = {
 
 const previewsConfig = [
   {
+    name: 'colors',
+    node: Colors,
+    category: 'theme',
+    tags: ['theme', 'colors'],
+    layout: 'container',
+    meta: {
+      title: 'Colors',
+      description: 'Color palette',
+      ...commonMeta,
+    },
+    props: {},
+  },
+  {
+    name: 'icons',
+    node: Icons,
+    category: 'theme',
+    tags: ['theme', 'icons'],
+    layout: 'container',
+    meta: {
+      title: 'Icons',
+      description: 'Theme Icons',
+      ...commonMeta,
+    },
+    props: {},
+  },
+  {
+    name: 'typography',
+    node: Typography,
+    category: 'theme',
+    tags: ['theme', 'typography'],
+    layout: 'container',
+    meta: {
+      title: 'Typography',
+      description: 'Theme typography',
+      ...commonMeta,
+    },
+    props: {},
+  },
+  {
     name: 'button',
     node: Button,
-    path: 'button',
     category: 'action',
     tags: ['component', 'ui'],
     layout: 'stack:center',
@@ -37,7 +76,6 @@ const previewsConfig = [
   {
     name: 'tag',
     node: Tag,
-    path: 'tag',
     category: 'status',
     tags: ['component', 'ui'],
     layout: 'stack:center',
@@ -53,7 +91,6 @@ const previewsConfig = [
   {
     name: 'container',
     node: Container,
-    path: 'container',
     category: 'layout',
     tags: ['component', 'ui', 'content'],
     meta: {
@@ -87,7 +124,6 @@ const previewsConfig = [
   {
     name: 'stack',
     node: Stack,
-    path: 'stack',
     category: 'layout',
     tags: ['component', 'ui', 'content', 'flexbox'],
     layout: 'container',

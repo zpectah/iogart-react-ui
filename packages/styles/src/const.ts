@@ -1,4 +1,4 @@
-export const PALETTE = {
+export const PALETTE: { [k: string]: string } = {
   red: 'rgb(211,47,47)',
   pink: 'rgb(194,24,91)',
   purple: 'rgb(123,31,162)',

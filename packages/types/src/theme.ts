@@ -21,6 +21,8 @@ interface themeTypographyObject {
   fontSize: string | number;
   lineHeight: string | number;
   letterSpacing: string | number;
+  marginTop: string | number;
+  marginBottom: string | number;
 }
 
 interface themeBreakpointValueObject {
@@ -38,37 +40,7 @@ export interface IogartTheme extends DefaultTheme {
     warning: themeColor;
     error: themeColor;
     common: {
-      red: string;
-      pink: string;
-      purple: string;
-      deepPurple: string;
-      indigo: string;
-      blue: string;
-      lightBlue: string;
-      cyan: string;
-      teal: string;
-      green: string;
-      lightGreen: string;
-      lime: string;
-      yellow: string;
-      amber: string;
-      orange: string;
-      deepOrange: string;
-      brown: string;
-      grey: string;
-      blueGrey: string;
-      white: string;
-      black: string;
-      light: string;
-      dark: string;
-      veryPeri: string; // Pantone 2022
-      anthracite: string; // Pantone 2022
-      volcanicGlass: string; // Pantone 2022
-      deepTaupe: string; // Pantone 2022
-      plazaTaupe: string; // Pantone 2022
-      whiteSand: string; // Pantone 2022
-      petrifiedOak: string; // Pantone 2022
-      cloudDancer: string; // Pantone 2022
+      [k: string]: string;
     };
     text: {
       primary: string;
@@ -121,6 +93,7 @@ export interface IogartTheme extends DefaultTheme {
     fontWeightRegular: number;
     fontWeightMedium: number;
     fontWeightBold: number;
+    fontWeightHeavy: number;
     h1: themeTypographyObject;
     h2: themeTypographyObject;
     h3: themeTypographyObject;
