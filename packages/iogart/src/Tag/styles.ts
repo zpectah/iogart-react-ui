@@ -1,7 +1,7 @@
 import { createUseStyles } from 'react-jss';
-import { withIogartThemeProps } from '@iogart-react-ui/styles';
+import { withIogartThemeProps } from '@iogart-react-ui/types';
 
-interface useTagStylesProps extends withIogartThemeProps {}
+type useTagStylesProps = withIogartThemeProps;
 
 const useTagStyles = createUseStyles<'root', useTagStylesProps>({
   root: {},

@@ -3,14 +3,14 @@ import { AriaRole, ReactNode, FocusEventHandler, KeyboardEventHandler, MouseEven
 import {
   AnchorElement,
   ButtonElement,
-  IogartCommonUi,
   MixedReactHTML,
   buttonElementTypeKeys,
   buttonVariantKeys,
-  withStyles,
-  withChildren,
   colorVariantKeys,
   sizeVariantKeys,
+  withStyles,
+  withChildren,
+  withSx,
 } from '@iogart-react-ui/types';
 
 export type ButtonElementType = keyof typeof buttonElementTypeKeys;
@@ -42,7 +42,7 @@ export interface ButtonBaseProps extends Omit<HTMLButtonElement, 'children'>, Bu
   as?: MixedReactHTML;
 }
 
-export interface ButtonProps extends IogartCommonUi, ButtonBaseProps, Omit<withStyles, 'className' | 'style'> {
+export interface ButtonProps extends ButtonBaseProps, Omit<withStyles, 'className' | 'style'>, withSx {
   variant?: ButtonVariant;
   size?: ButtonSize;
   color?: ButtonColor;

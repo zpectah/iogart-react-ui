@@ -21,7 +21,7 @@ const LayoutHeading = (props: LayoutHeadingProps) => {
       <div className={classes.primary}>
         {dashboardLink && (
           <Button to="/" spaced={false}>
-            <ArrowBack size="1.5rem" />
+            <ArrowBack size="24" />
           </Button>
         )}
         {title && <h4>{title}</h4>}

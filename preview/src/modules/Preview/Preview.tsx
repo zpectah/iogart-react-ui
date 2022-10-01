@@ -46,7 +46,7 @@ const Preview = () => {
         actions: (
           <>
             <Button spaced={false}>
-              <Settings size="1.5rem" />
+              <Settings size="24" />
             </Button>
           </>
         ),

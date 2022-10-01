@@ -1,6 +1,6 @@
-import { SVGProps } from 'react';
+import { SvgElement } from './element';
 
-export interface SvgIcon extends SVGProps<SVGSVGElement> {
+export interface SvgIcon extends SvgElement {
   size?: string | number;
   color?: string;
 }

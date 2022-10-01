@@ -1,10 +1,10 @@
 import { createUseStyles } from 'react-jss';
-import { containerMaxWidthKeys } from '@iogart-react-ui/types';
-import { withIogartThemeProps, THEME_BREAKPOINT_CONTAINER } from '@iogart-react-ui/styles';
+import { breakpointKeys, withIogartThemeProps } from '@iogart-react-ui/types';
+import { THEME_BREAKPOINT_CONTAINER } from '@iogart-react-ui/styles';
 
-interface useContainerStylesProps extends withIogartThemeProps {}
+type useContainerStylesProps = withIogartThemeProps;
 
-type useContainerStylesClassNames = 'root' | 'fluid' | keyof typeof containerMaxWidthKeys;
+type useContainerStylesClassNames = 'root' | 'fluid' | keyof typeof breakpointKeys;
 
 const useContainerStyles = createUseStyles<useContainerStylesClassNames, useContainerStylesProps>({
   root: ({ theme }) => ({

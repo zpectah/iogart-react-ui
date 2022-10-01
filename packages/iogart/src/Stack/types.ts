@@ -1,7 +1,4 @@
 import {
-  IogartCommonUi,
-  withChildren,
-  withStyles,
   flexboxDirection,
   flexboxAlignContent,
   flexboxAlignItems,
@@ -10,11 +7,14 @@ import {
   flexboxJustifyItems,
   flexboxJustifySelf,
   stackElementTypeKeys,
+  withChildren,
+  withStyles,
+  withSx,
 } from '@iogart-react-ui/types';
 
 export type StackElementType = keyof typeof stackElementTypeKeys;
 
-export interface StackProps extends IogartCommonUi, withChildren, withStyles {
+export interface StackProps extends withChildren, withStyles, withSx {
   elementType?: StackElementType;
   spacing?: number;
   direction?: flexboxDirection;

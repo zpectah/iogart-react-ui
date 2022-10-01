@@ -1,10 +1,9 @@
 import { CSSProperties } from 'react';
 import { IogartTheme } from '@iogart-react-ui/types';
 
-const getDisabledPseudoElement = (theme: IogartTheme) => {
+const getDisabledPseudoElement = (theme: IogartTheme, radius: number | string = 0) => {
   return {
     position: 'relative',
-    overflow: 'hidden',
 
     '&:before': {
       content: '""',
@@ -16,6 +15,8 @@ const getDisabledPseudoElement = (theme: IogartTheme) => {
       left: 0,
       color: 'inherit',
       backgroundColor: theme.palette.action.disabled,
+      boxShadow: `0 0 2px 2px ${theme.palette.action.disabled}`,
+      borderRadius: radius,
     } as CSSProperties,
   };
 };

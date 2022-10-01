@@ -28,7 +28,7 @@ const previewsConfig = [
       // variant: 'outlined',
       // size: 'small',
       // disabled: true,
-      // startIcon: <ArrowBack />,
+      startIcon: <ArrowBack />,
       endIcon: <ArrowForward />,
       // loading: true,
       // pill: true,

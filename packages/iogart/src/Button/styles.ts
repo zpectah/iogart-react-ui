@@ -10,15 +10,15 @@ import {
 import { withIogartThemeProps } from '@iogart-react-ui/types';
 import { ButtonVariant, ButtonSize, ButtonColor } from './types';
 
-interface useButtonBaseStylesProps extends withIogartThemeProps {}
+type useButtonBaseStylesProps = withIogartThemeProps;
 
-interface useButtonStylesProps extends withIogartThemeProps {
+type useButtonStylesProps = withIogartThemeProps & {
   variant: ButtonVariant;
   size: ButtonSize;
   disabled: boolean;
   loading: boolean;
   pill: boolean;
-}
+};
 
 type useButtonStylesClassNames = 'root' | 'loading' | ButtonColor;
 
@@ -46,7 +46,7 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
     ...getButtonSizeProps(theme, size),
 
     [`&:disabled, &.${CLASSNAMES.disabled}`]: {
-      ...getDisabledPseudoElement(theme),
+      ...getDisabledPseudoElement(theme, pill ? '3rem' : theme.shapes.borderRadius),
     },
   }),
   primary: ({ theme, variant }) => getColorVariantProps(theme, 'primary', variant),
@@ -55,7 +55,7 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
   error: ({ theme, variant }) => getColorVariantProps(theme, 'error', variant),
   warning: ({ theme, variant }) => getColorVariantProps(theme, 'warning', variant),
   info: ({ theme, variant }) => getColorVariantProps(theme, 'info', variant),
-  loading: ({ theme }) => ({
+  loading: ({ theme, pill }) => ({
     width: '100%',
     height: '100%',
     display: 'flex',
@@ -67,5 +67,7 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
     left: 0,
     color: 'inherit',
     backgroundColor: theme.palette.action.loading,
+    boxShadow: `0 0 2px 2px ${theme.palette.action.loading}`,
+    borderRadius: pill ? '3rem' : theme.shapes.borderRadius,
   }),
 });

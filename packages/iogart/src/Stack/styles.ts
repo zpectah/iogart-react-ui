@@ -11,7 +11,7 @@ import {
   flexboxJustifySelf,
 } from '@iogart-react-ui/types';
 
-interface useStackStylesProps extends withIogartThemeProps {
+type useStackStylesProps = withIogartThemeProps & {
   spacing?: number;
   direction?: flexboxDirection;
   alignItems?: flexboxAlignItems;
@@ -20,7 +20,7 @@ interface useStackStylesProps extends withIogartThemeProps {
   justifyContent?: flexboxJustifyContent;
   justifyItems?: flexboxJustifyItems;
   justifySelf?: flexboxJustifySelf;
-}
+};
 
 const useStackStyles = createUseStyles<'root', useStackStylesProps>({
   root: ({ ...rest }) => {

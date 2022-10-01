@@ -1,4 +1,7 @@
 export interface SxProps {
-  // TODO
-  a: unknown;
+  a?: unknown;
+}
+
+export interface withSx {
+  sx: SxProps;
 }
