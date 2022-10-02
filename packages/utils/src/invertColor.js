@@ -3,10 +3,11 @@
 function padZero(str, len) {
   len = len || 2;
   let zeros = new Array(len).join('0');
+
   return (zeros + str).slice(-len);
 }
 
-function invertColor(hex, bw) {
+const invertColor = (hex, bw) => {
   if (hex.indexOf('#') === 0) {
     hex = hex.slice(1);
   }
@@ -30,6 +31,6 @@ function invertColor(hex, bw) {
   b = (255 - b).toString(16);
   // pad each with zeros and return
   return '#' + padZero(r) + padZero(g) + padZero(b);
-}
+};
 
-export default invertColor;
+export { invertColor };

@@ -1,7 +1,7 @@
 import { createElement, useMemo } from 'react';
 import { getElementClassName } from '@iogart-react-ui/utils';
 import { useIogartTheme, CLASSNAME_PREFIX } from '@iogart-react-ui/styles';
-import { IogartClickEvent } from '@iogart-react-ui/types';
+import { IogartClickEvent, SvgIcon } from '@iogart-react-ui/types';
 import { Close } from '@iogart-react-ui/icons';
 import { useTagProps, useTagReturn } from './types';
 import { useTagStyles } from './styles';
@@ -44,7 +44,7 @@ const useTag = (props: useTagProps) => {
     }
   };
 
-  const closeNode = !!onClose && createElement(Close, iconProps);
+  const closeNode = !!onClose && createElement(Close, iconProps as SvgIcon);
 
   const returnProps: useTagReturn = {
     className: updatedClassName,

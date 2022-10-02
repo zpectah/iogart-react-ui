@@ -1,6 +1,6 @@
 import { CLASSNAMES } from '@iogart-react-ui/styles';
 
-export type getElementClassNameAdditionalProps = {
+type getElementClassNameAdditionalProps = {
   isActive?: boolean;
   isHover?: boolean;
   isFocus?: boolean;
@@ -36,4 +36,4 @@ const getElementClassName = (className = '', classes: string[] = [], additional?
   return finalClassName.replaceAll('  ', ' ').replace(/\s+$/g, '');
 };
 
-export default getElementClassName;
+export { getElementClassName };

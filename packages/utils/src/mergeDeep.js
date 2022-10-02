@@ -6,7 +6,7 @@
  * @returns {object} New object with merged key/values
  */
 
-function mergeDeep(...objects) {
+const mergeDeep = (...objects) => {
   const isObject = (obj) => obj && typeof obj === 'object';
 
   return objects.reduce((prev, obj) => {
@@ -25,6 +25,6 @@ function mergeDeep(...objects) {
 
     return prev;
   }, {});
-}
+};
 
-export default mergeDeep;
+export { mergeDeep };
