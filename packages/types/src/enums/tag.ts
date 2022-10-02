@@ -1,4 +1,4 @@
-export enum tagElementTypeKeys {
-  span = 'span',
-  div = 'div',
+export enum tagVariantKeys {
+  contained = 'contained',
+  outlined = 'outlined',
 }

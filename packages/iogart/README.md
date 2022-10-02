@@ -17,7 +17,7 @@ Main components kit
 | Badge            | `Badge`          | -      | Status     | read more                              |
 | Box              | `Box`            | -      | Layout     | read more                              |
 | Breadcrumbs      | `Breadcrumbs`    | -      | Navigation | read more                              |
-| Button           | `Button`         | ❎     | Action     | [read more](./src/Button/README.md)    |
+| Button           | `Button`         | ✅ ♻️  | Action     | [read more](./src/Button/README.md)    |
 | ButtonGroup      | `ButtonGroup`    | -      | Action     | read more                              |
 | Card             | `Card`           | -      | Layout     | read more                              |
 | Checkbox         | `Checkbox`       | -      | Data       | read more                              |
@@ -25,7 +25,7 @@ Main components kit
 | Code             | `Code`           | -      | Content    | read more                              |
 | Collapsed        | `Collapsed`      | -      | Content    | read more                              |
 | Confirm Dialog   | `ConfirmDialog`  | -      | Feedback   | read more                              |
-| Container        | `Container`      | ❎     | Layout     | [read more](./src/Container/README.md) |
+| Container        | `Container`      | ✅ ♻️  | Layout     | [read more](./src/Container/README.md) |
 | Data Table       | `DataTable`      | -      | Data       | read more                              |
 | Date Picker      | `DatePicker`     | -      | Data       | read more                              |
 | Date Time Picker | `DateTimePicker` | -      | Data       | read more                              |
@@ -58,12 +58,12 @@ Main components kit
 | Search           | `Search`         | -      | Data       | read more                              |
 | Select           | `Select`         | -      | Data       | read more                              |
 | Slider           | `Slider`         | -      | Data       | read more                              |
-| Stack            | `Stack`          | ❎     | Layout     | [read more](./src/Stack/README.md)     |
+| Stack            | `Stack`          | ✅ ♻️  | Layout     | [read more](./src/Stack/README.md)     |
 | Switch           | `Switch`         | -      | Data       | read more                              |
 | Switch Group     | `SwitchGroup`    | -      | Data       | read more                              |
 | Table            | `Table`          | -      | Data       | read more                              |
 | Tabs             | `Tabs`           | -      | Navigation | read more                              |
-| Tag              | `Tag`            | ❎     | Status     | [read more](./src/Tag/README.md)       |
+| Tag              | `Tag`            | ✅ ♻️  | Status     | [read more](./src/Tag/README.md)       |
 | Textarea         | `Textarea`       | -      | Data       | read more                              |
 | Text Field       | `TextField`      | -      | Data       | read more                              |
 | Text Editor      | `TextEditor`     | -      | Data       | read more                              |

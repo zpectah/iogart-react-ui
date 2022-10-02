@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import { IogartTheme } from '@iogart-react-ui/types';
 
-const getDisabledPseudoElement = (theme: IogartTheme, radius: number | string = 0) => {
+export const getDisabledPseudoElement = (theme: IogartTheme, radius: number | string = 0) => {
   return {
     position: 'relative',
 
@@ -20,5 +20,3 @@ const getDisabledPseudoElement = (theme: IogartTheme, radius: number | string = 
     } as CSSProperties,
   };
 };
-
-export default getDisabledPseudoElement;

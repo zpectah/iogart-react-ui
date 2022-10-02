@@ -3,9 +3,10 @@ import {
   buttonBaseMixin,
   buttonResetMixin,
   getButtonSizeProps,
-  getColorVariantProps,
+  getButtonColorVariantProps,
   CLASSNAMES,
   getDisabledPseudoElement,
+  getPillBorderRadius,
 } from '@iogart-react-ui/styles';
 import { withIogartThemeProps } from '@iogart-react-ui/types';
 import { ButtonVariant, ButtonSize, ButtonColor } from './types';
@@ -31,11 +32,10 @@ export const useButtonBaseStyles = createUseStyles<'root', useButtonBaseStylesPr
 
 export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useButtonStylesProps>({
   root: ({ theme, size, disabled, loading, pill }) => ({
-    justifyContent: 'space-between',
     gap: theme.spacer,
     borderWidth: '1px',
     borderStyle: 'solid',
-    borderRadius: pill ? '3rem' : theme.shapes.borderRadius,
+    borderRadius: getPillBorderRadius(pill, theme.shapes.borderRadius),
     borderColor: 'inherit',
     color: 'inherit',
     backgroundColor: 'transparent',
@@ -43,18 +43,18 @@ export const useButtonStyles = createUseStyles<useButtonStylesClassNames, useBut
     position: loading ? 'relative' : 'inherit',
     transition: [theme.transitions._create('background-color', 'sharp')],
     ...theme.typography.button,
-    ...getButtonSizeProps(theme, size),
+    ...getButtonSizeProps(theme, size, pill),
 
     [`&:disabled, &.${CLASSNAMES.disabled}`]: {
       ...getDisabledPseudoElement(theme, pill ? '3rem' : theme.shapes.borderRadius),
     },
   }),
-  primary: ({ theme, variant }) => getColorVariantProps(theme, 'primary', variant),
-  secondary: ({ theme, variant }) => getColorVariantProps(theme, 'secondary', variant),
-  success: ({ theme, variant }) => getColorVariantProps(theme, 'success', variant),
-  error: ({ theme, variant }) => getColorVariantProps(theme, 'error', variant),
-  warning: ({ theme, variant }) => getColorVariantProps(theme, 'warning', variant),
-  info: ({ theme, variant }) => getColorVariantProps(theme, 'info', variant),
+  primary: ({ theme, variant }) => getButtonColorVariantProps(theme, 'primary', variant),
+  secondary: ({ theme, variant }) => getButtonColorVariantProps(theme, 'secondary', variant),
+  success: ({ theme, variant }) => getButtonColorVariantProps(theme, 'success', variant),
+  error: ({ theme, variant }) => getButtonColorVariantProps(theme, 'error', variant),
+  warning: ({ theme, variant }) => getButtonColorVariantProps(theme, 'warning', variant),
+  info: ({ theme, variant }) => getButtonColorVariantProps(theme, 'info', variant),
   loading: ({ theme, pill }) => ({
     width: '100%',
     height: '100%',

@@ -1,5 +1,4 @@
-import { AriaRole, ReactNode, FocusEventHandler, KeyboardEventHandler, MouseEventHandler, MouseEvent } from 'react';
-
+import { ReactNode, FocusEventHandler, KeyboardEventHandler, MouseEventHandler, MouseEvent } from 'react';
 import {
   AnchorElement,
   ButtonElement,
@@ -8,7 +7,6 @@ import {
   buttonVariantKeys,
   colorVariantKeys,
   sizeVariantKeys,
-  withStyles,
   withChildren,
   withSx,
 } from '@iogart-react-ui/types';
@@ -36,13 +34,12 @@ export interface ButtonEvents<T = ButtonElement | AnchorElement> {
 
 export interface ButtonBaseProps extends Omit<HTMLButtonElement, 'children'>, ButtonEvents, withChildren {
   elementType?: ButtonElementType;
-  role?: AriaRole;
   href?: string;
   to?: string;
   as?: MixedReactHTML;
 }
 
-export interface ButtonProps extends ButtonBaseProps, Omit<withStyles, 'className' | 'style'>, withSx {
+export interface ButtonProps extends ButtonBaseProps, withSx {
   variant?: ButtonVariant;
   size?: ButtonSize;
   color?: ButtonColor;
